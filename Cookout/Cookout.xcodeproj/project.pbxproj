@@ -24,6 +24,7 @@
 		2030CE4E18ABBE3500636B2C /* CookoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CE4D18ABBE3500636B2C /* CookoutTests.m */; };
 		2030CE5818ABBE6E00636B2C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2030CE5718ABBE6E00636B2C /* CoreData.framework */; };
 		2030CE6218ABBEF700636B2C /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2030CE6018ABBEF700636B2C /* DataModel.xcdatamodeld */; };
+		58A4F60518ABD46C0094E983 /* Hourly.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A4F60418ABD46C0094E983 /* Hourly.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		2030CE4D18ABBE3500636B2C /* CookoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookoutTests.m; sourceTree = "<group>"; };
 		2030CE5718ABBE6E00636B2C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		2030CE6118ABBEF700636B2C /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		58A4F60318ABD46C0094E983 /* Hourly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hourly.h; sourceTree = "<group>"; };
+		58A4F60418ABD46C0094E983 /* Hourly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hourly.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +171,8 @@
 		2030CE5918ABBED400636B2C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				58A4F60318ABD46C0094E983 /* Hourly.h */,
+				58A4F60418ABD46C0094E983 /* Hourly.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 				2030CE6218ABBEF700636B2C /* DataModel.xcdatamodeld in Sources */,
 				2030CE3018ABBE3400636B2C /* AppDelegate.m in Sources */,
 				2030CE3618ABBE3400636B2C /* FirstViewController.m in Sources */,
+				58A4F60518ABD46C0094E983 /* Hourly.m in Sources */,
 				2030CE2C18ABBE3400636B2C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,6 +500,7 @@
 				2030CE5318ABBE3500636B2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2030CE5418ABBE3500636B2C /* Build configuration list for PBXNativeTarget "CookoutTests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +509,7 @@
 				2030CE5618ABBE3500636B2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
