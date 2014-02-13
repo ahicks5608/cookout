@@ -28,26 +28,15 @@
     return self;
 }
 
-
-
-
-
-
-
 -(NSString*) getStoreCode {
     return @"WS11";
 #warning implement get setting here
 }
 
-
-
-
 -(NSNumber*) getPayRate {
     return [NSNumber numberWithFloat:7.50f];
 #warning implement get setting here
 }
-
-
 
 
 -(NSNumber*) laborPercent{
@@ -61,10 +50,11 @@
     
     CGFloat sales = [_saleAmount floatValue];
     CGFloat laborCost = [_crewCount intValue] * [self.payrate floatValue];
+
     CGFloat result = floorf(((sales / laborCost) * 100) + 0.5) /100;
     
-
-    return [NSNumber numberWithFloat:result];
+    CGFloat roundedFloat = (int)(result * 100 + 0.5) / 100.0;
+    return [NSNumber numberWithFloat:roundedFloat];
 }
 
 /*
