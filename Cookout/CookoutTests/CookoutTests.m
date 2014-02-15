@@ -48,20 +48,18 @@
 
 - (void)test2
 {
-    hourly.saleAmount = [NSNumber numberWithInt:10000];
-    hourly.crewCount = [NSNumber numberWithInt:100];
-    NSNumber *result = [hourly laborPercent];
+    Hourly *hourly1 = [[Hourly alloc] init:[NSNumber numberWithInt:10000] crewCount:[NSNumber numberWithInt:100]];
+    NSNumber *result = hourly1.laborPercent;
     XCTAssertTrue((result != nil), @"result not nil");
     XCTAssertEqual(13.33f, [result floatValue], @"thats invalid");
 
 }
 
 - (void)test3 {
-    hourly.saleAmount = [NSNumber numberWithInt:2500];
-    hourly.crewCount = [NSNumber numberWithInt:23];
-    NSNumber *result = [hourly laborPercent];
+    Hourly *hourly1 = [[Hourly alloc] init:[NSNumber numberWithInt:2500] crewCount:[NSNumber numberWithInt:23]];
+    NSNumber *result = [hourly1 getLaborPercent];
     XCTAssertTrue((result != nil), @"result not null");
-   XCTAssertEqual(14.49f, [result floatValue], @"thats invalid");
+    XCTAssertEqual(14.49f, [result floatValue], @"thats invalid");
     
 }
 

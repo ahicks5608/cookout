@@ -24,6 +24,8 @@
 		2030CE4E18ABBE3500636B2C /* CookoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CE4D18ABBE3500636B2C /* CookoutTests.m */; };
 		2030CE5818ABBE6E00636B2C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2030CE5718ABBE6E00636B2C /* CoreData.framework */; };
 		2030CE6218ABBEF700636B2C /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2030CE6018ABBEF700636B2C /* DataModel.xcdatamodeld */; };
+		58A0B23818AE9142005C1E88 /* Daily.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0B23718AE9142005C1E88 /* Daily.m */; };
+		58A0B23A18AEA15C005C1E88 /* CookoutDailyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */; };
 		58A4F60718ABDFCD0094E983 /* CookoutClassTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A4F60618ABDFCD0094E983 /* CookoutClassTest.m */; };
 		58A4F60A18AC0A320094E983 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A4F60918AC0A320094E983 /* Common.m */; };
 		58A4F60B18AC29A70094E983 /* Hourly.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A4F60418ABD46C0094E983 /* Hourly.m */; };
@@ -63,6 +65,11 @@
 		2030CE4D18ABBE3500636B2C /* CookoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookoutTests.m; sourceTree = "<group>"; };
 		2030CE5718ABBE6E00636B2C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		2030CE6118ABBEF700636B2C /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		58A0B23618AE9142005C1E88 /* Daily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Daily.h; sourceTree = "<group>"; };
+		58A0B23718AE9142005C1E88 /* Daily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Daily.m; sourceTree = "<group>"; };
+		58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CookoutDailyTest.m; path = CookoutTests/CookoutDailyTest.m; sourceTree = "<group>"; };
+		58A354AD18AFE4DC00C69F36 /* CookoutAmounts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookoutAmounts.h; sourceTree = "<group>"; };
+		58A354AE18AFE6C500C69F36 /* CookOutHourly.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookOutHourly.h; sourceTree = "<group>"; };
 		58A4F60318ABD46C0094E983 /* Hourly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hourly.h; sourceTree = "<group>"; };
 		58A4F60418ABD46C0094E983 /* Hourly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hourly.m; sourceTree = "<group>"; };
 		58A4F60618ABDFCD0094E983 /* CookoutClassTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CookoutClassTest.m; sourceTree = "<group>"; };
@@ -98,6 +105,7 @@
 		2030CE1318ABBE3400636B2C = {
 			isa = PBXGroup;
 			children = (
+				58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */,
 				2030CE2518ABBE3400636B2C /* Cookout */,
 				2030CE4718ABBE3500636B2C /* CookoutTests */,
 				2030CE1E18ABBE3400636B2C /* Frameworks */,
@@ -177,10 +185,14 @@
 		2030CE5918ABBED400636B2C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				58A0B23618AE9142005C1E88 /* Daily.h */,
+				58A0B23718AE9142005C1E88 /* Daily.m */,
 				58A4F60318ABD46C0094E983 /* Hourly.h */,
 				58A4F60418ABD46C0094E983 /* Hourly.m */,
 				58A4F60818AC0A320094E983 /* Common.h */,
 				58A4F60918AC0A320094E983 /* Common.m */,
+				58A354AD18AFE4DC00C69F36 /* CookoutAmounts.h */,
+				58A354AE18AFE6C500C69F36 /* CookOutHourly.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -303,6 +315,7 @@
 				58A4F60B18AC29A70094E983 /* Hourly.m in Sources */,
 				2030CE3018ABBE3400636B2C /* AppDelegate.m in Sources */,
 				2030CE3618ABBE3400636B2C /* FirstViewController.m in Sources */,
+				58A0B23818AE9142005C1E88 /* Daily.m in Sources */,
 				2030CE2C18ABBE3400636B2C /* main.m in Sources */,
 				58A4F60A18AC0A320094E983 /* Common.m in Sources */,
 			);
@@ -313,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2030CE4E18ABBE3500636B2C /* CookoutTests.m in Sources */,
+				58A0B23A18AEA15C005C1E88 /* CookoutDailyTest.m in Sources */,
 				58A4F60718ABDFCD0094E983 /* CookoutClassTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
