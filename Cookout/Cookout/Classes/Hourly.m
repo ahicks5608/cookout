@@ -27,6 +27,9 @@
     if (self = [super init]) {
         _salesAmount = [salesAmount copy];
         _crewCount = [crewCount copy];
+        _serviceTime = @0;
+        _upDownAmount = @0;
+
         
     }
     return self;
@@ -38,7 +41,11 @@
     
     if(self = [super init]){
         _timeOfDay = [NSNumber numberWithInt:tod];
-        
+        _salesAmount = @0;
+        _crewCount = @0;
+        _serviceTime = @0;
+        _upDownAmount = @0;
+    
     }
     return self;
 }

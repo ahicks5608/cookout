@@ -67,7 +67,7 @@
 		2030CE6118ABBEF700636B2C /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		58A0B23618AE9142005C1E88 /* Daily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Daily.h; sourceTree = "<group>"; };
 		58A0B23718AE9142005C1E88 /* Daily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Daily.m; sourceTree = "<group>"; };
-		58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CookoutDailyTest.m; path = CookoutTests/CookoutDailyTest.m; sourceTree = "<group>"; };
+		58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CookoutDailyTest.m; sourceTree = "<group>"; };
 		58A354AD18AFE4DC00C69F36 /* CookoutAmounts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookoutAmounts.h; sourceTree = "<group>"; };
 		58A354AE18AFE6C500C69F36 /* CookOutHourly.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookOutHourly.h; sourceTree = "<group>"; };
 		58A4F60318ABD46C0094E983 /* Hourly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hourly.h; sourceTree = "<group>"; };
@@ -105,7 +105,6 @@
 		2030CE1318ABBE3400636B2C = {
 			isa = PBXGroup;
 			children = (
-				58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */,
 				2030CE2518ABBE3400636B2C /* Cookout */,
 				2030CE4718ABBE3500636B2C /* CookoutTests */,
 				2030CE1E18ABBE3400636B2C /* Frameworks */,
@@ -166,9 +165,10 @@
 		2030CE4718ABBE3500636B2C /* CookoutTests */ = {
 			isa = PBXGroup;
 			children = (
+				58A4F60618ABDFCD0094E983 /* CookoutClassTest.m */,
+				58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */,
 				2030CE4D18ABBE3500636B2C /* CookoutTests.m */,
 				2030CE4818ABBE3500636B2C /* Supporting Files */,
-				58A4F60618ABDFCD0094E983 /* CookoutClassTest.m */,
 			);
 			path = CookoutTests;
 			sourceTree = "<group>";

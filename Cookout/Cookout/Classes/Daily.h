@@ -20,8 +20,11 @@
 @property (nonatomic, readonly, getter = getSalesAmount) NSNumber* salesAmount;
 @property (nonatomic, readonly, getter = getCrewCount) NSNumber* crewCount;
 @property (nonatomic, readonly, getter = getServiceTime) NSNumber* serviceTime;
+#warning  add property here
+
 @property(nonatomic, strong) NSDate* createDate;
 
+-(id) initWithData:(NSDictionary*) values;
 
 -(void) setNetSalesAmt:(NSNumber*) value;
 
@@ -41,8 +44,6 @@
 -(void) setUpDownToday : (NSNumber*) value;
 
 //
-
-
 
 
 @end
