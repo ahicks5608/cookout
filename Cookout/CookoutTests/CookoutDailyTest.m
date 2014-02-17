@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 #import "Daily.h"
+#import "Common.h"
+
 
 @interface CookoutDailyTest : XCTestCase{
     Daily *daily;
@@ -77,6 +79,31 @@
     XCTAssertTrue((result != nil),@"result is nil");
     XCTAssertTrue(([result floatValue] == 100.00f) , @"invalid value");
     
+}
+
+- (void)testcompare1
+{
+    Daily *daily1 = [[Daily alloc] init];
+    NSNumber *result = [daily compare:daily1 what:COMPARE_SERVICETIME];
+    XCTAssertTrue((result != nil),@"result is nil");
+    XCTAssertTrue(([result floatValue] == 0.0f) , @"invalid value");
+}
+
+-(void) testInitWithData1 {
+    
+    /*
+     _employeeFoodAmt = (NSNumber *) [_data valueForKeyPath:@"employeeFoodAmt"];
+     _cashOsAmt = (NSNumber *) [_data valueForKeyPath:@"cashOsAmt"];
+     _cashAmt = (NSNumber *) [_data valueForKeyPath:@"cashAmt"];
+     */
+    Daily *daily1 = [[Daily alloc] initWithHourly:nil data:@{cfnEmployeeFoodAmt: @100.50f,
+                                                             cfnCashOsAmt:@-10,
+                                                            cfnCashAmt: @200
+                                                             }];
+    NSNumber *result = daily1.employeeFoodAmt;
+    XCTAssertTrue((result != nil),@"result is nil");
+    XCTAssertTrue(([result floatValue] == 100.50f) , @"invalid value");
+
 }
 
 @end

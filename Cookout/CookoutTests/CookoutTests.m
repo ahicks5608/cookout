@@ -81,11 +81,14 @@
 }
 
 - (void)test6 {
-    Hourly *hourly1 = [[Hourly alloc] init:[NSNumber numberWithInt:TOD22]];
+    Hourly *hourly1 = [[Hourly alloc] init:TOD22];
     NSNumber *result = hourly1.laborPercent;
     XCTAssertTrue((result != nil), @"result not null");
-    XCTAssertEqual(0, [result floatValue], @"thats invalid");
+    XCTAssertEqual(TOD22, [result intValue], @"thats invalid");
     
 }
+
+
+
 
 @end

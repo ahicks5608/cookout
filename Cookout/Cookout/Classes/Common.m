@@ -8,7 +8,9 @@
 
 #import "Common.h"
 
-
+NSString * const cfnEmployeeFoodAmt = @"empFoodAmt";
+NSString * const cfnCashOsAmt = @"cashOsAmt";
+NSString * const cfnCashAmt = @"cashAmt";
 
 @implementation Common
 

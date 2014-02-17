@@ -65,10 +65,11 @@
 		2030CE4D18ABBE3500636B2C /* CookoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookoutTests.m; sourceTree = "<group>"; };
 		2030CE5718ABBE6E00636B2C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		2030CE6118ABBEF700636B2C /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		581F35BA18B27A9D0078EE5D /* CookOutDaily.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookOutDaily.h; sourceTree = "<group>"; };
 		58A0B23618AE9142005C1E88 /* Daily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Daily.h; sourceTree = "<group>"; };
 		58A0B23718AE9142005C1E88 /* Daily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Daily.m; sourceTree = "<group>"; };
 		58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CookoutDailyTest.m; sourceTree = "<group>"; };
-		58A354AD18AFE4DC00C69F36 /* CookoutAmounts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookoutAmounts.h; sourceTree = "<group>"; };
+		58A354AD18AFE4DC00C69F36 /* CookOutAmounts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookOutAmounts.h; sourceTree = "<group>"; };
 		58A354AE18AFE6C500C69F36 /* CookOutHourly.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookOutHourly.h; sourceTree = "<group>"; };
 		58A4F60318ABD46C0094E983 /* Hourly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hourly.h; sourceTree = "<group>"; };
 		58A4F60418ABD46C0094E983 /* Hourly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hourly.m; sourceTree = "<group>"; };
@@ -191,8 +192,9 @@
 				58A4F60418ABD46C0094E983 /* Hourly.m */,
 				58A4F60818AC0A320094E983 /* Common.h */,
 				58A4F60918AC0A320094E983 /* Common.m */,
-				58A354AD18AFE4DC00C69F36 /* CookoutAmounts.h */,
+				58A354AD18AFE4DC00C69F36 /* CookOutAmounts.h */,
 				58A354AE18AFE6C500C69F36 /* CookOutHourly.h */,
+				581F35BA18B27A9D0078EE5D /* CookOutDaily.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

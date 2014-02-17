@@ -9,15 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "Common.h"
 #import "CookOutHourly.h"
-#import "CookoutAmounts.h"
+#import "CookOutAmounts.h"
 
 //THIS IS MY CLASS !!!
 @interface Hourly : NSObject <CookOutHourly, CookOutAmounts>
 
 
 //THESE ARE THE PROPERTIES OF THE CLASS
+
 @property (nonatomic, readonly, getter = getPayRate) NSNumber *payrate;
 @property (nonatomic, readonly, getter = getStoreCode) NSString *storeCode;
+
 @property (nonatomic, readonly, getter = getSalesAmount) NSNumber* salesAmount;
 @property (nonatomic, readonly, getter = getCrewCount) NSNumber* crewCount;
 @property (nonatomic, readonly, getter = getServiceTime) NSNumber* serviceTime;

@@ -8,11 +8,11 @@
 
 
 #import <Foundation/Foundation.h>
-#import "CookoutAmounts.h"
+#import "CookOutAmounts.h"
+#import "CookOutDaily.h"
 
 
-
-@interface Daily: NSObject <CookOutAmounts>
+@interface Daily: NSObject <CookOutAmounts, CookOutDaily>
 
 @property(nonatomic, strong, getter = getNetSalesAmt, setter = setNetSalesAmt:) NSNumber* netSalesAmt;
 @property (nonatomic, readonly, getter = getPayRate) NSNumber *payrate;
@@ -20,28 +20,12 @@
 @property (nonatomic, readonly, getter = getSalesAmount) NSNumber* salesAmount;
 @property (nonatomic, readonly, getter = getCrewCount) NSNumber* crewCount;
 @property (nonatomic, readonly, getter = getServiceTime) NSNumber* serviceTime;
-#warning  add property here
-
-@property(nonatomic, strong) NSDate* createDate;
-
--(id) initWithData:(NSDictionary*) values;
-
--(void) setNetSalesAmt:(NSNumber*) value;
-
-//
+@property (nonatomic, readonly, getter = getLaborPercent) NSNumber* laborPercent;
+@property (nonatomic, readonly, getter = getUpDownAmount) NSNumber* upDownAmount;
+@property (nonatomic, readonly, getter = getEmployeeFoodAmt) NSNumber*employeeFoodAmt;
 
 
--(NSNumber*) getEmployeeFoodAmt;
--(void) setEmployeeFood:(NSNumber *) value;
 
-//
-
--(void) setTotalServiceTime : (NSNumber*) value;
-
-//
-
-
--(void) setUpDownToday : (NSNumber*) value;
 
 //
 
