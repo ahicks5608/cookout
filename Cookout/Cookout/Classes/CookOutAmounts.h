@@ -13,10 +13,10 @@
 
 
 -(NSString*) getStoreCode;
--(NSNumber*) getSalesAmount;
+-(NSNumber*) getSalesAmt;
 -(NSNumber*) getCrewCount;
 -(NSNumber*) getServiceTime;
 -(NSNumber*) getLaborPercent;
--(NSNumber*) getUpDownAmount;
+-(NSNumber*) getUpDownAmt;
 
 @end

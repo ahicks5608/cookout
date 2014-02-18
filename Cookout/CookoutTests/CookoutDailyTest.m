@@ -98,12 +98,20 @@
      */
     Daily *daily1 = [[Daily alloc] initWithHourly:nil data:@{cfnEmployeeFoodAmt: @100.50f,
                                                              cfnCashOsAmt:@-10,
-                                                            cfnCashAmt: @200
+                                                             cfnCashAmt: @200,
+                                                             cfnCreditCardAmt: @12,
+                                                             cfnSalesTaxAmt: @43,
+                                                             cfnMgmtVoidAmt: @30,
+                                                             cfnPaidOutAmt: @68,
+                                                             cfnTotalDepositAmt: @49
+                                                             
                                                              }];
-    NSNumber *result = daily1.employeeFoodAmt;
+    NSNumber *result = [daily1 getCashAmt];
     XCTAssertTrue((result != nil),@"result is nil");
-    XCTAssertTrue(([result floatValue] == 100.50f) , @"invalid value");
+    XCTAssertTrue(([result floatValue] == 200.0f) , @"invalid value");
 
 }
 
+
+    
 @end

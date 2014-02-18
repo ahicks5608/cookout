@@ -12,7 +12,7 @@
 #import "CookOutAmounts.h"
 
 //THIS IS MY CLASS !!!
-@interface Hourly : NSObject <CookOutHourly, CookOutAmounts>
+@interface Hourly : NSObject <CookOutHourly, CookOutAmounts, NSCoding>
 
 
 //THESE ARE THE PROPERTIES OF THE CLASS
@@ -20,11 +20,11 @@
 @property (nonatomic, readonly, getter = getPayRate) NSNumber *payrate;
 @property (nonatomic, readonly, getter = getStoreCode) NSString *storeCode;
 
-@property (nonatomic, readonly, getter = getSalesAmount) NSNumber* salesAmount;
+@property (nonatomic, readonly, getter = getSalesAmount) NSNumber* salesAmt;
 @property (nonatomic, readonly, getter = getCrewCount) NSNumber* crewCount;
 @property (nonatomic, readonly, getter = getServiceTime) NSNumber* serviceTime;
 @property (nonatomic, readonly, getter = getTimeOfDay) NSNumber* timeOfDay;
-@property (nonatomic, readonly, getter = getUpDownAmount) NSNumber* upDownAmount; 
+@property (nonatomic, readonly, getter = getUpDownAmount) NSNumber* upDownAmt; 
 @property (nonatomic, readonly, getter = getLaborPercent) NSNumber* laborPercent;
 
 

@@ -77,7 +77,12 @@
             _employeeFoodAmt = (NSNumber *) [_data valueForKeyPath:cfnEmployeeFoodAmt];
             _cashOsAmt = (NSNumber *) [_data valueForKeyPath:cfnCashOsAmt];
             _cashAmt = (NSNumber *) [_data valueForKeyPath:cfnCashAmt];
-            
+            _creditCardAmt = (NSNumber *) [_data valueForKeyPath:cfnCreditCardAmt];
+            _salesTaxAmt = (NSNumber *) [_data valueForKeyPath:cfnSalesTaxAmt];
+            _mgmtVoidAmt = (NSNumber *) [_data valueForKeyPath:cfnMgmtVoidAmt];
+            _paidOutAmt = (NSNumber *) [_data valueForKeyPath:cfnPaidOutAmt];
+            _totalDepositAmt = (NSNumber *) [_data valueForKeyPath:cfnTotalDepositAmt];
+
         }
         
         
@@ -85,8 +90,11 @@
     return self;
     
 }
+-(NSNumber *)getSalesAmt {
+    return _salesAmt;
+}
 
--(NSNumber*) getSalesTaxAmt{
+-(NSNumber*) getSalesTaxAmt {
     return _salesTaxAmt;
 }
 
@@ -94,23 +102,23 @@
     return _totalDepositAmt;
 }
 
--(NSNumber*) getCreditCardAmt{
+-(NSNumber*) getCreditCardAmt {
     return _creditCardAmt;
 }
 
--(NSNumber*) getCashOsAmt{
+-(NSNumber*) getCashOsAmt {
     return _cashOsAmt;
 }
 
--(NSNumber*) getCashAmt{
+-(NSNumber*) getCashAmt {
     return _cashAmt;
 }
 
--(NSNumber*) getMgmtVoidAmt{
+-(NSNumber*) getMgmtVoidAmt {
     return _mgmtVoidAmt;
 }
 
--(NSNumber*) getPaidOutAmt{
+-(NSNumber*) getPaidOutAmt {
     return _paidOutAmt;
 }
 
@@ -128,7 +136,7 @@
 
 //
 
--(NSNumber*) getUpDownAmount{
+-(NSNumber*) getUpDownAmt{
     return _upDownToday;
 }
 

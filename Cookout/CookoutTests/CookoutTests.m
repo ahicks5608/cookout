@@ -88,7 +88,27 @@
     
 }
 
+- (void)test777 {
+    
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:hourly];
+    Hourly *hourly1 = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    XCTAssertTrue((data != nil),@"result is nil");
+    XCTAssertTrue((hourly1 != nil),@"result is nil");
+    
+}
 
+- (void)test8 {
+    Hourly *hourly1 = [[Hourly alloc] init:[NSNumber numberWithInt:10000] crewCount:[NSNumber numberWithInt:100]];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:hourly1];
+    Hourly *hourly2 = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    NSNumber *result = [hourly2 getLaborPercent];
+    XCTAssertTrue((result != nil), @"result not null");
+    XCTAssertEqual(13.33f, [result floatValue], @"thats invalid");
+    result = [hourly2 getSalesAmt];
+    XCTAssertTrue((result != nil), @"result not null");
+    XCTAssertEqual(10000.0f, [result floatValue], @"thats invalid");
+   
+}
 
 
 @end

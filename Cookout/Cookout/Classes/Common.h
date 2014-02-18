@@ -26,7 +26,16 @@ typedef enum : NSUInteger {
 extern NSString * const cfnEmployeeFoodAmt;
 extern NSString * const cfnCashOsAmt;
 extern NSString * const cfnCashAmt;
-
+extern NSString * const cfnCreditCardAmt;
+extern NSString * const cfnSalesTaxAmt;
+extern NSString * const cfnMgmtVoidAmt;
+extern NSString * const cfnPaidOutAmt;
+extern NSString * const cfnTotalDepositAmt;
+extern NSString * const cfnTimeOfDay;
+extern NSString * const cfnSalesAmt;
+extern NSString * const cfnCrewCount;
+extern NSString * const cfnServiceTime;
+extern NSString * const cfnUpDownAmt;
 
 @interface Common : NSObject
 

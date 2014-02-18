@@ -7,14 +7,14 @@
 //
 
 #import "Hourly.h"
-
+#import "Common.h"
 
 @interface Hourly(){
     NSNumber *_timeOfDay;
-    NSNumber *_salesAmount;
+    NSNumber *_salesAmt;
     NSNumber *_crewCount;
     NSNumber *_serviceTime;
-    NSNumber *_upDownAmount;
+    NSNumber *_upDownAmt;
     
 }
 
@@ -23,12 +23,36 @@
 
 @implementation Hourly
 
--(id) init:(NSNumber*) salesAmount crewCount:(NSNumber*) crewCount {
+- (id)initWithCoder:(NSCoder *)decoder {
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+    
+    _salesAmt = [decoder decodeObjectForKey:cfnSalesAmt];
+    _crewCount = [decoder decodeObjectForKey:cfnCrewCount];
+    _timeOfDay = [decoder decodeObjectForKey:cfnTimeOfDay];
+    _serviceTime = [decoder decodeObjectForKey:cfnTimeOfDay];
+    _upDownAmt = [decoder decodeObjectForKey:cfnUpDownAmt];
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeObject:_salesAmt forKey:cfnSalesAmt];
+    [encoder encodeObject:_crewCount forKey:cfnCrewCount];
+    [encoder encodeObject:_timeOfDay forKey:cfnTimeOfDay];
+    [encoder encodeObject:_serviceTime forKey:cfnServiceTime];
+    [encoder encodeObject:_upDownAmt forKey:cfnUpDownAmt];
+}
+
+
+-(id) init:(NSNumber*) salesAmt crewCount:(NSNumber*) crewCount {
     if (self = [super init]) {
-        _salesAmount = [salesAmount copy];
+        _salesAmt = [salesAmt copy];
         _crewCount = [crewCount copy];
         _serviceTime = @0;
-        _upDownAmount = @0;
+        _upDownAmt = @0;
 
         
     }
@@ -41,10 +65,10 @@
     
     if(self = [super init]){
         _timeOfDay = [NSNumber numberWithInt:tod];
-        _salesAmount = @0;
+        _salesAmt = @0;
         _crewCount = @0;
         _serviceTime = @0;
-        _upDownAmount = @0;
+        _upDownAmt = @0;
     
     }
     return self;
@@ -54,12 +78,15 @@
 -(id) init {
     if(self = [super init]){
         _timeOfDay = [NSNumber numberWithInt:TOD1];
-        _salesAmount = @0;
+        _salesAmt = @0;
         _crewCount = @0;
         _serviceTime = @0;
-        _upDownAmount = @0;
+        _upDownAmt = @0;
     }
     return self;
+}
+-(NSNumber*) getUpDownAmt{
+    return _upDownAmt;
 }
 
 -(NSNumber*) getServiceTime{
@@ -70,8 +97,8 @@
     return _crewCount;
 }
 
--(NSNumber*) getSalesAmount {
-    return _salesAmount;
+-(NSNumber*) getSalesAmt {
+    return _salesAmt;
 }
 
 
@@ -96,11 +123,11 @@
         return @0;
     }
     
-    if ([_salesAmount intValue] < 1){
+    if ([_salesAmt intValue] < 1){
         return @0;
     }
     
-    CGFloat sales = [_salesAmount floatValue];
+    CGFloat sales = [_salesAmt floatValue];
     CGFloat laborCost = [_crewCount intValue] * [self.payrate floatValue];
 
     CGFloat result = floorf(((sales / laborCost) * 100) + 0.5) /100;
