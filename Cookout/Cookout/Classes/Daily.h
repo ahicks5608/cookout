@@ -27,6 +27,7 @@
 
 
 
+-(id) initWithHourly:(NSArray*) hourlies data:(NSDictionary*) values;
 
 //
 

@@ -30,6 +30,7 @@
 		58A4F60718ABDFCD0094E983 /* CookoutClassTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A4F60618ABDFCD0094E983 /* CookoutClassTest.m */; };
 		58A4F60A18AC0A320094E983 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A4F60918AC0A320094E983 /* Common.m */; };
 		58A4F60B18AC29A70094E983 /* Hourly.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A4F60418ABD46C0094E983 /* Hourly.m */; };
+		58A89F2318BD2B7300239ED0 /* HourlyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A89F2218BD2B7300239ED0 /* HourlyTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,8 @@
 		58A4F60618ABDFCD0094E983 /* CookoutClassTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CookoutClassTest.m; sourceTree = "<group>"; };
 		58A4F60818AC0A320094E983 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Common.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		58A4F60918AC0A320094E983 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		58A89F2118BD2B7300239ED0 /* HourlyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyTableViewCell.h; sourceTree = "<group>"; };
+		58A89F2218BD2B7300239ED0 /* HourlyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +203,8 @@
 				58A354AD18AFE4DC00C69F36 /* CookOutAmounts.h */,
 				58A354AE18AFE6C500C69F36 /* CookOutHourly.h */,
 				581F35BA18B27A9D0078EE5D /* CookOutDaily.h */,
+				58A89F2118BD2B7300239ED0 /* HourlyTableViewCell.h */,
+				58A89F2218BD2B7300239ED0 /* HourlyTableViewCell.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -319,6 +324,7 @@
 			files = (
 				2030CE3918ABBE3400636B2C /* SecondViewController.m in Sources */,
 				2030CE6218ABBEF700636B2C /* DataModel.xcdatamodeld in Sources */,
+				58A89F2318BD2B7300239ED0 /* HourlyTableViewCell.m in Sources */,
 				58A4F60B18AC29A70094E983 /* Hourly.m in Sources */,
 				2030CE3018ABBE3400636B2C /* AppDelegate.m in Sources */,
 				2030CE3618ABBE3400636B2C /* FirstViewController.m in Sources */,
