@@ -30,7 +30,7 @@
     }
     
     _salesAmt = [decoder decodeObjectForKey:cfnSalesAmt];
-    _crewCount = [decoder decodeObjectForKey:cfnCrewCount];
+    _crewCount = [decoder decodeObjectForKey:cfnHoursWorked];
     _timeOfDay = [decoder decodeObjectForKey:cfnTimeOfDay];
     _serviceTime = [decoder decodeObjectForKey:cfnTimeOfDay];
     _upDownAmt = [decoder decodeObjectForKey:cfnUpDownAmt];
@@ -40,7 +40,7 @@
 
 - (void)encodeWithCoder:(NSCoder *)encoder {
     [encoder encodeObject:_salesAmt forKey:cfnSalesAmt];
-    [encoder encodeObject:_crewCount forKey:cfnCrewCount];
+    [encoder encodeObject:_crewCount forKey:cfnHoursWorked];
     [encoder encodeObject:_timeOfDay forKey:cfnTimeOfDay];
     [encoder encodeObject:_serviceTime forKey:cfnServiceTime];
     [encoder encodeObject:_upDownAmt forKey:cfnUpDownAmt];

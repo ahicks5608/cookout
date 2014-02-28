@@ -25,6 +25,8 @@
 		2030CE5818ABBE6E00636B2C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2030CE5718ABBE6E00636B2C /* CoreData.framework */; };
 		2030CE6218ABBEF700636B2C /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2030CE6018ABBEF700636B2C /* DataModel.xcdatamodeld */; };
 		580951BD18B3C76100053AD5 /* HourlyTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 580951BC18B3C76100053AD5 /* HourlyTransformer.m */; };
+		589CA6AB18BF9AE100DC73CA /* TODTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 589CA6AA18BF9AE100DC73CA /* TODTest.m */; };
+		589CA6AE18BFAD8600DC73CA /* HourlyEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 589CA6AD18BFAD8600DC73CA /* HourlyEditViewController.m */; };
 		58A0B23818AE9142005C1E88 /* Daily.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0B23718AE9142005C1E88 /* Daily.m */; };
 		58A0B23A18AEA15C005C1E88 /* CookoutDailyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */; };
 		58A4F60718ABDFCD0094E983 /* CookoutClassTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A4F60618ABDFCD0094E983 /* CookoutClassTest.m */; };
@@ -55,7 +57,6 @@
 		2030CE2E18ABBE3400636B2C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2030CE2F18ABBE3400636B2C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2030CE3218ABBE3400636B2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2030CE3418ABBE3400636B2C /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		2030CE3518ABBE3400636B2C /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		2030CE3718ABBE3400636B2C /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		2030CE3818ABBE3400636B2C /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
@@ -70,6 +71,10 @@
 		580951BB18B3C76100053AD5 /* HourlyTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyTransformer.h; sourceTree = "<group>"; };
 		580951BC18B3C76100053AD5 /* HourlyTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyTransformer.m; sourceTree = "<group>"; };
 		581F35BA18B27A9D0078EE5D /* CookOutDaily.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookOutDaily.h; sourceTree = "<group>"; };
+		589CA6AA18BF9AE100DC73CA /* TODTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TODTest.m; sourceTree = "<group>"; };
+		589CA6AC18BFAD8600DC73CA /* HourlyEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyEditViewController.h; sourceTree = "<group>"; };
+		589CA6AD18BFAD8600DC73CA /* HourlyEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyEditViewController.m; sourceTree = "<group>"; };
+		589CA6AF18BFB2D100DC73CA /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		58A0B23618AE9142005C1E88 /* Daily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Daily.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		58A0B23718AE9142005C1E88 /* Daily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Daily.m; sourceTree = "<group>"; };
 		58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CookoutDailyTest.m; sourceTree = "<group>"; };
@@ -148,7 +153,7 @@
 				2030CE2E18ABBE3400636B2C /* AppDelegate.h */,
 				2030CE2F18ABBE3400636B2C /* AppDelegate.m */,
 				2030CE3118ABBE3400636B2C /* Main.storyboard */,
-				2030CE3418ABBE3400636B2C /* FirstViewController.h */,
+				589CA6AF18BFB2D100DC73CA /* FirstViewController.h */,
 				2030CE3518ABBE3400636B2C /* FirstViewController.m */,
 				2030CE3718ABBE3400636B2C /* SecondViewController.h */,
 				2030CE3818ABBE3400636B2C /* SecondViewController.m */,
@@ -176,6 +181,7 @@
 				58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */,
 				2030CE4D18ABBE3500636B2C /* CookoutTests.m */,
 				2030CE4818ABBE3500636B2C /* Supporting Files */,
+				589CA6AA18BF9AE100DC73CA /* TODTest.m */,
 			);
 			path = CookoutTests;
 			sourceTree = "<group>";
@@ -205,6 +211,8 @@
 				581F35BA18B27A9D0078EE5D /* CookOutDaily.h */,
 				58A89F2118BD2B7300239ED0 /* HourlyTableViewCell.h */,
 				58A89F2218BD2B7300239ED0 /* HourlyTableViewCell.m */,
+				589CA6AC18BFAD8600DC73CA /* HourlyEditViewController.h */,
+				589CA6AD18BFAD8600DC73CA /* HourlyEditViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -332,6 +340,7 @@
 				2030CE2C18ABBE3400636B2C /* main.m in Sources */,
 				580951BD18B3C76100053AD5 /* HourlyTransformer.m in Sources */,
 				58A4F60A18AC0A320094E983 /* Common.m in Sources */,
+				589CA6AE18BFAD8600DC73CA /* HourlyEditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +351,7 @@
 				2030CE4E18ABBE3500636B2C /* CookoutTests.m in Sources */,
 				58A0B23A18AEA15C005C1E88 /* CookoutDailyTest.m in Sources */,
 				58A4F60718ABDFCD0094E983 /* CookoutClassTest.m in Sources */,
+				589CA6AB18BF9AE100DC73CA /* TODTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

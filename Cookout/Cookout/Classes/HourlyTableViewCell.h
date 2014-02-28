@@ -17,7 +17,12 @@
 @property (strong, nonatomic) IBOutlet UILabel *fldServiceTime;
 @property (strong, nonatomic) IBOutlet UILabel *fldHoursWorked;
 @property (strong, nonatomic) IBOutlet UILabel *fldLaborPercent;
-@property (strong, nonatomic) IBOutlet UIImageView *ArrowImage;
+@property (strong, nonatomic) IBOutlet UIImageView *arrowImage;
+
+
+
+-(void) configWithData:(NSDictionary*) values;
+
 
 
 @end

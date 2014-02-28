@@ -7,8 +7,12 @@
 //
 
 #import "FirstViewController.h"
+#import "HourlyTableViewCell.h"
+#import "Common.h"
 
-@interface FirstViewController ()
+@interface FirstViewController () {
+    NSString* _cellIdentifier;
+}
 
 @end
 
@@ -20,6 +24,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _cellIdentifier = @"HourlyTableViewCell";
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -30,19 +36,57 @@
 
 #pragma mark - Table view data source
 
+-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100.0f;
+}
+
+-(NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [Common getTitleForTimeOfDay:[NSNumber numberWithInt:section]];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 24;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
+
     return 1;
 }
 
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+   // HourlyTableViewCell *cell = [tableView dequeueReusableCellWithReuseIdentifier: _cellIdentifier forIndexPath:indexPath];
+    HourlyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:_cellIdentifier forIndexPath:indexPath];
+    [cell configWithData:@{cfnServiceTime:@"87", cfnLaborPercent:@"%15.4", cfnHoursWorked:@"67", cfnSalesAmt:@"1768"}];
+    return cell;
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

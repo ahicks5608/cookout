@@ -7,6 +7,7 @@
 //
 
 #import "HourlyTableViewCell.h"
+#import "Common.h"
 
 @implementation HourlyTableViewCell
 
@@ -29,6 +30,17 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+    
 }
+
+
+-(void) configWithData:(NSDictionary*) values{
+    _fldSalesAmt.text = [values valueForKey:cfnSalesAmt];
+    _fldServiceTime.text = [values valueForKey:cfnServiceTime];
+    _fldHoursWorked.text = [values valueForKey:cfnHoursWorked];
+    _fldLaborPercent.text = [values valueForKey:cfnLaborPercent];
+
+}
+
 
 @end

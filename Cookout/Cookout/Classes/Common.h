@@ -33,11 +33,14 @@ extern NSString * const cfnPaidOutAmt;
 extern NSString * const cfnTotalDepositAmt;
 extern NSString * const cfnTimeOfDay;
 extern NSString * const cfnSalesAmt;
-extern NSString * const cfnCrewCount;
+extern NSString * const cfnHoursWorked;
 extern NSString * const cfnServiceTime;
 extern NSString * const cfnUpDownAmt;
+extern NSString * const cfnLaborPercent;
 
 @interface Common : NSObject
+
++(NSString*) getTitleForTimeOfDay:(NSNumber*)value;
 
 
 @end
