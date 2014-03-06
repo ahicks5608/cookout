@@ -22,7 +22,35 @@ typedef enum : NSUInteger {
     ,COMPARE_ALL=99
 } CompareVaules;
 
+typedef enum : NSInteger{
+    CBUnknown=0,
+    CB0=100,
+    CB1=110,
+    CB2=120,
+    CB3=130,
+    CB4=140,
+    CB5=150,
+    CB6=160,
+    CB7=170,
+    CB8=180,
+    CB9=190,
+    CBDecimal=200,
+    CBEquals=300,
+    CBPlus=400,
+    CBMinus=410,
+    CBMultiply=420,
+    CBDivide=430,
+    CBPercent=440,
+    CBPosOrNeg=450,
+    CBMR=500,
+    CBMC=510,
+    CBMplus=520,
+    CBMminus=530
+} CalcButtons;
+
     
+    
+//hard coded values
 extern NSString * const cfnEmployeeFoodAmt;
 extern NSString * const cfnCashOsAmt;
 extern NSString * const cfnCashAmt;
@@ -38,9 +66,28 @@ extern NSString * const cfnServiceTime;
 extern NSString * const cfnUpDownAmt;
 extern NSString * const cfnLaborPercent;
 
+extern NSString * const cfnPredicate;
+
+//hard coded table names
+extern NSString* const ctnHourlyData;
+extern NSString* const ctnDailyData;
+
+//column names
+extern NSString* const ccnData;
+extern NSString* const ccnExtrainfo;
+extern NSString* const ccnTimestamp;
+extern NSString* const ccnUuid;
+
+
 @interface Common : NSObject
 
 +(NSString*) getTitleForTimeOfDay:(NSNumber*)value;
++(NSString *) generateUuidString;
++(NSString*) today;
++(NSDate*) StringToDate:(NSString*) dateStr ;
++(NSString*) dateToDateTimeString:(NSDate*) value;
++(NSString*) dateToString:(NSDate*) value_;
++(NSString*) stringFromDate:(NSDate *)value_;
 
 
 @end

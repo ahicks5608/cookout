@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5041.1" systemVersion="13B42" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="BaseEntity" syncable="YES">
-        <attribute name="extraInfo" optional="YES" attributeType="Transformable" storedInTruthFile="YES" syncable="YES"/>
+    <entity name="BaseEntity" isAbstract="YES" syncable="YES">
+        <attribute name="data" attributeType="Transformable" valueTransformerName="DictionaryTransformer" storedInTruthFile="YES" syncable="YES"/>
+        <attribute name="extraInfo" optional="YES" attributeType="Transformable" valueTransformerName="DictionaryTransformer" storedInTruthFile="YES" syncable="YES"/>
         <attribute name="timeStamp" attributeType="Date" indexed="YES" syncable="YES"/>
         <attribute name="uuid" attributeType="String" indexed="YES" syncable="YES"/>
     </entity>
-    <entity name="HourlyData" parentEntity="BaseEntity" syncable="YES">
-        <attribute name="data" attributeType="Transformable" storedInTruthFile="YES" syncable="YES"/>
-    </entity>
+    <entity name="DailyData" parentEntity="HourlyData" syncable="YES"/>
+    <entity name="HourlyData" parentEntity="BaseEntity" syncable="YES"/>
     <elements>
-        <element name="BaseEntity" positionX="36" positionY="-468" width="128" height="90"/>
-        <element name="HourlyData" positionX="34" positionY="-126" width="128" height="58"/>
+        <element name="BaseEntity" positionX="36" positionY="-468" width="128" height="103"/>
+        <element name="DailyData" positionX="36" positionY="-243" width="128" height="43"/>
+        <element name="HourlyData" positionX="34" positionY="-337" width="128" height="43"/>
     </elements>
 </model>

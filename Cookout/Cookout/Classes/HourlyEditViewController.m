@@ -8,6 +8,8 @@
 
 #import "HourlyEditViewController.h"
 #import "Common.h"
+#import "CalculatorViewController.h"
+#import "CommonModalSegue.h"
 
 @interface HourlyEditViewController ()
 
@@ -27,6 +29,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _fldHoursWorked.delegate = self;
+    _fldLaborPercent.delegate = self;
+    _fldSalesAmt.delegate = self;
+    _fldServiceTime.delegate = self;
     // Do any additional setup after loading the view.
 }
 
@@ -57,7 +63,22 @@
     
 }
 
+-(void) showInfo {
+UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    CalculatorViewController* calcVC = [storyboard instantiateViewControllerWithIdentifier:@"CalculatorViewController"];
+    
+  CommonModalSegue *segue = [[CommonModalSegue alloc] initWithIdentifier:@"CalculatorView"
+                                   source:self
+                                   destination:calcVC];
+    [self prepareForSegue:segue sender:self];
+    [segue perform];
+}
 
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    [self showInfo];
+    return NO;
+}
 
 
 

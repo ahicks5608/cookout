@@ -7,7 +7,7 @@
 //
 
 #import "Common.h"
-
+//field names
 NSString * const cfnEmployeeFoodAmt = @"empFoodAmt";
 NSString * const cfnCashOsAmt = @"cashOsAmt";
 NSString * const cfnCashAmt = @"cashAmt";
@@ -22,6 +22,23 @@ NSString * const cfnHoursWorked = @"crewCount";
 NSString * const cfnServiceTime = @"serviceTime";
 NSString * const cfnUpDownAmt = @"upDownAmt";
 NSString * const cfnLaborPercent = @"laborPercent"; 
+
+NSString * const cfnPredicate = @"predicate";
+
+//table names
+NSString* const ctnHourlyData = @"HourlyData";
+NSString* const ctnDailyData = @"DailyData";
+
+//column names
+NSString* const ccnData = @"data";;
+NSString* const ccnExtrainfo = @"extraInfo";
+NSString* const ccnTimestamp = @"timeStamp";
+NSString* const ccnUuid = @"uuid";
+
+//NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@)", startDate, endDate];
+//NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(date == %@) OR (date == %@)", firstDate, secondDate];
+//[NSPredicate predicateWithFormat:@"timeStamp IN %@", favoritePublishers];
+
 
 @implementation Common
 
@@ -104,5 +121,79 @@ NSString * const cfnLaborPercent = @"laborPercent";
             break;
     }
 }
++ (NSString *) generateUuidString {
+    
+    NSString *UUID = nil;
+    CFUUIDRef UUIDRef = CFUUIDCreate(kCFAllocatorDefault);
+    CFStringRef UUIDSRef = CFUUIDCreateString(kCFAllocatorDefault, UUIDRef);
+    UUID = [NSString stringWithFormat:@"%@", UUIDSRef];
+    CFRelease(UUIDRef);
+    CFRelease(UUIDSRef);
+    return UUID;
+}
+
++(NSString*) today {
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+    [dateFormat setDateStyle:NSDateFormatterShortStyle];
+    return [dateFormat stringFromDate:[NSDate date]];
+    
+}
+
++(NSDate*) StringToDate:(NSString*) dateStr {
+    
+    if ((dateStr == nil) | (dateStr.length == 0) ) {
+        return [NSDate date];
+    } else {
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"MM/dd/yyy"];
+        return[dateFormat dateFromString:dateStr];
+    }
+}
+
++(NSString*) dateToDateTimeString:(NSDate*) value {
+    
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"MM/dd/yyyy hh:mma"];
+    return [dateFormat stringFromDate:today];
+}
+
++(NSString*) dateToString:(NSDate*) value_ {
+    
+    if (value_ == nil) {
+        return @"";
+    } else {
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+        [dateFormat setDateStyle:NSDateFormatterShortStyle];
+        return [dateFormat stringFromDate:value_];
+    }
+}
+
++(NSString*) stringFromDate:(NSDate *)value_ {
+    
+    
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    unsigned units = NSYearCalendarUnit | NSMonthCalendarUnit |NSDayCalendarUnit;
+    NSDateComponents* comp1 = [calendar components:units fromDate:value_];
+    NSDateComponents* comp2 = [calendar components:units fromDate:today];
+    
+    if ([comp1 day]== [comp2 day] &&[comp1 month] == [comp2 month] &&[comp1 year]== [comp2 year]) {
+        [dateFormat setDateFormat:@"h:mm a"];
+        NSString *val = [dateFormat stringFromDate:value_];
+        return [NSString stringWithFormat:@"Today %@",val ];
+    } else {
+        [dateFormat setDateFormat:@"MMM dd yyyy"];
+        return [dateFormat stringFromDate:value_];
+    }
+}
+
+
+
 
 @end
