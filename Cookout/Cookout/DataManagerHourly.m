@@ -13,29 +13,28 @@
 
 @implementation DataManagerHourly
 
-- (void) addNew:(NSDictionary*) values{
+- (NSManagedObject*) addNew:(NSDictionary*) values context:(NSManagedObjectContext*)context {
     
-    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = appDelegate.managedObjectContext;
+
     NSManagedObject *hourly = [NSEntityDescription insertNewObjectForEntityForName:ctnHourlyData  inManagedObjectContext:context];
     NSDictionary *data = [values valueForKey:ccnData];
     NSDictionary *extraInfo = [values valueForKey:ccnExtrainfo];
     
     [hourly setValue:[Common generateUuidString] forKey:ccnUuid];
-    [hourly setValue:[NSDate date] forKey:ccnTimestamp];
+     NSDate *timeStamp = [values valueForKey:ccnTimestamp];
+    if (timeStamp == nil){
+        timeStamp = [NSDate date];
+    }
+    [hourly setValue:timeStamp forKey:ccnTimestamp];
     [hourly setValue:data forKeyPath:ccnData];
     if (extraInfo != nil) {
         [hourly setValue:extraInfo forKey:ccnExtrainfo];
     }
-    [appDelegate saveContext];
-    
+    [context save:nil];
+    return hourly;
     
 }
-- (NSManagedObject*) load:(NSDictionary*) values{
-    
-    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    
-    NSManagedObjectContext *context = appDelegate.managedObjectContext;
+- (NSManagedObject*) load:(NSDictionary*) values context:(NSManagedObjectContext*)context {
     
     NSString *value = [values valueForKey:ccnUuid];
     NSPredicate *predicate =[NSPredicate predicateWithFormat:@"uuid == %@", value];
@@ -66,20 +65,17 @@
 }
 
 
-- (void) remove:(NSDictionary*) values{
-    NSManagedObject* item = [self load:values];
+- (void) remove:(NSDictionary*) values context:(NSManagedObjectContext*)context{
+    NSManagedObject* item = [self load:values context:context];
     if (item != nil) {
-        AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-        
-        NSManagedObjectContext *context = appDelegate.managedObjectContext;
         [context deleteObject:item];
-        [appDelegate saveContext];
+        [context save:nil];
         
     }
 }
 
-- (void) update:(NSDictionary*) values{
-    NSManagedObject* hourly = [self load:values];
+- (void) update:(NSDictionary*) values context:(NSManagedObjectContext*)context {
+    NSManagedObject* hourly = [self load:values context:context];
     if (hourly != nil) {
         AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
         NSDictionary *data = [values valueForKey:ccnData];
@@ -95,12 +91,12 @@
     }
 }
 
-- (NSArray*) select:(NSDictionary*) values{
-    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+- (NSArray*) select:(NSDictionary*) values context:(NSManagedObjectContext*)context{
+    NSPredicate *predicate = nil;
+    if(values != nil) {
+        NSPredicate *predicate = (NSPredicate*) [values valueForKey:cfnPredicate];
+    }
     
-    NSManagedObjectContext *context = appDelegate.managedObjectContext;
-    
-    NSPredicate *predicate = (NSPredicate*) [values valueForKey:cfnPredicate];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:ctnHourlyData inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
@@ -112,7 +108,10 @@
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     //
     [fetchRequest setSortDescriptors:sortDescriptors];
-    [fetchRequest setPredicate:predicate];
+    if (predicate != nil){
+        
+        [fetchRequest setPredicate:predicate];
+    }
     
     NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
     

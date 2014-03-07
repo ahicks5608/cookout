@@ -14,21 +14,21 @@
 
 @implementation DataManagerDaily
 
-- (void) addNew:(NSDictionary*) values;{
+- (NSManagedObject*) addNew:(NSDictionary*) values;{
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = appDelegate.managedObjectContext;
-    NSManagedObject *hourly = [NSEntityDescription insertNewObjectForEntityForName:ctnDailyData  inManagedObjectContext:context];
+    NSManagedObject *daily = [NSEntityDescription insertNewObjectForEntityForName:ctnDailyData  inManagedObjectContext:context];
     NSDictionary *data = [values valueForKey:ccnData];
     NSDictionary *extraInfo = [values valueForKey:ccnExtrainfo];
     
-    [hourly setValue:[Common generateUuidString] forKey:ccnUuid];
-    [hourly setValue:[NSDate date] forKey:ccnTimestamp];
-    [hourly setValue:data forKeyPath:ccnData];
+    [daily setValue:[Common generateUuidString] forKey:ccnUuid];
+    [daily setValue:[NSDate date] forKey:ccnTimestamp];
+    [daily setValue:data forKeyPath:ccnData];
     if (extraInfo != nil) {
-        [hourly setValue:extraInfo forKey:ccnExtrainfo];
+        [daily setValue:extraInfo forKey:ccnExtrainfo];
     }
     [appDelegate saveContext];
-    
+    return daily;
 }
      
 - (void) remove:(NSDictionary*) values{

@@ -24,7 +24,7 @@
 		2030CE5818ABBE6E00636B2C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2030CE5718ABBE6E00636B2C /* CoreData.framework */; };
 		2030CE6218ABBEF700636B2C /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2030CE6018ABBEF700636B2C /* DataModel.xcdatamodeld */; };
 		589CA6AB18BF9AE100DC73CA /* TODTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 589CA6AA18BF9AE100DC73CA /* TODTest.m */; };
-		589CA6AE18BFAD8600DC73CA /* HourlyEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 589CA6AD18BFAD8600DC73CA /* HourlyEditViewController.m */; };
+		589CA6AE18BFAD8600DC73CA /* HourlyItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 589CA6AD18BFAD8600DC73CA /* HourlyItemViewController.m */; };
 		58A0B23818AE9142005C1E88 /* Daily.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0B23718AE9142005C1E88 /* Daily.m */; };
 		58A0B23A18AEA15C005C1E88 /* CookoutDailyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */; };
 		58A4F60718ABDFCD0094E983 /* CookoutClassTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A4F60618ABDFCD0094E983 /* CookoutClassTest.m */; };
@@ -36,6 +36,8 @@
 		58A89F2318BD2B7300239ED0 /* HourlyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A89F2218BD2B7300239ED0 /* HourlyTableViewCell.m */; };
 		58B8191B18C62E4B006D222C /* CalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B8191A18C62E4B006D222C /* CalculatorViewController.m */; };
 		58B819AD18C66509006D222C /* CommonModalSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B819AC18C66509006D222C /* CommonModalSegue.m */; };
+		58E9838D18CA3AA000E4AFC9 /* CookOutDataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E9838C18CA3AA000E4AFC9 /* CookOutDataTest.m */; };
+		58E9839218CA738D00E4AFC9 /* HourlyEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E9839118CA738D00E4AFC9 /* HourlyEditViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +73,8 @@
 		2030CE6118ABBEF700636B2C /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		581F35BA18B27A9D0078EE5D /* CookOutDaily.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookOutDaily.h; sourceTree = "<group>"; };
 		589CA6AA18BF9AE100DC73CA /* TODTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TODTest.m; sourceTree = "<group>"; };
-		589CA6AC18BFAD8600DC73CA /* HourlyEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyEditViewController.h; sourceTree = "<group>"; };
-		589CA6AD18BFAD8600DC73CA /* HourlyEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyEditViewController.m; sourceTree = "<group>"; };
+		589CA6AC18BFAD8600DC73CA /* HourlyItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyItemViewController.h; sourceTree = "<group>"; };
+		589CA6AD18BFAD8600DC73CA /* HourlyItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyItemViewController.m; sourceTree = "<group>"; };
 		589CA6AF18BFB2D100DC73CA /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstViewController.h; path = ../FirstViewController.h; sourceTree = "<group>"; };
 		58A0B23618AE9142005C1E88 /* Daily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Daily.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		58A0B23718AE9142005C1E88 /* Daily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Daily.m; sourceTree = "<group>"; };
@@ -97,6 +99,10 @@
 		58B8191A18C62E4B006D222C /* CalculatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorViewController.m; sourceTree = "<group>"; };
 		58B819AB18C66509006D222C /* CommonModalSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonModalSegue.h; sourceTree = "<group>"; };
 		58B819AC18C66509006D222C /* CommonModalSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonModalSegue.m; sourceTree = "<group>"; };
+		58E9838C18CA3AA000E4AFC9 /* CookOutDataTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CookOutDataTest.m; sourceTree = "<group>"; };
+		58E9838F18CA72FC00E4AFC9 /* ModalDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModalDelegate.h; sourceTree = "<group>"; };
+		58E9839018CA738D00E4AFC9 /* HourlyEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyEditViewController.h; sourceTree = "<group>"; };
+		58E9839118CA738D00E4AFC9 /* HourlyEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyEditViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +195,7 @@
 				2030CE4D18ABBE3500636B2C /* CookoutTests.m */,
 				2030CE4818ABBE3500636B2C /* Supporting Files */,
 				589CA6AA18BF9AE100DC73CA /* TODTest.m */,
+				58E9838C18CA3AA000E4AFC9 /* CookOutDataTest.m */,
 			);
 			path = CookoutTests;
 			sourceTree = "<group>";
@@ -205,6 +212,7 @@
 		2030CE5918ABBED400636B2C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				58E9838E18CA72C200E4AFC9 /* Protocols */,
 				58B8191C18C632CA006D222C /* ALL VIEW CONTROLLERS */,
 				58A78FB418C8D30100DB3B03 /* DictionaryTransformer.h */,
 				58A78FB518C8D30100DB3B03 /* DictionaryTransformer.m */,
@@ -256,14 +264,24 @@
 			children = (
 				589CA6AF18BFB2D100DC73CA /* FirstViewController.h */,
 				2030CE3518ABBE3400636B2C /* FirstViewController.m */,
-				589CA6AC18BFAD8600DC73CA /* HourlyEditViewController.h */,
-				589CA6AD18BFAD8600DC73CA /* HourlyEditViewController.m */,
+				589CA6AC18BFAD8600DC73CA /* HourlyItemViewController.h */,
+				589CA6AD18BFAD8600DC73CA /* HourlyItemViewController.m */,
 				58B8191918C62E4B006D222C /* CalculatorViewController.h */,
 				58B8191A18C62E4B006D222C /* CalculatorViewController.m */,
 				58B819AB18C66509006D222C /* CommonModalSegue.h */,
 				58B819AC18C66509006D222C /* CommonModalSegue.m */,
+				58E9839018CA738D00E4AFC9 /* HourlyEditViewController.h */,
+				58E9839118CA738D00E4AFC9 /* HourlyEditViewController.m */,
 			);
 			name = "ALL VIEW CONTROLLERS";
+			sourceTree = "<group>";
+		};
+		58E9838E18CA72C200E4AFC9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				58E9838F18CA72FC00E4AFC9 /* ModalDelegate.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,10 +390,11 @@
 				58A78FB618C8D30100DB3B03 /* DictionaryTransformer.m in Sources */,
 				58A0B23818AE9142005C1E88 /* Daily.m in Sources */,
 				2030CE2C18ABBE3400636B2C /* main.m in Sources */,
+				58E9839218CA738D00E4AFC9 /* HourlyEditViewController.m in Sources */,
 				58A78FBE18C8D60F00DB3B03 /* DataManagerDaily.m in Sources */,
 				58B8191B18C62E4B006D222C /* CalculatorViewController.m in Sources */,
 				58A4F60A18AC0A320094E983 /* Common.m in Sources */,
-				589CA6AE18BFAD8600DC73CA /* HourlyEditViewController.m in Sources */,
+				589CA6AE18BFAD8600DC73CA /* HourlyItemViewController.m in Sources */,
 				58A78FBA18C8D5C400DB3B03 /* DataManagerHourly.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +406,7 @@
 				2030CE4E18ABBE3500636B2C /* CookoutTests.m in Sources */,
 				58A0B23A18AEA15C005C1E88 /* CookoutDailyTest.m in Sources */,
 				58A4F60718ABDFCD0094E983 /* CookoutClassTest.m in Sources */,
+				58E9838D18CA3AA000E4AFC9 /* CookOutDataTest.m in Sources */,
 				589CA6AB18BF9AE100DC73CA /* TODTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
