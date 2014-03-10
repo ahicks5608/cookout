@@ -26,17 +26,41 @@
     return self;
 }
 
-- (void)viewDidLoad
+
+- (void) onDonePressed
+{
+    [_delegate willDismissViewController:self];
+     [_delegate didDismissViewController];
+}
+
+- (void) onCancelPressed
+{
+    [_delegate didDismissViewController];
+}
+
+- (void) viewDidLoad
 {
     [super viewDidLoad];
     _fldHoursWorked.delegate = self;
     _fldLaborPercent.delegate = self;
     _fldSalesAmt.delegate = self;
     _fldServiceTime.delegate = self;
+    
+   // NSMutableArray *buttons = [NSMutableArray arrayWithArray:self.navigationItem.rightBarButtonItems];
+    UIBarButtonItem *doneButton =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                              target:self action: @selector(onDonePressed)];
+    self.navigationItem.rightBarButtonItem = doneButton;
+    ///
+    
+    
+
+    UIBarButtonItem *cancelButton =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                               target:self action: @selector(onCancelPressed)];
+    self.navigationItem.leftBarButtonItem = cancelButton;
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
+- (void) didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

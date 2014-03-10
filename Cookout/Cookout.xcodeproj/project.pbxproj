@@ -222,9 +222,6 @@
 				58A4F60418ABD46C0094E983 /* Hourly.m */,
 				58A4F60818AC0A320094E983 /* Common.h */,
 				58A4F60918AC0A320094E983 /* Common.m */,
-				58A354AD18AFE4DC00C69F36 /* CookOutAmounts.h */,
-				58A354AE18AFE6C500C69F36 /* CookOutHourly.h */,
-				581F35BA18B27A9D0078EE5D /* CookOutDaily.h */,
 				58A89F2118BD2B7300239ED0 /* HourlyTableViewCell.h */,
 				58A89F2218BD2B7300239ED0 /* HourlyTableViewCell.m */,
 			);
@@ -280,6 +277,9 @@
 			isa = PBXGroup;
 			children = (
 				58E9838F18CA72FC00E4AFC9 /* ModalDelegate.h */,
+				58A354AD18AFE4DC00C69F36 /* CookOutAmounts.h */,
+				58A354AE18AFE6C500C69F36 /* CookOutHourly.h */,
+				581F35BA18B27A9D0078EE5D /* CookOutDaily.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";

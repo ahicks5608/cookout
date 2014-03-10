@@ -10,7 +10,11 @@
 #import "AppDelegate.h"
 #import "HourlyTableViewCell.h"
 #import "Common.h"
+#import "CommonModalSegue.h"
 #import "DataManagerHourly.h"
+#import "HourlyItemViewController.h"
+#import "HourlyEditViewController.h"
+
 
 @interface FirstViewController () {
     NSString* _cellIdentifier;
@@ -25,7 +29,14 @@
 
 
 - (void)addNew {
-    
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    HourlyEditViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"HourlyEditViewController"];
+    controller.delegate = self;
+    CommonModalSegue *segue = [[CommonModalSegue alloc] initWithIdentifier:@"masterToDetail"
+                                      source:self
+                                      destination:controller];
+    [self prepareForSegue:segue sender:self];
+    [segue perform];
 }
 
 
@@ -96,6 +107,42 @@
 //    [cell configWithData:@{cfnServiceTime:@"87", cfnLaborPercent:@"%15.4", cfnHoursWorked:@"67", cfnSalesAmt:@"1768"}];
     return cell;
 }
+
+#pragma mark - Modal methods
+
+- (void) willDismissViewController:(UIViewController*) controller
+{
+    HourlyItemViewController *viewController = (HourlyItemViewController*) controller;
+    NSString *hoursWorked = viewController.fldHoursWorked.text;
+    NSString *salesAmount = viewController.fldSalesAmt.text;
+    NSString *serviceTime = viewController.fldServiceTime.text;
+    
+    NSDictionary *dict = @{cfnSalesAmt: salesAmount, cfnHoursWorked: hoursWorked, cfnServiceTime: serviceTime,
+                           cfnTimeOfDay: [NSNumber numberWithInt:TOD1], cfnUpDownAmt: [NSNumber numberWithInt:0 ]};
+    
+    
+    
+    
+    
+    // - (NSManagedObject*) addNew:(NSDictionary*) values;
+    
+    /*
+     _salesAmt = [decoder decodeObjectForKey:cfnSalesAmt];
+     _crewCount = [decoder decodeObjectForKey:cfnHoursWorked];
+     _timeOfDay = [decoder decodeObjectForKey:cfnTimeOfDay];
+     _serviceTime = [decoder decodeObjectForKey:cfnTimeOfDay];
+     _upDownAmt = [decoder decodeObjectForKey:cfnUpDownAmt];
+     */
+    
+    
+}
+
+- (void) didDismissViewController
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
 
 @end
 

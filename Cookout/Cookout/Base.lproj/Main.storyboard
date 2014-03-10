@@ -13,11 +13,11 @@
                         <viewControllerLayoutGuide type="bottom" id="dtj-EO-iXF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2VE-Yg-loa">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="N9o-Wv-kaY">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -140,7 +140,6 @@
                                             <outlet property="lblLaborPercent" destination="IhG-0A-5oF" id="Omc-FJ-uSa"/>
                                             <outlet property="lblSalesAmt" destination="1Nb-UC-fyf" id="PpO-Q2-SMm"/>
                                             <outlet property="lblServiceTime" destination="K1O-ym-Yrx" id="Z9V-1g-IKT"/>
-                                            <segue destination="HKo-n8-5VV" kind="push" identifier="masterToDetail" id="em5-jR-7gJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -155,8 +154,10 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="xCE-RZ-OS3"/>
                     <keyCommands/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="N9o-Wv-kaY" id="YUH-WC-kWB"/>
                     </connections>
@@ -165,16 +166,16 @@
             </objects>
             <point key="canvasLocation" x="1170" y="-315"/>
         </scene>
-        <!--Hourly Item View Controller-->
+        <!--Hourly Edit View Controller-->
         <scene sceneID="hzf-np-HX2">
             <objects>
-                <viewController id="HKo-n8-5VV" customClass="HourlyItemViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HourlyEditViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HKo-n8-5VV" customClass="HourlyEditViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1aR-5Z-rom"/>
                         <viewControllerLayoutGuide type="bottom" id="M8t-wU-hNr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Mbd-rz-bR6">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Sales Amt Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEj-vZ-KAg">
@@ -191,12 +192,6 @@
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hours Worked" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoU-oH-Mdb">
                                 <rect key="frame" x="13" y="246" width="112" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Labor %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wh0-6S-VJu">
-                                <rect key="frame" x="58" y="339" width="67" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -219,28 +214,31 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dLF-XI-b07">
-                                <rect key="frame" x="161" y="330" width="139" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jxZ-KJ-pGu">
+                                <rect key="frame" x="73" y="275" width="174" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="HKo-n8-5VV" id="ojd-tt-nZF"/>
+                                    <outlet property="delegate" destination="HKo-n8-5VV" id="1Cw-fK-1hK"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="paU-XX-4mS"/>
                     <connections>
-                        <outlet property="fldHoursWorked" destination="S6Y-jQ-gyB" id="KgO-KP-PJZ"/>
-                        <outlet property="fldLaborPercent" destination="dLF-XI-b07" id="so7-Uk-8gt"/>
-                        <outlet property="fldSalesAmt" destination="eEj-vZ-KAg" id="qma-Nq-nFj"/>
-                        <outlet property="fldServiceTime" destination="jgf-iY-S7n" id="cvl-we-lj2"/>
+                        <outlet property="fldHoursWorked" destination="S6Y-jQ-gyB" id="0Qt-9x-Jtf"/>
+                        <outlet property="fldSalesAmt" destination="eEj-vZ-KAg" id="Ekt-Yb-Jq4"/>
+                        <outlet property="fldServiceTime" destination="jgf-iY-S7n" id="BbE-xU-aqq"/>
+                        <outlet property="lblHoursWorked" destination="KoU-oH-Mdb" id="6pf-Wz-XzE"/>
+                        <outlet property="lblSalesAmt" destination="voo-Y1-Cop" id="SlY-47-76X"/>
+                        <outlet property="lblServiceTime" destination="Veg-eA-JeB" id="2c3-2k-sMl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ks-Wo-RQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1663" y="-271"/>
+            <point key="canvasLocation" x="2189" y="-271"/>
         </scene>
         <!--Calculator View Controller-->
         <scene sceneID="7g0-ih-nM9">
@@ -547,7 +545,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BdX-3Q-c0t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2106" y="-202"/>
+            <point key="canvasLocation" x="2632" y="-202"/>
         </scene>
         <!--Second View Controller - Second-->
         <scene sceneID="ot8-2e-RuS">

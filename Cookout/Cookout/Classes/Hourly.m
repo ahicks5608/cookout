@@ -32,7 +32,7 @@
     _salesAmt = [decoder decodeObjectForKey:cfnSalesAmt];
     _crewCount = [decoder decodeObjectForKey:cfnHoursWorked];
     _timeOfDay = [decoder decodeObjectForKey:cfnTimeOfDay];
-    _serviceTime = [decoder decodeObjectForKey:cfnTimeOfDay];
+    _serviceTime = [decoder decodeObjectForKey:cfnServiceTime];
     _upDownAmt = [decoder decodeObjectForKey:cfnUpDownAmt];
     
     return self;

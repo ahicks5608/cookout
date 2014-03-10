@@ -7,6 +7,7 @@
 //
 
 #import "HourlyEditViewController.h"
+#import "Common.h"
 
 @interface HourlyEditViewController () {
     NSManagedObject *_data;
@@ -16,13 +17,28 @@
 
 @implementation HourlyEditViewController
 
+#pragma mark - The Picker Data Source
 
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+#pragma mark - The Picker Delegate
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+
 }
+
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView*)pickerView{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    return 24;
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    return [Common getTitleForTimeOfDay:row];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -45,5 +61,37 @@
             
 }
 
+- (void) onDonePressed
+{
+    [_delegate willDismissViewController:self];
+    [_delegate didDismissViewController];
+}
+
+- (void) onCancelPressed
+{
+    [_delegate didDismissViewController];
+}
+
+- (void) viewDidLoad
+{
+    [super viewDidLoad];
+    _fldHoursWorked.delegate = self;
+    _fldLaborPercent.delegate = self;
+    _fldSalesAmt.delegate = self;
+    _fldServiceTime.delegate = self;
+    
+    // NSMutableArray *buttons = [NSMutableArray arrayWithArray:self.navigationItem.rightBarButtonItems];
+    UIBarButtonItem *doneButton =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                               target:self action: @selector(onDonePressed)];
+    self.navigationItem.rightBarButtonItem = doneButton;
+    ///
+    
+    
+    
+    UIBarButtonItem *cancelButton =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                                 target:self action: @selector(onCancelPressed)];
+    self.navigationItem.leftBarButtonItem = cancelButton;
+    // Do any additional setup after loading the view.
+}
 
 @end

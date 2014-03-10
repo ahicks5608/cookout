@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ModalDelegate.h"
 
 @interface HourlyItemViewController : UIViewController <UITextFieldDelegate>
 
@@ -20,6 +21,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *fldLaborPercent;
 
 
+@property (weak, nonatomic) id <ModalDelegate> delegate;
 
 -(void) configWithData:(NSDictionary*) values;
 

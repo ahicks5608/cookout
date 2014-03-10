@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ModalDelegate.h"
 
-@interface FirstViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface FirstViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, ModalDelegate>
+
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 

@@ -42,8 +42,8 @@ NSString* const ccnUuid = @"uuid";
 
 @implementation Common
 
-+(NSString*) getTitleForTimeOfDay:(NSNumber*)value {
-    switch ([value intValue]) {
++(NSString*) getTitleForTimeOfDay:(NSUInteger)value {
+    switch (value) {
         case TOD0:
             return @"12:00am to 12:59am";
             break;
