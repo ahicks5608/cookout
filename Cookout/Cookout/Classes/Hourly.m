@@ -59,6 +59,16 @@
     return self;
 }
 
+-(id)initWithDictionary:(NSDictionary*) dict{
+      if (self = [super init]) {
+          _salesAmt = [dict valueForKey:cfnSalesAmt];
+          _crewCount = [dict valueForKey:cfnHoursWorked];
+          _timeOfDay = [dict valueForKey:cfnTimeOfDay];
+          _serviceTime = [dict valueForKey:cfnServiceTime];
+          _upDownAmt = [dict valueForKey:cfnUpDownAmt];
+      }
+    return self;
+}
 
 
 -(id) init:(NSUInteger)tod {

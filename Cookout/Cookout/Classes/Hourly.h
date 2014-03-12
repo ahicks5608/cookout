@@ -30,6 +30,11 @@
 
 -(id) init:(NSUInteger)tod;
 -(id) init:(NSNumber*) salesAmount crewCount:(NSNumber*) crewCount;
+-(id)initWithDictionary:(NSDictionary*) dict;
+
+
+
+
 
 
 //THIS IS A CLASS METHOD

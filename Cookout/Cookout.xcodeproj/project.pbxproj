@@ -23,6 +23,9 @@
 		2030CE4E18ABBE3500636B2C /* CookoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CE4D18ABBE3500636B2C /* CookoutTests.m */; };
 		2030CE5818ABBE6E00636B2C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2030CE5718ABBE6E00636B2C /* CoreData.framework */; };
 		2030CE6218ABBEF700636B2C /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2030CE6018ABBEF700636B2C /* DataModel.xcdatamodeld */; };
+		581A71D318D0E4B700AF0FEA /* HourlyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A71D218D0E4B700AF0FEA /* HourlyData.m */; };
+		581A71D618D0E4B800AF0FEA /* DailyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A71D518D0E4B800AF0FEA /* DailyData.m */; };
+		581A71D918D0E4B800AF0FEA /* BaseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A71D818D0E4B800AF0FEA /* BaseEntity.m */; };
 		589CA6AB18BF9AE100DC73CA /* TODTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 589CA6AA18BF9AE100DC73CA /* TODTest.m */; };
 		589CA6AE18BFAD8600DC73CA /* HourlyItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 589CA6AD18BFAD8600DC73CA /* HourlyItemViewController.m */; };
 		58A0B23818AE9142005C1E88 /* Daily.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0B23718AE9142005C1E88 /* Daily.m */; };
@@ -71,6 +74,12 @@
 		2030CE4D18ABBE3500636B2C /* CookoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookoutTests.m; sourceTree = "<group>"; };
 		2030CE5718ABBE6E00636B2C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		2030CE6118ABBEF700636B2C /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		581A71D118D0E4B700AF0FEA /* HourlyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HourlyData.h; path = "Managed Objects/HourlyData.h"; sourceTree = "<group>"; };
+		581A71D218D0E4B700AF0FEA /* HourlyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HourlyData.m; path = "Managed Objects/HourlyData.m"; sourceTree = "<group>"; };
+		581A71D418D0E4B800AF0FEA /* DailyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DailyData.h; path = "Managed Objects/DailyData.h"; sourceTree = "<group>"; };
+		581A71D518D0E4B800AF0FEA /* DailyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DailyData.m; path = "Managed Objects/DailyData.m"; sourceTree = "<group>"; };
+		581A71D718D0E4B800AF0FEA /* BaseEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseEntity.h; path = "Managed Objects/BaseEntity.h"; sourceTree = "<group>"; };
+		581A71D818D0E4B800AF0FEA /* BaseEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseEntity.m; path = "Managed Objects/BaseEntity.m"; sourceTree = "<group>"; };
 		581F35BA18B27A9D0078EE5D /* CookOutDaily.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookOutDaily.h; sourceTree = "<group>"; };
 		589CA6AA18BF9AE100DC73CA /* TODTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TODTest.m; sourceTree = "<group>"; };
 		589CA6AC18BFAD8600DC73CA /* HourlyItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyItemViewController.h; sourceTree = "<group>"; };
@@ -233,6 +242,12 @@
 			children = (
 				2030CE5C18ABBED400636B2C /* Managed Objects */,
 				2030CE6018ABBEF700636B2C /* DataModel.xcdatamodeld */,
+				581A71D718D0E4B800AF0FEA /* BaseEntity.h */,
+				581A71D818D0E4B800AF0FEA /* BaseEntity.m */,
+				581A71D418D0E4B800AF0FEA /* DailyData.h */,
+				581A71D518D0E4B800AF0FEA /* DailyData.m */,
+				581A71D118D0E4B700AF0FEA /* HourlyData.h */,
+				581A71D218D0E4B700AF0FEA /* HourlyData.m */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -382,9 +397,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2030CE6218ABBEF700636B2C /* DataModel.xcdatamodeld in Sources */,
+				581A71D918D0E4B800AF0FEA /* BaseEntity.m in Sources */,
 				58A89F2318BD2B7300239ED0 /* HourlyTableViewCell.m in Sources */,
+				581A71D618D0E4B800AF0FEA /* DailyData.m in Sources */,
 				58A4F60B18AC29A70094E983 /* Hourly.m in Sources */,
 				2030CE3018ABBE3400636B2C /* AppDelegate.m in Sources */,
+				581A71D318D0E4B700AF0FEA /* HourlyData.m in Sources */,
 				58B819AD18C66509006D222C /* CommonModalSegue.m in Sources */,
 				2030CE3618ABBE3400636B2C /* FirstViewController.m in Sources */,
 				58A78FB618C8D30100DB3B03 /* DictionaryTransformer.m in Sources */,

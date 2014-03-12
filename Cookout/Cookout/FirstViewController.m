@@ -14,6 +14,9 @@
 #import "DataManagerHourly.h"
 #import "HourlyItemViewController.h"
 #import "HourlyEditViewController.h"
+#import "Hourly.h"
+#import "DailyData.h"
+
 
 
 @interface FirstViewController () {
@@ -85,7 +88,7 @@
 }
 
 -(NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [Common getTitleForTimeOfDay:[NSNumber numberWithInt:section]];
+    return [Common getTitleForTimeOfDay:section];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -104,7 +107,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    // HourlyTableViewCell *cell = [tableView dequeueReusableCellWithReuseIdentifier: _cellIdentifier forIndexPath:indexPath];
     HourlyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:_cellIdentifier forIndexPath:indexPath];
-//    [cell configWithData:@{cfnServiceTime:@"87", cfnLaborPercent:@"%15.4", cfnHoursWorked:@"67", cfnSalesAmt:@"1768"}];
+    
+    HourlyData *hd = (HourlyData*) [_items objectAtIndex:indexPath.row];
+    NSDictionary *hourly= ( NSDictionary*) [hd valueForKey:ccnData];
+    
+    
+    cell.fldSalesAmt.text = [hourly valueForKey:cfnSalesAmt];
+    
     return cell;
 }
 
@@ -116,11 +125,20 @@
     NSString *hoursWorked = viewController.fldHoursWorked.text;
     NSString *salesAmount = viewController.fldSalesAmt.text;
     NSString *serviceTime = viewController.fldServiceTime.text;
+
+    //NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] init];
     
     NSDictionary *dict = @{cfnSalesAmt: salesAmount, cfnHoursWorked: hoursWorked, cfnServiceTime: serviceTime,
                            cfnTimeOfDay: [NSNumber numberWithInt:TOD1], cfnUpDownAmt: [NSNumber numberWithInt:0 ]};
+       AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+   
+    Hourly *hourly = [[Hourly alloc] initWithDictionary:dict];
+    [_dataManager addNew:@{ccnData: hourly} context:appDelegate.managedObjectContext];
     
+    [_tableView reloadData];
     
+
+    //Hourly *hourly = [[Hourly alloc] initWithDictionary:dict];
     
     
     
