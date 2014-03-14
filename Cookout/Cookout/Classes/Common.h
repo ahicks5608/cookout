@@ -24,7 +24,13 @@ typedef enum : NSUInteger {
     ,COMPARE_ALL=99
 } CompareVaules;
 
-
+//EDIT FIELDS
+typedef enum : NSInteger{
+efUnknown = 0
+    ,efSalesAmt = 1
+    ,efHoursWorked = 2
+    ,efServiceTime = 3
+}EditFields;
 
 
 //Calculator Button
@@ -57,6 +63,7 @@ typedef enum : NSInteger{
     
     
 //hard coded values
+extern NSString * const cfnValue;
 extern NSString * const cfnEmployeeFoodAmt;
 extern NSString * const cfnCashOsAmt;
 extern NSString * const cfnCashAmt;

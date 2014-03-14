@@ -8,6 +8,7 @@
 
 #import "Common.h"
 //field names
+NSString * const cfnValue = @"value";
 NSString * const cfnEmployeeFoodAmt = @"empFoodAmt";
 NSString * const cfnCashOsAmt = @"cashOsAmt";
 NSString * const cfnCashAmt = @"cashAmt";

@@ -27,12 +27,13 @@
 		581A71D618D0E4B800AF0FEA /* DailyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A71D518D0E4B800AF0FEA /* DailyData.m */; };
 		581A71D918D0E4B800AF0FEA /* BaseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A71D818D0E4B800AF0FEA /* BaseEntity.m */; };
 		589CA6AB18BF9AE100DC73CA /* TODTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 589CA6AA18BF9AE100DC73CA /* TODTest.m */; };
-		589CA6AE18BFAD8600DC73CA /* HourlyItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 589CA6AD18BFAD8600DC73CA /* HourlyItemViewController.m */; };
 		58A0B23818AE9142005C1E88 /* Daily.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0B23718AE9142005C1E88 /* Daily.m */; };
 		58A0B23A18AEA15C005C1E88 /* CookoutDailyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */; };
+		58A1D0AE18D21961003C4EB2 /* Calc.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58A1D0AD18D21961003C4EB2 /* Calc.Storyboard */; };
 		58A4F60718ABDFCD0094E983 /* CookoutClassTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A4F60618ABDFCD0094E983 /* CookoutClassTest.m */; };
 		58A4F60A18AC0A320094E983 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A4F60918AC0A320094E983 /* Common.m */; };
 		58A4F60B18AC29A70094E983 /* Hourly.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A4F60418ABD46C0094E983 /* Hourly.m */; };
+		58A76CE818D37C770098D9F9 /* BaseModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A76CE718D37C770098D9F9 /* BaseModalViewController.m */; };
 		58A78FB618C8D30100DB3B03 /* DictionaryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A78FB518C8D30100DB3B03 /* DictionaryTransformer.m */; };
 		58A78FBA18C8D5C400DB3B03 /* DataManagerHourly.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A78FB918C8D5C400DB3B03 /* DataManagerHourly.m */; };
 		58A78FBE18C8D60F00DB3B03 /* DataManagerDaily.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A78FBD18C8D60F00DB3B03 /* DataManagerDaily.m */; };
@@ -82,12 +83,11 @@
 		581A71D818D0E4B800AF0FEA /* BaseEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseEntity.m; path = "Managed Objects/BaseEntity.m"; sourceTree = "<group>"; };
 		581F35BA18B27A9D0078EE5D /* CookOutDaily.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookOutDaily.h; sourceTree = "<group>"; };
 		589CA6AA18BF9AE100DC73CA /* TODTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TODTest.m; sourceTree = "<group>"; };
-		589CA6AC18BFAD8600DC73CA /* HourlyItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyItemViewController.h; sourceTree = "<group>"; };
-		589CA6AD18BFAD8600DC73CA /* HourlyItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyItemViewController.m; sourceTree = "<group>"; };
 		589CA6AF18BFB2D100DC73CA /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstViewController.h; path = ../FirstViewController.h; sourceTree = "<group>"; };
 		58A0B23618AE9142005C1E88 /* Daily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Daily.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		58A0B23718AE9142005C1E88 /* Daily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Daily.m; sourceTree = "<group>"; };
 		58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CookoutDailyTest.m; sourceTree = "<group>"; };
+		58A1D0AD18D21961003C4EB2 /* Calc.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calc.Storyboard; sourceTree = "<group>"; };
 		58A354AD18AFE4DC00C69F36 /* CookOutAmounts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CookOutAmounts.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		58A354AE18AFE6C500C69F36 /* CookOutHourly.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookOutHourly.h; sourceTree = "<group>"; };
 		58A4F60318ABD46C0094E983 /* Hourly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Hourly.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -95,6 +95,8 @@
 		58A4F60618ABDFCD0094E983 /* CookoutClassTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CookoutClassTest.m; sourceTree = "<group>"; };
 		58A4F60818AC0A320094E983 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Common.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		58A4F60918AC0A320094E983 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		58A76CE618D37C770098D9F9 /* BaseModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModalViewController.h; sourceTree = "<group>"; };
+		58A76CE718D37C770098D9F9 /* BaseModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModalViewController.m; sourceTree = "<group>"; };
 		58A78FB418C8D30100DB3B03 /* DictionaryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryTransformer.h; sourceTree = "<group>"; };
 		58A78FB518C8D30100DB3B03 /* DictionaryTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryTransformer.m; sourceTree = "<group>"; };
 		58A78FB818C8D5C400DB3B03 /* DataManagerHourly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManagerHourly.h; sourceTree = "<group>"; };
@@ -177,8 +179,8 @@
 				2030CE5918ABBED400636B2C /* Classes */,
 				2030CE5B18ABBED400636B2C /* Data Model */,
 				2030CE2E18ABBE3400636B2C /* AppDelegate.h */,
-				2030CE2F18ABBE3400636B2C /* AppDelegate.m */,
 				2030CE3118ABBE3400636B2C /* Main.storyboard */,
+				2030CE2F18ABBE3400636B2C /* AppDelegate.m */,
 				2030CE3A18ABBE3400636B2C /* Images.xcassets */,
 				2030CE2618ABBE3400636B2C /* Supporting Files */,
 			);
@@ -259,6 +261,24 @@
 			path = "Managed Objects";
 			sourceTree = "<group>";
 		};
+		58A1D0AB18D2191F003C4EB2 /* calc */ = {
+			isa = PBXGroup;
+			children = (
+				58B8191918C62E4B006D222C /* CalculatorViewController.h */,
+				58B8191A18C62E4B006D222C /* CalculatorViewController.m */,
+				58A1D0AC18D2192B003C4EB2 /* storyboard */,
+			);
+			name = calc;
+			sourceTree = "<group>";
+		};
+		58A1D0AC18D2192B003C4EB2 /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				58A1D0AD18D21961003C4EB2 /* Calc.Storyboard */,
+			);
+			name = storyboard;
+			sourceTree = "<group>";
+		};
 		58A78FB718C8D59700DB3B03 /* Data Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,16 +294,15 @@
 		58B8191C18C632CA006D222C /* ALL VIEW CONTROLLERS */ = {
 			isa = PBXGroup;
 			children = (
+				58A1D0AB18D2191F003C4EB2 /* calc */,
 				589CA6AF18BFB2D100DC73CA /* FirstViewController.h */,
 				2030CE3518ABBE3400636B2C /* FirstViewController.m */,
-				589CA6AC18BFAD8600DC73CA /* HourlyItemViewController.h */,
-				589CA6AD18BFAD8600DC73CA /* HourlyItemViewController.m */,
-				58B8191918C62E4B006D222C /* CalculatorViewController.h */,
-				58B8191A18C62E4B006D222C /* CalculatorViewController.m */,
 				58B819AB18C66509006D222C /* CommonModalSegue.h */,
 				58B819AC18C66509006D222C /* CommonModalSegue.m */,
 				58E9839018CA738D00E4AFC9 /* HourlyEditViewController.h */,
 				58E9839118CA738D00E4AFC9 /* HourlyEditViewController.m */,
+				58A76CE618D37C770098D9F9 /* BaseModalViewController.h */,
+				58A76CE718D37C770098D9F9 /* BaseModalViewController.m */,
 			);
 			name = "ALL VIEW CONTROLLERS";
 			sourceTree = "<group>";
@@ -376,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2030CE3B18ABBE3400636B2C /* Images.xcassets in Resources */,
+				58A1D0AE18D21961003C4EB2 /* Calc.Storyboard in Resources */,
 				2030CE2A18ABBE3400636B2C /* InfoPlist.strings in Resources */,
 				2030CE3318ABBE3400636B2C /* Main.storyboard in Resources */,
 			);
@@ -397,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2030CE6218ABBEF700636B2C /* DataModel.xcdatamodeld in Sources */,
+				58A76CE818D37C770098D9F9 /* BaseModalViewController.m in Sources */,
 				581A71D918D0E4B800AF0FEA /* BaseEntity.m in Sources */,
 				58A89F2318BD2B7300239ED0 /* HourlyTableViewCell.m in Sources */,
 				581A71D618D0E4B800AF0FEA /* DailyData.m in Sources */,
@@ -412,7 +433,6 @@
 				58A78FBE18C8D60F00DB3B03 /* DataManagerDaily.m in Sources */,
 				58B8191B18C62E4B006D222C /* CalculatorViewController.m in Sources */,
 				58A4F60A18AC0A320094E983 /* Common.m in Sources */,
-				589CA6AE18BFAD8600DC73CA /* HourlyItemViewController.m in Sources */,
 				58A78FBA18C8D5C400DB3B03 /* DataManagerHourly.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

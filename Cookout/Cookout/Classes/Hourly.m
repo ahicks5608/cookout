@@ -123,7 +123,7 @@
 }
 
 -(NSNumber*) getPayRate {
-    return [NSNumber numberWithFloat:7.50f];
+    return [NSNumber numberWithFloat:5.50f];
 #warning implement get setting here
 }
 
@@ -146,14 +146,15 @@
     return [NSNumber numberWithFloat:roundedFloat];
 }
 
-+(NSNumber*) getLaborPercentWithSalesAmount:(NSNumber*) salesAmount
-                        crewCount:(NSNumber*) crew
++(NSString*) getLaborPercentWithSalesAmount:(NSString*) asalesAmount
+                        crewCount:(NSString*) acrew
 
 {
+    NSNumber *salesAmount = [NSNumber numberWithFloat:asalesAmount.floatValue];
+    NSNumber *crew = [NSNumber numberWithInt:acrew.intValue];
     
-    
-    Hourly * hourly = [[Hourly alloc] init:salesAmount crewCount:salesAmount];
-    return hourly.laborPercent;
+    Hourly * hourly = [[Hourly alloc] init:salesAmount crewCount:crew];
+    return [hourly.laborPercent stringValue];
     
 }
 @end

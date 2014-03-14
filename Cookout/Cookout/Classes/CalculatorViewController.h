@@ -8,16 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CalculatorViewController : UIViewController
+#import "BaseModalViewController.h"
 
+@interface CalculatorViewController : BaseModalViewController
 
-
-@property (weak, nonatomic) IBOutlet UILabel *calculatorDisplay;
 @property (nonatomic) BOOL typingNumber;
 @property (nonatomic) float firstNumber;
 @property (nonatomic) float secondNumber;
 @property (nonatomic, copy) NSString *operation;
 
+
+@property (nonatomic, strong) IBOutlet UILabel *calcResult;
+
+- (id) initWithData:(NSDictionary*) values;
+- (void) configWithData:(NSDictionary*) values;
 
 - (IBAction)numberPressed:(UIButton *)sender;
 

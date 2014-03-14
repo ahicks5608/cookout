@@ -7,23 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ModalDelegate.h"
 #import <CoreData/NSManagedObject.h>
+#import "BaseModalViewController.h"
+#import "ModalDelegate.h"
 
-@interface HourlyEditViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface HourlyEditViewController : BaseModalViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, ModalDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *lblSalesAmt;
 @property (strong, nonatomic) IBOutlet UILabel *lblServiceTime;
 @property (strong, nonatomic) IBOutlet UILabel *lblHoursWorked;
-@property (strong, nonatomic) IBOutlet UILabel *lblLaborPercent;
+
 @property (strong, nonatomic) IBOutlet UITextField *fldSalesAmt;
 @property (strong, nonatomic) IBOutlet UITextField *fldServiceTime;
 @property (strong, nonatomic) IBOutlet UITextField *fldHoursWorked;
-@property (strong, nonatomic) IBOutlet UITextField *fldLaborPercent;
+@property (strong, nonatomic) IBOutlet UIPickerView *fldTimeOfDay;
 
 
 
-@property (nonatomic,weak) id<ModalDelegate> delegate;
+
 
 
 

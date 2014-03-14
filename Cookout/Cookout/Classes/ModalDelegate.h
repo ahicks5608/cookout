@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @protocol ModalDelegate <NSObject>
-
+@optional
 - (void) willDismissViewController:(UIViewController*) controller;
+@required
 - (void) didDismissViewController;
 
 @end

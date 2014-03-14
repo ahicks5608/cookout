@@ -12,7 +12,6 @@
 #import "Common.h"
 #import "CommonModalSegue.h"
 #import "DataManagerHourly.h"
-#import "HourlyItemViewController.h"
 #import "HourlyEditViewController.h"
 #import "Hourly.h"
 #import "DailyData.h"
@@ -23,6 +22,8 @@
     NSString* _cellIdentifier;
     NSArray* _items;
     DataManagerHourly* _dataManager;
+    HourlyData *_selectedData;
+    
     
 }
 
@@ -41,7 +42,12 @@
     [self prepareForSegue:segue sender:self];
     [segue perform];
 }
-
+- (void) reload{
+        AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = appDelegate.managedObjectContext;
+    _items = [_dataManager select:nil context:context];
+    [_tableView reloadData];
+}
 
 - (void)viewDidLoad
 {
@@ -51,10 +57,8 @@
     _tableView.dataSource = self;
     _cellIdentifier = @"HourlyTableViewCell";
     _dataManager = [[DataManagerHourly alloc] init];
-    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    
-    NSManagedObjectContext *context = appDelegate.managedObjectContext;
-    _items = [_dataManager select:nil context:context];
+
+    [self reload];
     
     
     NSMutableArray *buttons = [NSMutableArray arrayWithArray:self.navigationItem.rightBarButtonItems];
@@ -84,24 +88,37 @@
 #pragma mark - Table view data source
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100.0f;
+    return 150.0f;
 }
 
--(NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [Common getTitleForTimeOfDay:section];
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return [_items count];
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 
-    return 1;
+    return [_items count];
 }
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    HourlyEditViewController *controller = (HourlyEditViewController*)[ segue destinationViewController];
+  //   NSDictionary *hourly= ( NSDictionary*) [_selectedData valueForKey:ccnData];
+    [controller configWithData:_selectedData];
+    
+        
+    }
+
+
+
+-(void) showEditor {
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+   HourlyEditViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"HourlyEditViewController"];
+    controller.delegate = self;
+    CommonModalSegue *segue = [[CommonModalSegue alloc] initWithIdentifier:@"masterToDetail"
+                                                                    source:self
+                                                               destination:controller];
+    [self prepareForSegue:segue sender:self];
+    [segue perform];
+}
+
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -113,29 +130,46 @@
     
     
     cell.fldSalesAmt.text = [hourly valueForKey:cfnSalesAmt];
+    cell.fldHoursWorked.text = [hourly valueForKey:cfnHoursWorked];
+    cell.fldServiceTime.text = [hourly valueForKey:cfnServiceTime];
     
+    //cell.fldLaborPercent.text = [hourly valueForKey:cfnLaborPercent];
+    NSNumber *value = [hourly valueForKey:cfnTimeOfDay];
+    cell.fldTimeOfDay.text = [Common getTitleForTimeOfDay:[value intValue]];
+    
+   cell.fldLaborPercent.text = [Hourly getLaborPercentWithSalesAmount:[hourly valueForKey:cfnSalesAmt] crewCount:[hourly valueForKey:cfnHoursWorked]];
     return cell;
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    _selectedData = (HourlyData*) [_items objectAtIndex:indexPath.row];
+    [self showEditor];
+    
 }
 
 #pragma mark - Modal methods
 
 - (void) willDismissViewController:(UIViewController*) controller
 {
-    HourlyItemViewController *viewController = (HourlyItemViewController*) controller;
+    HourlyEditViewController *viewController = (HourlyEditViewController*) controller;
     NSString *hoursWorked = viewController.fldHoursWorked.text;
     NSString *salesAmount = viewController.fldSalesAmt.text;
     NSString *serviceTime = viewController.fldServiceTime.text;
-
+    NSInteger timeOfDay = [viewController.fldTimeOfDay selectedRowInComponent:0];
+    
     //NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] init];
     
-    NSDictionary *dict = @{cfnSalesAmt: salesAmount, cfnHoursWorked: hoursWorked, cfnServiceTime: serviceTime,
-                           cfnTimeOfDay: [NSNumber numberWithInt:TOD1], cfnUpDownAmt: [NSNumber numberWithInt:0 ]};
-       AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    NSDictionary *dict = @{cfnSalesAmt: salesAmount,
+                           cfnHoursWorked: hoursWorked,
+                           cfnServiceTime: serviceTime,
+                           cfnUpDownAmt: [NSNumber numberWithInt:0],
+                           cfnTimeOfDay:[NSNumber numberWithInt:timeOfDay]};
+    
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
    
     Hourly *hourly = [[Hourly alloc] initWithDictionary:dict];
     [_dataManager addNew:@{ccnData: hourly} context:appDelegate.managedObjectContext];
-    
-    [_tableView reloadData];
+    [self reload];
     
 
     //Hourly *hourly = [[Hourly alloc] initWithDictionary:dict];

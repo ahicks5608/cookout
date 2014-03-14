@@ -20,10 +20,27 @@
 
 @implementation CalculatorViewController
 
+- (id) initWithData:(NSDictionary*) values{
+    if (self = [super init]) {
+        _calcResult.text = [values valueForKey:cfnValue];
+    }
+    return self;
+}
+
+- (void) configWithData:(NSDictionary*) values{
+
+    _calcResult.text = [values valueForKey:cfnValue];
+
+}
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    _calcResult.text = @"0";
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -33,11 +50,11 @@
 }
 
 - (IBAction)posOrNeg:(id)sender {
-    if (self.calculatorDisplay.text != nil) {
-        if (self.calculatorDisplay.text.length > 0) {
-            float  result = self.calculatorDisplay.text.floatValue;
+    if (_calcResult.text != nil) {
+        if (_calcResult.text.length > 0) {
+            float  result = _calcResult.text.floatValue;
             result = result * -1.0;
-            self.calculatorDisplay.text = [NSString stringWithFormat:@"%0.2f", result];
+            _calcResult.text = [NSString stringWithFormat:@"%0.2f", result];
         }
     }
 }
@@ -46,41 +63,38 @@
     NSString *number = sender.currentTitle;
     if (sender.tag == 10){
         if (self.typingNumber == NO) {
-            self.calculatorDisplay.text = @".";
+            _calcResult.text = @".";
              self.typingNumber = YES;
-        } else if([self.calculatorDisplay.text rangeOfString:@"."].location == NSNotFound) {
-            NSString *result = [NSString stringWithFormat:@"%@.",self.calculatorDisplay.text];
-            self.calculatorDisplay.text = result;
+        } else if([_calcResult.text rangeOfString:@"."].location == NSNotFound) {
+            NSString *result = [NSString stringWithFormat:@"%@.",_calcResult.text];
+            _calcResult.text = result;
             self.typingNumber = YES;
         }
         // }
     } else if (self.typingNumber) {
-        self.calculatorDisplay.text = [self.calculatorDisplay.text
+        _calcResult.text = [_calcResult.text
                                        stringByAppendingString:number];
     } else {
-        self.calculatorDisplay.text = number;
+        _calcResult.text = number;
         self.typingNumber = YES;
     }
     
 }
 
-
-
-
 - (IBAction)percent:(id)sender
 {
     
-    float  result = self.calculatorDisplay.text.floatValue;
+    float  result = _calcResult.text.floatValue;
     result = result / 100.00;
-    self.calculatorDisplay.text = [NSString stringWithFormat:@"%0.2f", result];
+    _calcResult.text = [NSString stringWithFormat:@"%0.2f", result];
     
     
 }
 
 - (IBAction)decimalPoint:(id)sender{
-    if ([self.calculatorDisplay.text rangeOfString:@"."].location == NSNotFound) {
-     NSString *result = [NSString stringWithFormat:@"%@.",self.calculatorDisplay.text];
-    self.calculatorDisplay.text = result;
+    if ([_calcResult.text rangeOfString:@"."].location == NSNotFound) {
+     NSString *result = [NSString stringWithFormat:@"%@.",_calcResult.text];
+    _calcResult.text = result;
     }
 }
 
@@ -88,14 +102,14 @@
     UIButton *btn = (UIButton*) sender;
     _operatorTag = btn.tag;
     self.typingNumber = NO;
-    self.firstNumber = [self.calculatorDisplay.text floatValue];
+    self.firstNumber = [_calcResult.text floatValue];
     self.operation = [sender currentTitle];
     
 }
 
 - (IBAction)equalsPressed {
     self.typingNumber = NO;
-    self.secondNumber = [self.calculatorDisplay.text floatValue];
+    self.secondNumber = [_calcResult.text floatValue];
     
     float result = 0.0f;
     switch (_operatorTag) {
@@ -121,22 +135,22 @@
     }
 
     
-    self.calculatorDisplay.text = [NSString stringWithFormat:@"%0.2f", result];
+    _calcResult.text = [NSString stringWithFormat:@"%0.2f", result];
     self.secondNumber = 0;
     
 }
 
 
 - (IBAction)memoryPressed:(id)sender {
-    float currentValue = self.calculatorDisplay.text.floatValue;
+    float currentValue = _calcResult.text.floatValue;
     switch (_operatorTag) {
             
         case CBMR:
-            self.calculatorDisplay.text = [NSString stringWithFormat:@"%f", _memValue];
+            _calcResult.text = [NSString stringWithFormat:@"%f", _memValue];
             break;
         case CBMC:
             _memValue = 0;
-            self.calculatorDisplay.text = [NSString stringWithFormat:@"%f", _memValue];
+            _calcResult.text = [NSString stringWithFormat:@"%f", _memValue];
             break;
         case CBMminus:
             _memValue -= currentValue;
@@ -157,7 +171,7 @@
 
 
 - (IBAction)clearPressed{
-    self.calculatorDisplay.text = @"0";
+    _calcResult.text = @"0";
     self.typingNumber = NO;
     self.secondNumber = 0;
 }

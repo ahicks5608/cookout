@@ -38,8 +38,8 @@
 
 
 //THIS IS A CLASS METHOD
-+(NSNumber*) getLaborPercentWithSalesAmount:(NSNumber*) salesAmount
-                                  crewCount:(NSNumber*) crew;
++(NSString*) getLaborPercentWithSalesAmount:(NSString*) asalesAmount
+                                  crewCount:(NSString*) acrew;
 
 
 @end

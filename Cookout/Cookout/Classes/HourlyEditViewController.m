@@ -8,16 +8,42 @@
 
 #import "HourlyEditViewController.h"
 #import "Common.h"
+#import "CommonModalSegue.h"
+#import "CalculatorViewController.h"
+
+
 
 @interface HourlyEditViewController () {
     NSManagedObject *_data;
+    NSInteger _tag;
 }
 
 @end
 
 @implementation HourlyEditViewController
 
-#pragma mark - The Picker Data Source
+- (void) willDismissViewController:(UIViewController *)controller {
+    
+    CalculatorViewController *calcVC = (CalculatorViewController*) controller;
+    switch (_tag) {
+        case efHoursWorked:
+            _fldHoursWorked.text = calcVC.calcResult.text;
+            break;
+        case efSalesAmt:
+            _fldSalesAmt.text = calcVC.calcResult.text;
+            break;
+        case efServiceTime:
+            _fldServiceTime.text = calcVC.calcResult.text;
+            break;
+        default:
+            break;
+    }
+    
+}
+
+- (void) didDismissViewController {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 #pragma mark - The Picker Delegate
@@ -61,37 +87,59 @@
             
 }
 
-- (void) onDonePressed
-{
-    [_delegate willDismissViewController:self];
-    [_delegate didDismissViewController];
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    CalculatorViewController *controller = (CalculatorViewController*)[ segue destinationViewController];
+    switch (_tag) {
+        case efSalesAmt:
+            [controller configWithData:@{cfnValue: _fldSalesAmt.text}];
+            break;
+        case efHoursWorked:
+            [controller configWithData:@{cfnValue: _fldHoursWorked.text}];
+            break;
+        case efServiceTime:
+            [controller configWithData:@{cfnValue: _fldServiceTime.text}];
+            break;
+        default:
+            break;
+    }
 }
 
-- (void) onCancelPressed
-{
-    [_delegate didDismissViewController];
+-(void) showCalc {
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Calc" bundle:nil];
+    CalculatorViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"CalculatorViewController"];
+    controller.delegate = self;
+    CommonModalSegue *segue = [[CommonModalSegue alloc] initWithIdentifier:@"masterToDetail"
+                                                                    source:self
+                                                               destination:controller];
+    [self prepareForSegue:segue sender:self];
+    [segue perform];
 }
+
 
 - (void) viewDidLoad
 {
     [super viewDidLoad];
     _fldHoursWorked.delegate = self;
-    _fldLaborPercent.delegate = self;
+    _fldHoursWorked.tag = efHoursWorked;
     _fldSalesAmt.delegate = self;
+    _fldSalesAmt.tag = efSalesAmt;
     _fldServiceTime.delegate = self;
-    
-    // NSMutableArray *buttons = [NSMutableArray arrayWithArray:self.navigationItem.rightBarButtonItems];
-    UIBarButtonItem *doneButton =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                               target:self action: @selector(onDonePressed)];
-    self.navigationItem.rightBarButtonItem = doneButton;
-    ///
-    
-    
-    
-    UIBarButtonItem *cancelButton =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-                                                                                 target:self action: @selector(onCancelPressed)];
-    self.navigationItem.leftBarButtonItem = cancelButton;
-    // Do any additional setup after loading the view.
+    _fldServiceTime.tag = efServiceTime;
+
 }
+
+#pragma mark UITextFieldDelegate
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+
+
+    _tag = textField.tag;
+        [self showCalc];
+    return NO;
+    
+    
+}
+
+
 
 @end
