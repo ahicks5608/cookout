@@ -123,7 +123,7 @@
 }
 
 -(NSNumber*) getPayRate {
-    return [NSNumber numberWithFloat:5.50f];
+    return [NSNumber numberWithFloat:.50f];
 #warning implement get setting here
 }
 
