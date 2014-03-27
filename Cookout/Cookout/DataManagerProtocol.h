@@ -17,6 +17,7 @@
 - (void) update:(NSDictionary*) values context:(NSManagedObjectContext*)context;
 - (NSManagedObject*) load:(NSDictionary*) values context:(NSManagedObjectContext*)context;
 - (NSArray*) select:(NSDictionary*) values context:(NSManagedObjectContext*)context;
+- (void) createDaily;
 @optional
 - (NSArray*) addNew:(NSDictionary*) values data:(NSArray*) data context:(NSManagedObjectContext*)context;
 @end

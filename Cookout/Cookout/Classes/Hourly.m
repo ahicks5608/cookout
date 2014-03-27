@@ -15,7 +15,7 @@
     NSNumber *_crewCount;
     NSNumber *_serviceTime;
     NSNumber *_upDownAmt;
-    
+    NSNumber *_laborRate;
 }
 
 @end
@@ -34,6 +34,7 @@
     _timeOfDay = [decoder decodeObjectForKey:cfnTimeOfDay];
     _serviceTime = [decoder decodeObjectForKey:cfnServiceTime];
     _upDownAmt = [decoder decodeObjectForKey:cfnUpDownAmt];
+    _laborRate = [decoder decodeObjectForKey:cfnLaborRate];
     
     return self;
 }
@@ -44,57 +45,37 @@
     [encoder encodeObject:_timeOfDay forKey:cfnTimeOfDay];
     [encoder encodeObject:_serviceTime forKey:cfnServiceTime];
     [encoder encodeObject:_upDownAmt forKey:cfnUpDownAmt];
+    [encoder encodeObject:_laborRate forKey:cfnLaborRate];
 }
 
-
--(id) init:(NSNumber*) salesAmt crewCount:(NSNumber*) crewCount {
+-(id)init {
     if (self = [super init]) {
-        _salesAmt = [salesAmt copy];
-        _crewCount = [crewCount copy];
+        _salesAmt = @0;
+        _crewCount = @0;
+        _timeOfDay = @0;
         _serviceTime = @0;
         _upDownAmt = @0;
+        _laborRate = @0;
+    }return self;
+}
 
+-(id)initWithDictionary:(NSDictionary*) dict{
+    if (self = [super init]) {
+        _salesAmt = (NSNumber*)[dict valueForKey:cfnSalesAmt];
+        _crewCount = (NSNumber*)[dict valueForKey:cfnHoursWorked];
+        _serviceTime = (NSNumber*)[dict valueForKey:cfnServiceTime];
+        _laborRate = (NSNumber*)[dict valueForKey:cfnLaborRate];
+        _upDownAmt = (NSNumber*)[dict valueForKey:cfnUpDownAmt];
+        _timeOfDay = (NSNumber*)[dict valueForKey:cfnTimeOfDay];
         
     }
     return self;
 }
 
--(id)initWithDictionary:(NSDictionary*) dict{
-      if (self = [super init]) {
-          _salesAmt = [dict valueForKey:cfnSalesAmt];
-          _crewCount = [dict valueForKey:cfnHoursWorked];
-          _timeOfDay = [dict valueForKey:cfnTimeOfDay];
-          _serviceTime = [dict valueForKey:cfnServiceTime];
-          _upDownAmt = [dict valueForKey:cfnUpDownAmt];
-      }
-    return self;
+-(NSNumber*) getLaborRate{
+    return _laborRate;
 }
 
-
--(id) init:(NSUInteger)tod {
-    
-    if(self = [super init]){
-        _timeOfDay = [NSNumber numberWithInt:tod];
-        _salesAmt = @0;
-        _crewCount = @0;
-        _serviceTime = @0;
-        _upDownAmt = @0;
-    
-    }
-    return self;
-}
-    
-
--(id) init {
-    if(self = [super init]){
-        _timeOfDay = [NSNumber numberWithInt:TOD1];
-        _salesAmt = @0;
-        _crewCount = @0;
-        _serviceTime = @0;
-        _upDownAmt = @0;
-    }
-    return self;
-}
 -(NSNumber*) getUpDownAmt{
     return _upDownAmt;
 }
@@ -122,10 +103,10 @@
 #warning implement get setting here
 }
 
--(NSNumber*) getPayRate {
-    return [NSNumber numberWithFloat:.50f];
-#warning implement get setting here
-}
+//-(NSNumber*) getPayRate {
+    //return [NSNumber numberWithFloat:8.99f];
+//#warning implement get setting here
+//}
 
 
 -(NSNumber*) getLaborPercent{
@@ -136,16 +117,20 @@
     if ([_salesAmt intValue] < 1){
         return @0;
     }
+    if ([_laborRate floatValue] <1){
+        return @0;
+    }
     
     CGFloat sales = [_salesAmt floatValue];
-    CGFloat laborCost = [_crewCount intValue] * [self.payrate floatValue];
+    CGFloat laborCost = [_crewCount intValue] * [_laborRate floatValue];
 
-    CGFloat result = floorf(((sales / laborCost) * 100) + 0.5) /100;
+    CGFloat result = ((laborCost / sales) * 100.00);
     
-    CGFloat roundedFloat = (int)(result * 100 + 0.5) / 100.0;
-    return [NSNumber numberWithFloat:roundedFloat];
+    
+    return [NSNumber numberWithFloat:result];
 }
 
+/*
 +(NSString*) getLaborPercentWithSalesAmount:(NSString*) asalesAmount
                         crewCount:(NSString*) acrew
 
@@ -157,4 +142,5 @@
     return [hourly.laborPercent stringValue];
     
 }
+ */
 @end

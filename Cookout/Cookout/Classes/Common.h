@@ -30,6 +30,7 @@ efUnknown = 0
     ,efSalesAmt = 1
     ,efHoursWorked = 2
     ,efServiceTime = 3
+    ,efLaborRate = 4
 }EditFields;
 
 
@@ -60,8 +61,52 @@ typedef enum : NSInteger{
     CBMminus=530
 } CalcButtons;
 
+//DAILY FIELDS
+
+typedef enum : NSInteger{
+    DFUnknown=0
+   ,DFNetSalesDAY=1
+   ,DFSalesTax=2
+   ,DFGrossSales=3
+   ,DFPaidOuts=4
+   ,DFCreditCards=5
+   ,DFCashSHForDep=6
+   ,DFDeposit1=7
+   ,DFDeposit2=8
+   ,DFTotalDep=9
+   ,DFCashOSDAY=10
+   ,DFCashOSPercDAY91=11
+   ,DFCashOSMONTH911=12
+   ,DFCashOSPercMONTH1114=13
+   ,DFNetSalesWEEK113=14
+   ,DFNetSalesMONTH114=15
+   ,DFLaborAmtDAYPaysh=16
+   ,DFLaborAmtWEEK1516=17
+   ,DFLaborAmtMONTH1517=18
+   ,DFLaborPercDAY151=19
+   ,DFLaborPercWEEK1613=20
+   ,DFLaborPercMONTH1714=21
+   ,DFMgvdTransvoid=22
+   ,DFMgrvdPercDAY211=23
+   ,DFMgrvdMONTH2123=24
+   ,DFMgrvdPercMONTH2314=25
+   ,DFDayServiceTime=26
+   ,DFNightServiceTime=27
+   ,DFTotalServiceTime=28
+   ,DFFoodEmpForDay=29
+   ,DFFoodEmpPercDAY281=30
+   ,DFFoodEmpMONTH2830=31
+   ,DFFoodEmpPercMONTH3014=32
+   ,DFSalesLastWeekSameDay=33
+   ,DFUpDownToday132=34
+   ,DFNetSalesLastWEEKThruTODAY=35
+   ,DFUpDownThisWEEK1334=36
+}DailyFields;
     
-    
+
+
+
+
 //hard coded values
 extern NSString * const cfnValue;
 extern NSString * const cfnEmployeeFoodAmt;
@@ -78,6 +123,7 @@ extern NSString * const cfnHoursWorked;
 extern NSString * const cfnServiceTime;
 extern NSString * const cfnUpDownAmt;
 extern NSString * const cfnLaborPercent;
+extern NSString * const cfnLaborRate;
 
 extern NSString * const cfnPredicate;
 
@@ -101,6 +147,9 @@ extern NSString* const ccnUuid;
 +(NSString*) dateToDateTimeString:(NSDate*) value;
 +(NSString*) dateToString:(NSDate*) value_;
 +(NSString*) stringFromDate:(NSDate *)value_;
++(NSArray*) getTitlesForTimeofDay;
++(NSString*) formatNumberAsMoney:(NSNumber*) value;
++(NSString*) formatNumberAsPercent:(NSNumber*) value;
 
 
 @end

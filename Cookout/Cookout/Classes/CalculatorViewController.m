@@ -14,6 +14,7 @@
 @interface CalculatorViewController () {
     NSUInteger _operatorTag;
     float _memValue;
+    NSString *_originalValue;
 
 }
 @end
@@ -29,17 +30,16 @@
 
 - (void) configWithData:(NSDictionary*) values{
 
-    _calcResult.text = [values valueForKey:cfnValue];
+   _originalValue = [values valueForKey:cfnValue];
 
 }
-
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    _calcResult.text = @"0";
+    _calcResult.text = _originalValue;
     
 }
 
@@ -163,10 +163,6 @@
             break;
     }
 }
-
-
-
-
 
 
 

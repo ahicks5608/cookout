@@ -13,5 +13,5 @@
 @interface BaseModalViewController : UIViewController
 
 @property (nonatomic, weak) id<ModalDelegate> delegate;
-
+- (BOOL) isValidValues;
 @end

@@ -19,6 +19,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *fldLaborPercent;
 @property (strong, nonatomic) IBOutlet UILabel *fldTimeOfDay;
 @property (strong, nonatomic) IBOutlet UIImageView *arrowImage;
+@property (strong, nonatomic) IBOutlet UILabel *lblLaborRate;
+@property (strong, nonatomic) IBOutlet UILabel *fldLaborRate;
 
 
 

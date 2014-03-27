@@ -11,4 +11,6 @@
 
 @interface DataManagerHourly : NSObject <DataManagerProtocol>
 
++(BOOL) find:(NSDictionary*) values context:(NSManagedObjectContext*)context;
+
 @end

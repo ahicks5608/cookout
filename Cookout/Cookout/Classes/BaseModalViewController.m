@@ -14,11 +14,25 @@
 
 @implementation BaseModalViewController
 
+- (BOOL) isValidValues{
+    return YES;
+}
 
 - (void) onDonePressed
 {
-    [_delegate willDismissViewController:self];
-    [_delegate didDismissViewController];
+    if ([self isValidValues]) {
+        
+        if ([_delegate respondsToSelector:@selector(isValidValue:)]) {
+            if ([_delegate isValidValue:self] ) {
+                [_delegate willDismissViewController:self];
+                [_delegate didDismissViewController];
+            }
+        }else {
+            [_delegate willDismissViewController:self];
+            [_delegate didDismissViewController];
+        }
+    }
+    
 }
 
 - (void) onCancelPressed

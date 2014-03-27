@@ -26,10 +26,8 @@
 @property (nonatomic, readonly, getter = getTimeOfDay) NSNumber* timeOfDay;
 @property (nonatomic, readonly, getter = getUpDownAmount) NSNumber* upDownAmt; 
 @property (nonatomic, readonly, getter = getLaborPercent) NSNumber* laborPercent;
+@property (nonatomic, readonly, getter = getLaborRate) NSNumber* laborRate;
 
-
--(id) init:(NSUInteger)tod;
--(id) init:(NSNumber*) salesAmount crewCount:(NSNumber*) crewCount;
 -(id)initWithDictionary:(NSDictionary*) dict;
 
 
@@ -38,8 +36,8 @@
 
 
 //THIS IS A CLASS METHOD
-+(NSString*) getLaborPercentWithSalesAmount:(NSString*) asalesAmount
-                                  crewCount:(NSString*) acrew;
+//+(NSString*) getLaborPercentWithSalesAmount:(NSString*) asalesAmount
+//                                  crewCount:(NSString*) acrew;
 
 
 @end

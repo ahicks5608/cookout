@@ -9,6 +9,12 @@
 #import "Common.h"
 //field names
 NSString * const cfnValue = @"value";
+NSString * const cfnSalesAmt = @"salesAmt";
+NSString * const cfnHoursWorked = @"crewCount";
+NSString * const cfnServiceTime = @"serviceTime";
+NSString * const cfnUpDownAmt = @"upDownAmt";
+NSString * const cfnLaborPercent = @"laborPercent";
+NSString * const cfnLaborRate = @"laborRate";
 NSString * const cfnEmployeeFoodAmt = @"empFoodAmt";
 NSString * const cfnCashOsAmt = @"cashOsAmt";
 NSString * const cfnCashAmt = @"cashAmt";
@@ -18,11 +24,7 @@ NSString * const cfnMgmtVoidAmt = @"mgmtVoidAmt";
 NSString * const cfnPaidOutAmt = @"paidOutAmt";
 NSString * const cfnTotalDepositAmt = @"totalDepositAmt";
 NSString * const cfnTimeOfDay = @"timeOfDay";
-NSString * const cfnSalesAmt = @"salesAmt";
-NSString * const cfnHoursWorked = @"crewCount";
-NSString * const cfnServiceTime = @"serviceTime";
-NSString * const cfnUpDownAmt = @"upDownAmt";
-NSString * const cfnLaborPercent = @"laborPercent"; 
+
 
 NSString * const cfnPredicate = @"predicate";
 
@@ -42,6 +44,179 @@ NSString* const ccnUuid = @"uuid";
 
 
 @implementation Common
+
++(NSString*) formatNumberAsMoney:(NSNumber*) value {
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    return [formatter stringFromNumber:value];
+    
+}
+
++(NSString*) formatNumberAsPercent:(NSNumber*) value {
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    
+    [numberFormatter setNumberStyle:NSNumberFormatterPercentStyle];
+    [numberFormatter setMaximumFractionDigits:1];
+    [numberFormatter setMultiplier:@1];
+
+    
+    return [numberFormatter stringFromNumber:value];
+    
+}
+
+
+
++(NSArray*) getTitlesForTimeofDay {
+    return @[
+             @"12:00am to 12:59am",
+             @"1:00am to 1:59am",
+             @"2:00am to 2:59am",
+             @"3:00am to 3:59am",
+             @"4:00am to 4:59am",
+             @"5:00am to 5:59am",
+             @"6:00am to 6:59am",
+             @"7:00am to 7:59am",
+             @"8:00am to 8:59am",
+             @"9:00am to 9:59am",
+             @"10:00am to 10:59am",
+             @"11:00am to 11:59am",
+             @"12:00pm to 12:59pm",
+             @"1:00pm to 1:59pm",
+             @"2:00pm to 2:59pm",
+             @"3:00pm to 3:59pm",
+             @"4:00pm to 4:59pm",
+             @"5:00pm to 5:59pm",
+             @"6:00pm to 6:59pm",
+             @"7:00pm to 7:59pm",
+             @"8:00pm to 8:59pm",
+             @"9:00pm to 9:59pm",
+             @"10:00pm to 10:59pm",
+             @"11:00pm to 11:59pm"
+             ];
+    
+}
+
++(NSString*) getTitleForDaily:(NSUInteger)value {
+    NSString * result;
+    switch (value) {
+            
+        case DFNetSalesDAY:
+            return @"Net Sales Day";
+            break;
+        case DFSalesTax:
+            return @"Sales Tax";
+            break;
+        case DFGrossSales:
+            return @"Gross Sales";
+            break;
+        case DFPaidOuts:
+            return @"Paid Outs";
+            break;
+        case DFCreditCards:
+            return @"Credit Cards";
+            break;
+        case DFCashSHForDep:
+            return @"Cash s/h for Deposit";
+            break;
+        case DFDeposit1:
+            return @"Deposit #1";
+            break;
+        case DFDeposit2:
+            return @"Deposit #2";
+            break;
+        case DFTotalDep:
+            return @"Total Deposit";
+            break;
+        case DFCashOSDAY:
+            return @"Cash O/S for day";
+            break;
+        case DFCashOSPercDAY91:
+            return @"Cash O/S % day 9:1";
+            break;
+        case DFCashOSMONTH911:
+            return @"Cash O/S month 9+11";
+            break;
+        case DFCashOSPercMONTH1114:
+            return @"Cash O/S % month 11:14";
+            break;
+        case DFNetSalesWEEK113:
+            return @"Net Sales week 1+13";
+            break;
+        case DFNetSalesMONTH114:
+            return @"Net Sales month 1+14";
+            break;
+        case DFLaborAmtDAYPaysh:
+            return @"Labor $ day Paysh";
+            break;
+        case DFLaborAmtWEEK1516:
+            return @"Labor $ week 15+16";
+            break;
+        case DFLaborAmtMONTH1517:
+            return @"Labor $ month 15+17";
+            break;
+        case DFLaborPercDAY151:
+            return @"Labor % day 15:1";
+            break;
+        case DFLaborPercWEEK1613:
+            return @"Labor % week 16:13";
+            break;
+        case DFLaborPercMONTH1714:
+            return @"Labor % month 17:14";
+            break;
+        case DFMgvdTransvoid:
+            return @"Mgvd/Transvoids";
+            break;
+        case DFMgrvdPercDAY211:
+            return @"Mgrvd % day 21:1";
+            break;
+        case DFMgrvdMONTH2123:
+            return @"Mgrvd month 21+23";
+            break;
+        case DFMgrvdPercMONTH2314:
+            return @"Mgrvd % month 23:14";
+            break;
+        case DFDayServiceTime:
+            return @"Day Service Time";
+            break;
+        case DFNightServiceTime:
+            return @"Night Service Time";
+            break;
+        case DFTotalServiceTime:
+            return @"Total Service Time";
+            break;
+        case DFFoodEmpForDay:
+            return @"Food Emp for day";
+            break;
+        case DFFoodEmpPercDAY281:
+            return @"Food Emp % day 28:1";
+            break;
+        case DFFoodEmpMONTH2830:
+            return @"Food Emp month 28+30";
+            break;
+        case DFFoodEmpPercMONTH3014:
+            return @"Food Emp % month 30:14";
+            break;
+        case DFSalesLastWeekSameDay:
+            return @"Sales last week, same day";
+            break;
+        case DFUpDownToday132:
+            return @"Up-Down today 1-32";
+            break;
+        case DFNetSalesLastWEEKThruTODAY:
+            return @"Net sales last week thru today";
+            break;
+        case DFUpDownThisWEEK1334:
+            return @"Up-Down this week 13-34";
+            break;
+        default:
+            result = @"NOT A VALID FIELD?";
+            break;
+    }
+    return result;
+}
+
+
+
 
 +(NSString*) getTitleForTimeOfDay:(NSUInteger)value {
     switch (value) {

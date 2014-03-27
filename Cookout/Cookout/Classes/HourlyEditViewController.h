@@ -16,12 +16,13 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblSalesAmt;
 @property (strong, nonatomic) IBOutlet UILabel *lblServiceTime;
 @property (strong, nonatomic) IBOutlet UILabel *lblHoursWorked;
+@property (strong, nonatomic) IBOutlet UILabel *lblLaborRate;
 
 @property (strong, nonatomic) IBOutlet UITextField *fldSalesAmt;
 @property (strong, nonatomic) IBOutlet UITextField *fldServiceTime;
 @property (strong, nonatomic) IBOutlet UITextField *fldHoursWorked;
 @property (strong, nonatomic) IBOutlet UIPickerView *fldTimeOfDay;
-
+@property (strong, nonatomic) IBOutlet UITextField *fldLaborRate;
 
 
 

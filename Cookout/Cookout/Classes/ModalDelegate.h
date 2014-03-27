@@ -11,6 +11,7 @@
 @protocol ModalDelegate <NSObject>
 @optional
 - (void) willDismissViewController:(UIViewController*) controller;
+- (BOOL) isValidValue:(UIViewController*) controller;
 @required
 - (void) didDismissViewController;
 
