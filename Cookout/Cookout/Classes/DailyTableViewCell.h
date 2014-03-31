@@ -11,7 +11,8 @@
 @interface DailyTableViewCell : UITableViewCell
 
 
-@property (strong, nonatomic)NSString *header;
-@property (strong, nonatomic)NSString *value;
+@property (strong, nonatomic) IBOutlet UILabel *header;
+
+@property (strong, nonatomic) IBOutlet UILabel *value;
 
 @end

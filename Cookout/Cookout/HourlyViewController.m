@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Simple iApps. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "HourlyViewController.h"
 #import "AppDelegate.h"
 #import "HourlyTableViewCell.h"
 #import "Common.h"
@@ -18,7 +18,7 @@
 
 
 
-@interface FirstViewController () {
+@interface HourlyViewController () {
     NSString* _cellIdentifier;
     NSArray* _items;
     DataManagerHourly* _dataManager;
@@ -31,7 +31,7 @@
 
 @end
 
-@implementation FirstViewController
+@implementation HourlyViewController
 
 
 - (void)addNew {
@@ -228,6 +228,19 @@
         
     }
 }
+
+
+#pragma mark - TAB BAR 
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
+    
+}
+
+
+
+
+
+
 
 #pragma mark - Modal methods
 

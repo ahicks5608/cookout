@@ -9,7 +9,7 @@
 #import "DataManagerHourly.h"
 #import "AppDelegate.h"
 #import "Common.h"
-#import "FirstViewController.h"
+#import "HourlyViewController.h"
 #import "Hourly.h"
 
 @implementation DataManagerHourly

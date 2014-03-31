@@ -139,7 +139,7 @@ extern NSString* const ccnUuid;
 
 
 @interface Common : NSObject
-
++(NSString*) getTitleForDaily:(NSUInteger)value;
 +(NSString*) getTitleForTimeOfDay:(NSUInteger)value;
 +(NSString *) generateUuidString;
 +(NSString*) today;

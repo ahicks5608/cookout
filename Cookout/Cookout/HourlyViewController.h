@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "ModalDelegate.h"
 
-@interface FirstViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, ModalDelegate>
+@interface HourlyViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, ModalDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITabBar *tabBar;
 
 
 @end

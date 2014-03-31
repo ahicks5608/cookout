@@ -12,7 +12,7 @@
 #import "CommonModalSegue.h"
 #import "CalculatorViewController.h"
 #import "Hourly.h"
-#import "FirstViewController.h"
+#import "HourlyViewController.h"
 #import "HourlyData.h"
 #import "DataManagerHourly.h"
 

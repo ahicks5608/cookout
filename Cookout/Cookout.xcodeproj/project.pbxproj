@@ -14,7 +14,7 @@
 		2030CE2C18ABBE3400636B2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CE2B18ABBE3400636B2C /* main.m */; };
 		2030CE3018ABBE3400636B2C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CE2F18ABBE3400636B2C /* AppDelegate.m */; };
 		2030CE3318ABBE3400636B2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2030CE3118ABBE3400636B2C /* Main.storyboard */; };
-		2030CE3618ABBE3400636B2C /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CE3518ABBE3400636B2C /* FirstViewController.m */; };
+		2030CE3618ABBE3400636B2C /* HourlyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CE3518ABBE3400636B2C /* HourlyViewController.m */; };
 		2030CE3B18ABBE3400636B2C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2030CE3A18ABBE3400636B2C /* Images.xcassets */; };
 		2030CE4218ABBE3500636B2C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2030CE4118ABBE3500636B2C /* XCTest.framework */; };
 		2030CE4318ABBE3500636B2C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2030CE1F18ABBE3400636B2C /* Foundation.framework */; };
@@ -27,6 +27,7 @@
 		58A0B23818AE9142005C1E88 /* Daily.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0B23718AE9142005C1E88 /* Daily.m */; };
 		58A0B23A18AEA15C005C1E88 /* CookoutDailyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */; };
 		58A1D0AE18D21961003C4EB2 /* Calc.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58A1D0AD18D21961003C4EB2 /* Calc.Storyboard */; };
+		58A4C0B818E9C77F000CD73D /* DailyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A4C0B718E9C77F000CD73D /* DailyViewController.m */; };
 		58A4F60718ABDFCD0094E983 /* CookoutClassTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A4F60618ABDFCD0094E983 /* CookoutClassTest.m */; };
 		58A4F60A18AC0A320094E983 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A4F60918AC0A320094E983 /* Common.m */; };
 		58A4F60B18AC29A70094E983 /* Hourly.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A4F60418ABD46C0094E983 /* Hourly.m */; };
@@ -68,7 +69,7 @@
 		2030CE2E18ABBE3400636B2C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2030CE2F18ABBE3400636B2C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2030CE3218ABBE3400636B2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2030CE3518ABBE3400636B2C /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FirstViewController.m; path = ../FirstViewController.m; sourceTree = "<group>"; };
+		2030CE3518ABBE3400636B2C /* HourlyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HourlyViewController.m; path = ../HourlyViewController.m; sourceTree = "<group>"; };
 		2030CE3A18ABBE3400636B2C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2030CE4018ABBE3500636B2C /* CookoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2030CE4118ABBE3500636B2C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -79,13 +80,15 @@
 		2030CE6118ABBEF700636B2C /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		581F35BA18B27A9D0078EE5D /* CookOutDaily.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookOutDaily.h; sourceTree = "<group>"; };
 		589CA6AA18BF9AE100DC73CA /* TODTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TODTest.m; sourceTree = "<group>"; };
-		589CA6AF18BFB2D100DC73CA /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstViewController.h; path = ../FirstViewController.h; sourceTree = "<group>"; };
+		589CA6AF18BFB2D100DC73CA /* HourlyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HourlyViewController.h; path = ../HourlyViewController.h; sourceTree = "<group>"; };
 		58A0B23618AE9142005C1E88 /* Daily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Daily.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		58A0B23718AE9142005C1E88 /* Daily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Daily.m; sourceTree = "<group>"; };
 		58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CookoutDailyTest.m; sourceTree = "<group>"; };
 		58A1D0AD18D21961003C4EB2 /* Calc.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calc.Storyboard; sourceTree = "<group>"; };
 		58A354AD18AFE4DC00C69F36 /* CookOutAmounts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CookOutAmounts.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		58A354AE18AFE6C500C69F36 /* CookOutHourly.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookOutHourly.h; sourceTree = "<group>"; };
+		58A4C0B618E9C77F000CD73D /* DailyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyViewController.h; sourceTree = "<group>"; };
+		58A4C0B718E9C77F000CD73D /* DailyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyViewController.m; sourceTree = "<group>"; };
 		58A4F60318ABD46C0094E983 /* Hourly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Hourly.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		58A4F60418ABD46C0094E983 /* Hourly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Hourly.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		58A4F60618ABDFCD0094E983 /* CookoutClassTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CookoutClassTest.m; sourceTree = "<group>"; };
@@ -184,7 +187,6 @@
 				2030CE5918ABBED400636B2C /* Classes */,
 				2030CE5B18ABBED400636B2C /* Data Model */,
 				2030CE2E18ABBE3400636B2C /* AppDelegate.h */,
-				2030CE3118ABBE3400636B2C /* Main.storyboard */,
 				2030CE2F18ABBE3400636B2C /* AppDelegate.m */,
 				2030CE3A18ABBE3400636B2C /* Images.xcassets */,
 				2030CE2618ABBE3400636B2C /* Supporting Files */,
@@ -230,16 +232,14 @@
 			children = (
 				58E9838E18CA72C200E4AFC9 /* Protocols */,
 				58B8191C18C632CA006D222C /* ALL VIEW CONTROLLERS */,
-				58A78FB418C8D30100DB3B03 /* DictionaryTransformer.h */,
-				58A78FB518C8D30100DB3B03 /* DictionaryTransformer.m */,
 				58A0B23618AE9142005C1E88 /* Daily.h */,
 				58A0B23718AE9142005C1E88 /* Daily.m */,
 				58A4F60318ABD46C0094E983 /* Hourly.h */,
 				58A4F60418ABD46C0094E983 /* Hourly.m */,
 				58A4F60818AC0A320094E983 /* Common.h */,
 				58A4F60918AC0A320094E983 /* Common.m */,
-				58A89F2118BD2B7300239ED0 /* HourlyTableViewCell.h */,
-				58A89F2218BD2B7300239ED0 /* HourlyTableViewCell.m */,
+				58A78FB418C8D30100DB3B03 /* DictionaryTransformer.h */,
+				58A78FB518C8D30100DB3B03 /* DictionaryTransformer.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -266,14 +266,14 @@
 			path = "Managed Objects";
 			sourceTree = "<group>";
 		};
-		58A1D0AB18D2191F003C4EB2 /* calc */ = {
+		58A1D0AB18D2191F003C4EB2 /* calc stuff */ = {
 			isa = PBXGroup;
 			children = (
 				58B8191918C62E4B006D222C /* CalculatorViewController.h */,
 				58B8191A18C62E4B006D222C /* CalculatorViewController.m */,
 				58A1D0AC18D2192B003C4EB2 /* storyboard */,
 			);
-			name = calc;
+			name = "calc stuff";
 			sourceTree = "<group>";
 		};
 		58A1D0AC18D2192B003C4EB2 /* storyboard */ = {
@@ -282,6 +282,28 @@
 				58A1D0AD18D21961003C4EB2 /* Calc.Storyboard */,
 			);
 			name = storyboard;
+			sourceTree = "<group>";
+		};
+		58A4C0B418E9C5D0000CD73D /* hourly stuff */ = {
+			isa = PBXGroup;
+			children = (
+				589CA6AF18BFB2D100DC73CA /* HourlyViewController.h */,
+				2030CE3518ABBE3400636B2C /* HourlyViewController.m */,
+				58E9839018CA738D00E4AFC9 /* HourlyEditViewController.h */,
+				58E9839118CA738D00E4AFC9 /* HourlyEditViewController.m */,
+				58A89F2118BD2B7300239ED0 /* HourlyTableViewCell.h */,
+				58A89F2218BD2B7300239ED0 /* HourlyTableViewCell.m */,
+				58A4C0B518E9C607000CD73D /* main storyboard */,
+			);
+			name = "hourly stuff";
+			sourceTree = "<group>";
+		};
+		58A4C0B518E9C607000CD73D /* main storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				2030CE3118ABBE3400636B2C /* Main.storyboard */,
+			);
+			name = "main storyboard";
 			sourceTree = "<group>";
 		};
 		58A78FB718C8D59700DB3B03 /* Data Manager */ = {
@@ -296,14 +318,16 @@
 			name = "Data Manager";
 			sourceTree = "<group>";
 		};
-		58AA459318E5EEF20081CA3D /* daily */ = {
+		58AA459318E5EEF20081CA3D /* daily stuff */ = {
 			isa = PBXGroup;
 			children = (
+				58A4C0B618E9C77F000CD73D /* DailyViewController.h */,
+				58A4C0B718E9C77F000CD73D /* DailyViewController.m */,
 				58AA459918E5FBCA0081CA3D /* DailyTableViewCell.h */,
 				58AA459A18E5FBCA0081CA3D /* DailyTableViewCell.m */,
 				58AA459818E5F8680081CA3D /* storyboard */,
 			);
-			name = daily;
+			name = "daily stuff";
 			sourceTree = "<group>";
 		};
 		58AA459818E5F8680081CA3D /* storyboard */ = {
@@ -317,14 +341,11 @@
 		58B8191C18C632CA006D222C /* ALL VIEW CONTROLLERS */ = {
 			isa = PBXGroup;
 			children = (
-				58AA459318E5EEF20081CA3D /* daily */,
-				58A1D0AB18D2191F003C4EB2 /* calc */,
-				589CA6AF18BFB2D100DC73CA /* FirstViewController.h */,
-				2030CE3518ABBE3400636B2C /* FirstViewController.m */,
+				58A4C0B418E9C5D0000CD73D /* hourly stuff */,
+				58AA459318E5EEF20081CA3D /* daily stuff */,
+				58A1D0AB18D2191F003C4EB2 /* calc stuff */,
 				58B819AB18C66509006D222C /* CommonModalSegue.h */,
 				58B819AC18C66509006D222C /* CommonModalSegue.m */,
-				58E9839018CA738D00E4AFC9 /* HourlyEditViewController.h */,
-				58E9839118CA738D00E4AFC9 /* HourlyEditViewController.m */,
 				58A76CE618D37C770098D9F9 /* BaseModalViewController.h */,
 				58A76CE718D37C770098D9F9 /* BaseModalViewController.m */,
 			);
@@ -453,7 +474,7 @@
 				2030CE3018ABBE3400636B2C /* AppDelegate.m in Sources */,
 				58FB7C2418E0841600F6EDCA /* BaseEntity.m in Sources */,
 				58B819AD18C66509006D222C /* CommonModalSegue.m in Sources */,
-				2030CE3618ABBE3400636B2C /* FirstViewController.m in Sources */,
+				2030CE3618ABBE3400636B2C /* HourlyViewController.m in Sources */,
 				58A78FB618C8D30100DB3B03 /* DictionaryTransformer.m in Sources */,
 				58AA459B18E5FBCA0081CA3D /* DailyTableViewCell.m in Sources */,
 				58A0B23818AE9142005C1E88 /* Daily.m in Sources */,
@@ -462,6 +483,7 @@
 				58A78FBE18C8D60F00DB3B03 /* DataManagerDaily.m in Sources */,
 				58B8191B18C62E4B006D222C /* CalculatorViewController.m in Sources */,
 				58A4F60A18AC0A320094E983 /* Common.m in Sources */,
+				58A4C0B818E9C77F000CD73D /* DailyViewController.m in Sources */,
 				58A78FBA18C8D5C400DB3B03 /* DataManagerHourly.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,6 +525,7 @@
 				2030CE3218ABBE3400636B2C /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		2030CE4A18ABBE3500636B2C /* InfoPlist.strings */ = {
