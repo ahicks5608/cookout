@@ -9,12 +9,18 @@
 #import "DailyViewController.h"
 #import "DailyTableViewCell.h"
 #import "Common.h"
+#import "CalculatorViewController.h"
+#import "CommonModalSegue.h"
+#import "DailyFormulaViewController.h"
+#import "CommonPushSegue.h"
+
 
 @interface DailyViewController ()
 
 @end
 
 @implementation DailyViewController
+
 
 
 - (void)viewDidLoad
@@ -29,6 +35,36 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (void) willDismissViewController:(UIViewController*) controller{
+    //
+}
+
+- (void) didDismissViewController{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void) showFormula {
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"DailyFormula" bundle:nil];
+    DailyFormulaViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"DailyFormula"];
+    CommonPushSegue *segue = [[CommonPushSegue alloc] initWithIdentifier:@"masterToFormula"
+                                                                    source:self
+                                                               destination:controller];
+    [self prepareForSegue:segue sender:self];
+    [segue perform];
+}
+
+-(void) showCalc {
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Calc" bundle:nil];
+    CalculatorViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"CalculatorViewController"];
+    controller.delegate = self;
+    CommonModalSegue *segue = [[CommonModalSegue alloc] initWithIdentifier:@"masterToDetail"
+                                                                    source:self
+                                                               destination:controller];
+    [self prepareForSegue:segue sender:self];
+    [segue perform];
 }
 
 #pragma mark - Table view data source
@@ -52,10 +88,18 @@
    DailyTableViewCell *cell = (DailyTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"DailyTableViewCell" forIndexPath:indexPath];
     
     cell.header.text = [Common getTitleForDaily:indexPath.row];
+    cell.value.text = @"$0.00";
     
     return cell;
 }
 
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([Common canEditDaily:indexPath.row]) {
+        [self showCalc];
+    }else{
+        [self showFormula];
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.

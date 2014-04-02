@@ -64,43 +64,43 @@ typedef enum : NSInteger{
 //DAILY FIELDS
 
 typedef enum : NSInteger{
-    DFUnknown=0
-   ,DFNetSalesDAY=1
-   ,DFSalesTax=2
-   ,DFGrossSales=3
-   ,DFPaidOuts=4
-   ,DFCreditCards=5
-   ,DFCashSHForDep=6
-   ,DFDeposit1=7
-   ,DFDeposit2=8
-   ,DFTotalDep=9
-   ,DFCashOSDAY=10
-   ,DFCashOSPercDAY91=11
-   ,DFCashOSMONTH911=12
-   ,DFCashOSPercMONTH1114=13
-   ,DFNetSalesWEEK113=14
-   ,DFNetSalesMONTH114=15
-   ,DFLaborAmtDAYPaysh=16
-   ,DFLaborAmtWEEK1516=17
-   ,DFLaborAmtMONTH1517=18
-   ,DFLaborPercDAY151=19
-   ,DFLaborPercWEEK1613=20
-   ,DFLaborPercMONTH1714=21
-   ,DFMgvdTransvoid=22
-   ,DFMgrvdPercDAY211=23
-   ,DFMgrvdMONTH2123=24
-   ,DFMgrvdPercMONTH2314=25
-   ,DFDayServiceTime=26
-   ,DFNightServiceTime=27
-   ,DFTotalServiceTime=28
-   ,DFFoodEmpForDay=29
-   ,DFFoodEmpPercDAY281=30
-   ,DFFoodEmpMONTH2830=31
-   ,DFFoodEmpPercMONTH3014=32
-   ,DFSalesLastWeekSameDay=33
-   ,DFUpDownToday132=34
-   ,DFNetSalesLastWEEKThruTODAY=35
-   ,DFUpDownThisWEEK1334=36
+    DFNetSalesDAY=0
+   ,DFSalesTax=1
+   ,DFGrossSales=2
+   ,DFPaidOuts=3
+   ,DFCreditCards=4
+   ,DFCashSHForDep=5
+   ,DFDeposit1=6
+   ,DFDeposit2=7
+   ,DFTotalDep=8
+   ,DFCashOSDAY=9
+   ,DFCashOSPercDAY91=10
+   ,DFCashOSMONTH911=11
+   ,DFCashOSPercMONTH1114=12
+   ,DFNetSalesWEEK113=13
+   ,DFNetSalesMONTH114=14
+   ,DFLaborAmtDAYPaysh=15
+   ,DFLaborAmtWEEK1516=16
+   ,DFLaborAmtMONTH1517=17
+   ,DFLaborPercDAY151=18
+   ,DFLaborPercWEEK1613=19
+   ,DFLaborPercMONTH1714=20
+   ,DFMgvdTransvoid=21
+   ,DFMgrvdPercDAY211=22
+   ,DFMgrvdMONTH2123=23
+   ,DFMgrvdPercMONTH2314=24
+   ,DFDayServiceTime=25
+   ,DFNightServiceTime=26
+   ,DFTotalServiceTime=27
+   ,DFFoodEmpForDay=28
+   ,DFFoodEmpPercDAY281=29
+   ,DFFoodEmpMONTH2830=30
+   ,DFFoodEmpPercMONTH3014=31
+   ,DFSalesLastWeekSameDay=32
+   ,DFUpDownToday132=33
+   ,DFNetSalesLastWEEKThruTODAY=34
+   ,DFUpDownThisWEEK1334=35
+   ,DFUnknown=36
 }DailyFields;
     
 
@@ -150,6 +150,6 @@ extern NSString* const ccnUuid;
 +(NSArray*) getTitlesForTimeofDay;
 +(NSString*) formatNumberAsMoney:(NSNumber*) value;
 +(NSString*) formatNumberAsPercent:(NSNumber*) value;
-
++(BOOL) canEditDaily:(NSUInteger) value;
 
 @end

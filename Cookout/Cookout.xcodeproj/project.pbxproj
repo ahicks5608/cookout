@@ -13,7 +13,6 @@
 		2030CE2A18ABBE3400636B2C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2030CE2818ABBE3400636B2C /* InfoPlist.strings */; };
 		2030CE2C18ABBE3400636B2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CE2B18ABBE3400636B2C /* main.m */; };
 		2030CE3018ABBE3400636B2C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CE2F18ABBE3400636B2C /* AppDelegate.m */; };
-		2030CE3318ABBE3400636B2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2030CE3118ABBE3400636B2C /* Main.storyboard */; };
 		2030CE3618ABBE3400636B2C /* HourlyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CE3518ABBE3400636B2C /* HourlyViewController.m */; };
 		2030CE3B18ABBE3400636B2C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2030CE3A18ABBE3400636B2C /* Images.xcassets */; };
 		2030CE4218ABBE3500636B2C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2030CE4118ABBE3500636B2C /* XCTest.framework */; };
@@ -24,6 +23,13 @@
 		2030CE5818ABBE6E00636B2C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2030CE5718ABBE6E00636B2C /* CoreData.framework */; };
 		2030CE6218ABBEF700636B2C /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2030CE6018ABBEF700636B2C /* DataModel.xcdatamodeld */; };
 		589CA6AB18BF9AE100DC73CA /* TODTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 589CA6AA18BF9AE100DC73CA /* TODTest.m */; };
+		589E023B18EC822C0028AFC0 /* Hourly.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 589E023A18EC822C0028AFC0 /* Hourly.storyboard */; };
+		589E024918EC8C5D0028AFC0 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589E024818EC8C5D0028AFC0 /* MainTableViewCell.m */; };
+		589E024C18EC8C720028AFC0 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 589E024B18EC8C720028AFC0 /* MainTableViewController.m */; };
+		589E024E18EC8CAE0028AFC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 589E024D18EC8CAE0028AFC0 /* Main.storyboard */; };
+		589E025118EC91530028AFC0 /* CommonPushSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 589E025018EC91530028AFC0 /* CommonPushSegue.m */; };
+		589E025318ECB7480028AFC0 /* DailyFormula.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 589E025218ECB7470028AFC0 /* DailyFormula.storyboard */; };
+		589E025918ECB9B00028AFC0 /* DailyFormulaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 589E025818ECB9B00028AFC0 /* DailyFormulaViewController.m */; };
 		58A0B23818AE9142005C1E88 /* Daily.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0B23718AE9142005C1E88 /* Daily.m */; };
 		58A0B23A18AEA15C005C1E88 /* CookoutDailyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */; };
 		58A1D0AE18D21961003C4EB2 /* Calc.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58A1D0AD18D21961003C4EB2 /* Calc.Storyboard */; };
@@ -68,7 +74,6 @@
 		2030CE2D18ABBE3400636B2C /* Cookout-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cookout-Prefix.pch"; sourceTree = "<group>"; };
 		2030CE2E18ABBE3400636B2C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2030CE2F18ABBE3400636B2C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2030CE3218ABBE3400636B2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2030CE3518ABBE3400636B2C /* HourlyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HourlyViewController.m; path = ../HourlyViewController.m; sourceTree = "<group>"; };
 		2030CE3A18ABBE3400636B2C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2030CE4018ABBE3500636B2C /* CookoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +86,17 @@
 		581F35BA18B27A9D0078EE5D /* CookOutDaily.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookOutDaily.h; sourceTree = "<group>"; };
 		589CA6AA18BF9AE100DC73CA /* TODTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TODTest.m; sourceTree = "<group>"; };
 		589CA6AF18BFB2D100DC73CA /* HourlyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HourlyViewController.h; path = ../HourlyViewController.h; sourceTree = "<group>"; };
+		589E023A18EC822C0028AFC0 /* Hourly.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Hourly.storyboard; sourceTree = "<group>"; };
+		589E024718EC8C5D0028AFC0 /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
+		589E024818EC8C5D0028AFC0 /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
+		589E024A18EC8C720028AFC0 /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
+		589E024B18EC8C720028AFC0 /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
+		589E024D18EC8CAE0028AFC0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		589E024F18EC91530028AFC0 /* CommonPushSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonPushSegue.h; sourceTree = "<group>"; };
+		589E025018EC91530028AFC0 /* CommonPushSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonPushSegue.m; sourceTree = "<group>"; };
+		589E025218ECB7470028AFC0 /* DailyFormula.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DailyFormula.storyboard; sourceTree = "<group>"; };
+		589E025718ECB9B00028AFC0 /* DailyFormulaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyFormulaViewController.h; sourceTree = "<group>"; };
+		589E025818ECB9B00028AFC0 /* DailyFormulaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyFormulaViewController.m; sourceTree = "<group>"; };
 		58A0B23618AE9142005C1E88 /* Daily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Daily.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		58A0B23718AE9142005C1E88 /* Daily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Daily.m; sourceTree = "<group>"; };
 		58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CookoutDailyTest.m; sourceTree = "<group>"; };
@@ -240,6 +256,12 @@
 				58A4F60918AC0A320094E983 /* Common.m */,
 				58A78FB418C8D30100DB3B03 /* DictionaryTransformer.h */,
 				58A78FB518C8D30100DB3B03 /* DictionaryTransformer.m */,
+				58B819AB18C66509006D222C /* CommonModalSegue.h */,
+				58B819AC18C66509006D222C /* CommonModalSegue.m */,
+				58A76CE618D37C770098D9F9 /* BaseModalViewController.h */,
+				58A76CE718D37C770098D9F9 /* BaseModalViewController.m */,
+				589E024F18EC91530028AFC0 /* CommonPushSegue.h */,
+				589E025018EC91530028AFC0 /* CommonPushSegue.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -266,22 +288,26 @@
 			path = "Managed Objects";
 			sourceTree = "<group>";
 		};
+		589E024618EC8C3F0028AFC0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				589E024718EC8C5D0028AFC0 /* MainTableViewCell.h */,
+				589E024818EC8C5D0028AFC0 /* MainTableViewCell.m */,
+				589E024A18EC8C720028AFC0 /* MainTableViewController.h */,
+				589E024B18EC8C720028AFC0 /* MainTableViewController.m */,
+				589E024D18EC8CAE0028AFC0 /* Main.storyboard */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
 		58A1D0AB18D2191F003C4EB2 /* calc stuff */ = {
 			isa = PBXGroup;
 			children = (
 				58B8191918C62E4B006D222C /* CalculatorViewController.h */,
 				58B8191A18C62E4B006D222C /* CalculatorViewController.m */,
-				58A1D0AC18D2192B003C4EB2 /* storyboard */,
-			);
-			name = "calc stuff";
-			sourceTree = "<group>";
-		};
-		58A1D0AC18D2192B003C4EB2 /* storyboard */ = {
-			isa = PBXGroup;
-			children = (
 				58A1D0AD18D21961003C4EB2 /* Calc.Storyboard */,
 			);
-			name = storyboard;
+			name = "calc stuff";
 			sourceTree = "<group>";
 		};
 		58A4C0B418E9C5D0000CD73D /* hourly stuff */ = {
@@ -293,17 +319,9 @@
 				58E9839118CA738D00E4AFC9 /* HourlyEditViewController.m */,
 				58A89F2118BD2B7300239ED0 /* HourlyTableViewCell.h */,
 				58A89F2218BD2B7300239ED0 /* HourlyTableViewCell.m */,
-				58A4C0B518E9C607000CD73D /* main storyboard */,
+				589E023A18EC822C0028AFC0 /* Hourly.storyboard */,
 			);
 			name = "hourly stuff";
-			sourceTree = "<group>";
-		};
-		58A4C0B518E9C607000CD73D /* main storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				2030CE3118ABBE3400636B2C /* Main.storyboard */,
-			);
-			name = "main storyboard";
 			sourceTree = "<group>";
 		};
 		58A78FB718C8D59700DB3B03 /* Data Manager */ = {
@@ -325,29 +343,21 @@
 				58A4C0B718E9C77F000CD73D /* DailyViewController.m */,
 				58AA459918E5FBCA0081CA3D /* DailyTableViewCell.h */,
 				58AA459A18E5FBCA0081CA3D /* DailyTableViewCell.m */,
-				58AA459818E5F8680081CA3D /* storyboard */,
+				58AA459618E5F7FA0081CA3D /* daily.storyboard */,
+				589E025218ECB7470028AFC0 /* DailyFormula.storyboard */,
+				589E025718ECB9B00028AFC0 /* DailyFormulaViewController.h */,
+				589E025818ECB9B00028AFC0 /* DailyFormulaViewController.m */,
 			);
 			name = "daily stuff";
-			sourceTree = "<group>";
-		};
-		58AA459818E5F8680081CA3D /* storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				58AA459618E5F7FA0081CA3D /* daily.storyboard */,
-			);
-			name = storyboard;
 			sourceTree = "<group>";
 		};
 		58B8191C18C632CA006D222C /* ALL VIEW CONTROLLERS */ = {
 			isa = PBXGroup;
 			children = (
+				589E024618EC8C3F0028AFC0 /* Main */,
 				58A4C0B418E9C5D0000CD73D /* hourly stuff */,
 				58AA459318E5EEF20081CA3D /* daily stuff */,
 				58A1D0AB18D2191F003C4EB2 /* calc stuff */,
-				58B819AB18C66509006D222C /* CommonModalSegue.h */,
-				58B819AC18C66509006D222C /* CommonModalSegue.m */,
-				58A76CE618D37C770098D9F9 /* BaseModalViewController.h */,
-				58A76CE718D37C770098D9F9 /* BaseModalViewController.m */,
 			);
 			name = "ALL VIEW CONTROLLERS";
 			sourceTree = "<group>";
@@ -445,8 +455,10 @@
 				2030CE3B18ABBE3400636B2C /* Images.xcassets in Resources */,
 				58A1D0AE18D21961003C4EB2 /* Calc.Storyboard in Resources */,
 				2030CE2A18ABBE3400636B2C /* InfoPlist.strings in Resources */,
-				2030CE3318ABBE3400636B2C /* Main.storyboard in Resources */,
+				589E025318ECB7480028AFC0 /* DailyFormula.storyboard in Resources */,
+				589E024E18EC8CAE0028AFC0 /* Main.storyboard in Resources */,
 				58AA459718E5F7FA0081CA3D /* daily.storyboard in Resources */,
+				589E023B18EC822C0028AFC0 /* Hourly.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +477,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				589E024C18EC8C720028AFC0 /* MainTableViewController.m in Sources */,
 				2030CE6218ABBEF700636B2C /* DataModel.xcdatamodeld in Sources */,
 				58A76CE818D37C770098D9F9 /* BaseModalViewController.m in Sources */,
 				58A89F2318BD2B7300239ED0 /* HourlyTableViewCell.m in Sources */,
@@ -474,14 +487,17 @@
 				2030CE3018ABBE3400636B2C /* AppDelegate.m in Sources */,
 				58FB7C2418E0841600F6EDCA /* BaseEntity.m in Sources */,
 				58B819AD18C66509006D222C /* CommonModalSegue.m in Sources */,
+				589E024918EC8C5D0028AFC0 /* MainTableViewCell.m in Sources */,
 				2030CE3618ABBE3400636B2C /* HourlyViewController.m in Sources */,
 				58A78FB618C8D30100DB3B03 /* DictionaryTransformer.m in Sources */,
 				58AA459B18E5FBCA0081CA3D /* DailyTableViewCell.m in Sources */,
 				58A0B23818AE9142005C1E88 /* Daily.m in Sources */,
+				589E025918ECB9B00028AFC0 /* DailyFormulaViewController.m in Sources */,
 				2030CE2C18ABBE3400636B2C /* main.m in Sources */,
 				58E9839218CA738D00E4AFC9 /* HourlyEditViewController.m in Sources */,
 				58A78FBE18C8D60F00DB3B03 /* DataManagerDaily.m in Sources */,
 				58B8191B18C62E4B006D222C /* CalculatorViewController.m in Sources */,
+				589E025118EC91530028AFC0 /* CommonPushSegue.m in Sources */,
 				58A4F60A18AC0A320094E983 /* Common.m in Sources */,
 				58A4C0B818E9C77F000CD73D /* DailyViewController.m in Sources */,
 				58A78FBA18C8D5C400DB3B03 /* DataManagerHourly.m in Sources */,
@@ -517,15 +533,6 @@
 				2030CE2918ABBE3400636B2C /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		2030CE3118ABBE3400636B2C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2030CE3218ABBE3400636B2C /* Base */,
-			);
-			name = Main.storyboard;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		2030CE4A18ABBE3500636B2C /* InfoPlist.strings */ = {

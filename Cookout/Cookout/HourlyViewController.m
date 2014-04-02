@@ -36,7 +36,7 @@
 
 - (void)addNew {
     _newRecord = TRUE;
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Hourly" bundle:nil];
     HourlyEditViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"HourlyEditViewController"];
     controller.delegate = self;
     CommonModalSegue *segue = [[CommonModalSegue alloc] initWithIdentifier:@"masterToDetail"
@@ -160,7 +160,7 @@
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    HourlyEditViewController *controller = (HourlyEditViewController*)[ segue destinationViewController];
+    //HourlyEditViewController *controller = (HourlyEditViewController*)[ segue destinationViewController];
   //   NSDictionary *hourly= ( NSDictionary*) [_selectedData valueForKey:ccnData];
   //  [controller configWithData:_selectedData];
     

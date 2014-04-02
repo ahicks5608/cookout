@@ -98,6 +98,24 @@ NSString* const ccnUuid = @"uuid";
              ];
     
 }
++(BOOL) canEditDaily:(NSUInteger) value{
+    switch (value) {
+        case DFSalesTax:
+        case DFPaidOuts:
+        case DFCreditCards:
+        case DFCashSHForDep:
+        case DFDeposit1:
+        case DFDeposit2:
+        case DFTotalDep:
+        case DFCashOSDAY:
+        case DFMgvdTransvoid:
+        case DFFoodEmpForDay:
+            return YES;
+        default:
+            return NO;
+            
+    }
+}
 
 +(NSString*) getTitleForDaily:(NSUInteger)value {
     NSString * result;
