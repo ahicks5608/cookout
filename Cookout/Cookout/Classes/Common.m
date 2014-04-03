@@ -17,7 +17,7 @@ NSString * const cfnLaborPercent = @"laborPercent";
 NSString * const cfnLaborRate = @"laborRate";
 NSString * const cfnEmployeeFoodAmt = @"empFoodAmt";
 NSString * const cfnCashOsAmt = @"cashOsAmt";
-NSString * const cfnCashAmt = @"cashAmt";
+
 NSString * const cfnCreditCardAmt = @"creditCardAmt";
 NSString * const cfnSalesTaxAmt = @"salesTaxAmt";
 NSString * const cfnMgmtVoidAmt = @"mgmtVoidAmt";

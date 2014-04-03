@@ -11,14 +11,17 @@
 @protocol CookOutDaily <NSObject>
 @required
 
--(NSNumber*) getEmployeeFoodAmt;
--(NSNumber*) getCashOsAmt;
--(NSNumber*) getCashAmt;
--(NSNumber*) getCreditCardAmt;
--(NSNumber*) getSalesTaxAmt;
--(NSNumber*) getMgmtVoidAmt;
+-(NSNumber*) getNetSalesDay;
+-(NSNumber*) getSalesTax;
 -(NSNumber*) getPaidOutAmt;
+-(NSNumber*) getCreditCardAmt;
+-(NSNumber*) getCashSHForDep;
+-(NSNumber*) getDeposit1;
+-(NSNumber*) getDeposit2;
 -(NSNumber*) getTotalDepositAmt;
+-(NSNumber*) getCashOsAmt;
+-(NSNumber*) getMgmtVoidAmt;
+-(NSNumber*) getEmployeeFoodAmt;
 
 //init
 -(id) initWithHourly:(NSArray*) hourlies data:(NSDictionary*) values;

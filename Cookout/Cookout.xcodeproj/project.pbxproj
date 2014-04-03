@@ -33,6 +33,8 @@
 		58A0B23818AE9142005C1E88 /* Daily.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0B23718AE9142005C1E88 /* Daily.m */; };
 		58A0B23A18AEA15C005C1E88 /* CookoutDailyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */; };
 		58A1D0AE18D21961003C4EB2 /* Calc.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58A1D0AD18D21961003C4EB2 /* Calc.Storyboard */; };
+		58A2E21918EDCB7500E9E543 /* Formula10.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A2E21818EDCB7500E9E543 /* Formula10.m */; };
+		58A2E21C18EDE07900E9E543 /* Formula3.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A2E21B18EDE07900E9E543 /* Formula3.m */; };
 		58A4C0B818E9C77F000CD73D /* DailyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A4C0B718E9C77F000CD73D /* DailyViewController.m */; };
 		58A4F60718ABDFCD0094E983 /* CookoutClassTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A4F60618ABDFCD0094E983 /* CookoutClassTest.m */; };
 		58A4F60A18AC0A320094E983 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A4F60918AC0A320094E983 /* Common.m */; };
@@ -101,6 +103,11 @@
 		58A0B23718AE9142005C1E88 /* Daily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Daily.m; sourceTree = "<group>"; };
 		58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CookoutDailyTest.m; sourceTree = "<group>"; };
 		58A1D0AD18D21961003C4EB2 /* Calc.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calc.Storyboard; sourceTree = "<group>"; };
+		58A2E21518EDCA4600E9E543 /* DailyFormulaProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyFormulaProtocol.h; sourceTree = "<group>"; };
+		58A2E21718EDCB7500E9E543 /* Formula10.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Formula10.h; sourceTree = "<group>"; };
+		58A2E21818EDCB7500E9E543 /* Formula10.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Formula10.m; sourceTree = "<group>"; };
+		58A2E21A18EDE07900E9E543 /* Formula3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Formula3.h; sourceTree = "<group>"; };
+		58A2E21B18EDE07900E9E543 /* Formula3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Formula3.m; sourceTree = "<group>"; };
 		58A354AD18AFE4DC00C69F36 /* CookOutAmounts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CookOutAmounts.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		58A354AE18AFE6C500C69F36 /* CookOutHourly.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookOutHourly.h; sourceTree = "<group>"; };
 		58A4C0B618E9C77F000CD73D /* DailyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyViewController.h; sourceTree = "<group>"; };
@@ -310,6 +317,17 @@
 			name = "calc stuff";
 			sourceTree = "<group>";
 		};
+		58A2E21618EDCB5400E9E543 /* Formulas */ = {
+			isa = PBXGroup;
+			children = (
+				58A2E21718EDCB7500E9E543 /* Formula10.h */,
+				58A2E21818EDCB7500E9E543 /* Formula10.m */,
+				58A2E21A18EDE07900E9E543 /* Formula3.h */,
+				58A2E21B18EDE07900E9E543 /* Formula3.m */,
+			);
+			name = Formulas;
+			sourceTree = "<group>";
+		};
 		58A4C0B418E9C5D0000CD73D /* hourly stuff */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +357,7 @@
 		58AA459318E5EEF20081CA3D /* daily stuff */ = {
 			isa = PBXGroup;
 			children = (
+				58A2E21618EDCB5400E9E543 /* Formulas */,
 				58A4C0B618E9C77F000CD73D /* DailyViewController.h */,
 				58A4C0B718E9C77F000CD73D /* DailyViewController.m */,
 				58AA459918E5FBCA0081CA3D /* DailyTableViewCell.h */,
@@ -369,6 +388,7 @@
 				58A354AD18AFE4DC00C69F36 /* CookOutAmounts.h */,
 				58A354AE18AFE6C500C69F36 /* CookOutHourly.h */,
 				581F35BA18B27A9D0078EE5D /* CookOutDaily.h */,
+				58A2E21518EDCA4600E9E543 /* DailyFormulaProtocol.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -501,6 +521,8 @@
 				58A4F60A18AC0A320094E983 /* Common.m in Sources */,
 				58A4C0B818E9C77F000CD73D /* DailyViewController.m in Sources */,
 				58A78FBA18C8D5C400DB3B03 /* DataManagerHourly.m in Sources */,
+				58A2E21C18EDE07900E9E543 /* Formula3.m in Sources */,
+				58A2E21918EDCB7500E9E543 /* Formula10.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

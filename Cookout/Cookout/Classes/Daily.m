@@ -16,7 +16,6 @@
     NSNumber *_employeeFoodAmt;
     NSNumber *_paidOutAmt;
     NSNumber *_mgmtVoidAmt;
-    NSNumber *_cashAmt;
     NSNumber *_cashOsAmt;
     NSNumber *_creditCardAmt;
     NSNumber *_totalDepositAmt;
@@ -40,7 +39,7 @@
         _upDownToday = @0;
         _paidOutAmt = @0;
         _mgmtVoidAmt = @0;
-        _cashAmt = @0;
+       
         _cashOsAmt = @0;
         _creditCardAmt = @0;
         _totalDepositAmt = @0;
@@ -60,8 +59,7 @@
         _upDownToday = @0;
         _paidOutAmt = @0;
         _mgmtVoidAmt = @0;
-        _cashAmt = @0;
-        _cashOsAmt = @0;
+                _cashOsAmt = @0;
         _creditCardAmt = @0;
         _totalDepositAmt = @0;
         _salesTaxAmt = @0;
@@ -76,7 +74,7 @@
             [_data addEntriesFromDictionary:values];
             _employeeFoodAmt = (NSNumber *) [_data valueForKeyPath:cfnEmployeeFoodAmt];
             _cashOsAmt = (NSNumber *) [_data valueForKeyPath:cfnCashOsAmt];
-            _cashAmt = (NSNumber *) [_data valueForKeyPath:cfnCashAmt];
+           
             _creditCardAmt = (NSNumber *) [_data valueForKeyPath:cfnCreditCardAmt];
             _salesTaxAmt = (NSNumber *) [_data valueForKeyPath:cfnSalesTaxAmt];
             _mgmtVoidAmt = (NSNumber *) [_data valueForKeyPath:cfnMgmtVoidAmt];
@@ -110,9 +108,6 @@
     return _cashOsAmt;
 }
 
--(NSNumber*) getCashAmt {
-    return _cashAmt;
-}
 
 -(NSNumber*) getMgmtVoidAmt {
     return _mgmtVoidAmt;
