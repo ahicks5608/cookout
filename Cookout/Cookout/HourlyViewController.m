@@ -15,6 +15,7 @@
 #import "HourlyEditViewController.h"
 #import "Hourly.h"
 #import "DailyData.h"
+#import "HourlyData.h"
 
 
 
@@ -46,9 +47,7 @@
     [segue perform];
 }
 - (void) reload{
-        AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = appDelegate.managedObjectContext;
-    _items = [_dataManager select:nil context:context];
+    _items = [_dataManager select:nil];
     _editButton.enabled = [_items count] >0;
     [_tableView reloadData];
 }
@@ -72,14 +71,69 @@
     }
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    /*
+     NSString *hoursWorked = viewController.fldHoursWorked.text;
+     NSString *str = viewController.fldSalesAmt.text;
+     
+     // NSString *salesAmount = [str substringWithRange:NSMakeRange(1, [str length]-1 )];
+     NSString *salesAmount = [str stringByReplacingOccurrencesOfString:@"$" withString:@""];
+     salesAmount = [salesAmount stringByReplacingOccurrencesOfString:@"," withString:@""];
+     NSString *serviceTime = viewController.fldServiceTime.text;
+     NSInteger timeOfDay = [viewController.fldTimeOfDay selectedRowInComponent:0];
+     NSString *laborRate = viewController.fldLaborRate.text;
+     laborRate = [laborRate stringByReplacingOccurrencesOfString:@"$" withString:@""];
+     //NSString *laborRate= [str substringWithRange:NSMakeRange(1, [str length]-1 )];
+     //NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] init];
+     */
+    
+    float netSalesAmt = 0.00;
+    int serviceTime1 = 0;  //average service before 5
+    int serviceTime2 = 0;  //average sevice after 5
+    float moneyPaid = 0;  //#15 lab$paysh
+    int count = [_items count];
+    if (buttonIndex == 1) {
+        for (HourlyData *item in _items) {
+            Hourly *hourly = (Hourly*) item.data;
+            netSalesAmt += [hourly.salesAmt floatValue];
+            moneyPaid += [hourly.laborRate floatValue] * [hourly.crewCount intValue];
+            
+            int timeVal = [hourly.serviceTime intValue];
+            
+            if ((timeVal >= TOD0) && (timeVal <= TOD17)) {
+                serviceTime1 += [hourly.serviceTime intValue];
+            }else {
+                serviceTime2 += [hourly.serviceTime intValue];
+                
+            }
+            
+        }
+    }
+    serviceTime1 = serviceTime1 / count;
+    serviceTime2 = serviceTime2 / count;
+    moneyPaid = moneyPaid / count;
+    
+    NSNumber *netSalesVal = [NSNumber numberWithFloat:netSalesAmt];
+    NSNumber *serviceTime1Val = [NSNumber numberWithInt:serviceTime1];
+    NSNumber *serviceTime2Val = [NSNumber numberWithInt:serviceTime2];
+    NSNumber *moneyPaidVal = [NSNumber numberWithFloat:moneyPaid];
+    
+    NSDictionary *values = @{cfnSalesAmt: netSalesVal, cfnServiceTime: serviceTime1Val, cfnServiceTime2: serviceTime2Val, cfnLabMoneyPaid: moneyPaidVal};
+    
+    
+}
+
+
 
 - (void) endOfDay {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Create a Daily"
                                                     message:@"Are you sure you want to close out current day ?"
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
+                                                   delegate:self
+                                          cancelButtonTitle:@"Cancel"
+                                          otherButtonTitles:@"OK",nil];
     [alert show];
+    
 
 }
 
@@ -171,7 +225,7 @@
 
 -(void) showEditor {
     _newRecord = FALSE;
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Hourly" bundle:nil];
    HourlyEditViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"HourlyEditViewController"];
     controller.delegate = self;
     CommonModalSegue *segue = [[CommonModalSegue alloc] initWithIdentifier:@"masterToDetail"
@@ -221,7 +275,7 @@
         [appDelegate.managedObjectContext deleteObject:hd];
         [appDelegate.managedObjectContext save:nil];
         _items = nil;
-         _items = [_dataManager select:nil context:appDelegate.managedObjectContext];
+         _items = [_dataManager select:nil];
         _editButton.enabled = [_items count] >0;
         [self.tableView reloadData];
         
@@ -256,6 +310,7 @@
     NSString *serviceTime = viewController.fldServiceTime.text;
     NSInteger timeOfDay = [viewController.fldTimeOfDay selectedRowInComponent:0];
     NSString *laborRate = viewController.fldLaborRate.text;
+    laborRate = [laborRate stringByReplacingOccurrencesOfString:@"$" withString:@""];
     //NSString *laborRate= [str substringWithRange:NSMakeRange(1, [str length]-1 )];
     //NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] init];
     
@@ -267,18 +322,18 @@
                            cfnLaborRate: [NSNumber numberWithFloat:laborRate.floatValue]
                            };
     
-    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
    
     
     Hourly *hourly = [[Hourly alloc] initWithDictionary:dict];
     if (_newRecord == TRUE) {
-        [_dataManager addNew:@{ccnData: hourly} context:appDelegate.managedObjectContext];
+        [_dataManager addNew:@{ccnData: hourly}];
     } else {
         NSMutableDictionary *dict2 = [[NSMutableDictionary alloc] initWithCapacity:2];
         NSString *value = [_selectedData valueForKey:ccnUuid];
         [dict2 setValue:value forKey:ccnUuid];
         [dict2 setValue:hourly forKey:ccnData];
-        [_dataManager update:dict2 context:appDelegate.managedObjectContext];
+        [_dataManager update:dict2];
         
     }
     [self reload];

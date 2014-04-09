@@ -11,7 +11,6 @@
 @protocol CookOutAmounts <NSObject>
 @required
 -(NSString*) getStoreCode;
--(NSNumber*) getSalesAmt;
 -(NSNumber*) getCrewCount;
 -(NSNumber*) getServiceTime;
 -(NSNumber*) getLaborPercent;

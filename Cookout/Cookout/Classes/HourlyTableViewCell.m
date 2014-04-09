@@ -39,7 +39,7 @@
     _fldServiceTime.text = [values valueForKey:cfnServiceTime];
     _fldHoursWorked.text = [values valueForKey:cfnHoursWorked];
     _fldLaborPercent.text = [values valueForKey:cfnLaborPercent];
-
+    _fldLaborRate.text = [values valueForKey:cfnLaborRate];
 }
 
 

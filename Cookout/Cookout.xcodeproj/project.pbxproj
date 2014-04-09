@@ -22,6 +22,7 @@
 		2030CE4E18ABBE3500636B2C /* CookoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030CE4D18ABBE3500636B2C /* CookoutTests.m */; };
 		2030CE5818ABBE6E00636B2C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2030CE5718ABBE6E00636B2C /* CoreData.framework */; };
 		2030CE6218ABBEF700636B2C /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2030CE6018ABBEF700636B2C /* DataModel.xcdatamodeld */; };
+		581198E618F5E5260032A854 /* Formula2.m in Sources */ = {isa = PBXBuildFile; fileRef = 581198E518F5E5260032A854 /* Formula2.m */; };
 		589CA6AB18BF9AE100DC73CA /* TODTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 589CA6AA18BF9AE100DC73CA /* TODTest.m */; };
 		589E023B18EC822C0028AFC0 /* Hourly.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 589E023A18EC822C0028AFC0 /* Hourly.storyboard */; };
 		589E024918EC8C5D0028AFC0 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589E024818EC8C5D0028AFC0 /* MainTableViewCell.m */; };
@@ -85,6 +86,8 @@
 		2030CE4D18ABBE3500636B2C /* CookoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookoutTests.m; sourceTree = "<group>"; };
 		2030CE5718ABBE6E00636B2C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		2030CE6118ABBEF700636B2C /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		581198E418F5E5260032A854 /* Formula2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Formula2.h; sourceTree = "<group>"; };
+		581198E518F5E5260032A854 /* Formula2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Formula2.m; sourceTree = "<group>"; };
 		581F35BA18B27A9D0078EE5D /* CookOutDaily.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookOutDaily.h; sourceTree = "<group>"; };
 		589CA6AA18BF9AE100DC73CA /* TODTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TODTest.m; sourceTree = "<group>"; };
 		589CA6AF18BFB2D100DC73CA /* HourlyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HourlyViewController.h; path = ../HourlyViewController.h; sourceTree = "<group>"; };
@@ -324,6 +327,8 @@
 				58A2E21818EDCB7500E9E543 /* Formula10.m */,
 				58A2E21A18EDE07900E9E543 /* Formula3.h */,
 				58A2E21B18EDE07900E9E543 /* Formula3.m */,
+				581198E418F5E5260032A854 /* Formula2.h */,
+				581198E518F5E5260032A854 /* Formula2.m */,
 			);
 			name = Formulas;
 			sourceTree = "<group>";
@@ -498,6 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				589E024C18EC8C720028AFC0 /* MainTableViewController.m in Sources */,
+				581198E618F5E5260032A854 /* Formula2.m in Sources */,
 				2030CE6218ABBEF700636B2C /* DataModel.xcdatamodeld in Sources */,
 				58A76CE818D37C770098D9F9 /* BaseModalViewController.m in Sources */,
 				58A89F2318BD2B7300239ED0 /* HourlyTableViewCell.m in Sources */,

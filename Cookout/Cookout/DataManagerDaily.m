@@ -61,9 +61,11 @@
 }
 
 
-
++ (NSDictionary*) summarizeData {
+    return nil;
+}
     
-- (NSArray*) select:(NSDictionary*) values{
+-(NSArray*) select:(NSDictionary*) values{
     
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
@@ -94,7 +96,6 @@
     }
     return nil;
 }
-
 
 - (NSManagedObject*) load:(NSDictionary*) values{
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];

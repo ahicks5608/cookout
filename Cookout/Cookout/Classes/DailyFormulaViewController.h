@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Daily.h"
+
 
 @interface DailyFormulaViewController : UIViewController <UITextFieldDelegate>
 
@@ -16,4 +18,10 @@
 @property (strong, nonatomic) IBOutlet UITextField *fldInput1;
 @property (strong, nonatomic) IBOutlet UITextField *fldInput2;
 @property (strong, nonatomic) IBOutlet UITextField *fldTotalInput;
+
+-(void) configWithData:(Daily*) data fieldId:(NSUInteger) value;
+
+
+
+
 @end

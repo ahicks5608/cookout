@@ -15,7 +15,10 @@
 #import "CommonPushSegue.h"
 
 
-@interface DailyViewController ()
+@interface DailyViewController () {
+    NSUInteger _selectedRow;
+    
+}
 
 @end
 
@@ -44,6 +47,15 @@
 
 - (void) didDismissViewController{
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"masterToFormula"]) {
+        DailyFormulaViewController *controller =  (DailyFormulaViewController*)segue.destinationViewController;
+        Daily *item = [[Daily alloc] init];
+        [controller configWithData:item fieldId:_selectedRow];
+    }
 }
 
 -(void) showFormula {
@@ -94,6 +106,7 @@
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    _selectedRow = indexPath.row;
     if ([Common canEditDaily:indexPath.row]) {
         [self showCalc];
     }else{

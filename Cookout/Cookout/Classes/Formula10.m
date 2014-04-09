@@ -46,7 +46,7 @@
 
 -(NSDictionary*) getvalues{
     [_result removeAllObjects];
-    NSNumber *value1 = [NSNumber numberWithFloat:[[_delegate getNetSalesDay] floatValue]];
+    NSNumber *value1 = [NSNumber numberWithFloat:[[_delegate getNetSalesDAY] floatValue]];
     NSNumber *value2 = [NSNumber numberWithFloat:[[_delegate getSalesTax] floatValue]];
     float val = [value1 floatValue] + [value2 floatValue];
     NSNumber *value3 = [NSNumber numberWithFloat:val];

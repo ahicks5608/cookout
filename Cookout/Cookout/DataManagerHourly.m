@@ -14,10 +14,15 @@
 
 @implementation DataManagerHourly
 
-- (NSManagedObject*) addNew:(NSDictionary*) values context:(NSManagedObjectContext*)context {
+- (void) summarizeData{
     
+}
 
-    NSManagedObject *hourlyData = [NSEntityDescription insertNewObjectForEntityForName:ctnHourlyData  inManagedObjectContext:context];
+
+- (NSManagedObject*) addNew:(NSDictionary*) values {
+    
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    NSManagedObject *hourlyData = [NSEntityDescription insertNewObjectForEntityForName:ctnHourlyData  inManagedObjectContext:appDelegate.managedObjectContext];
     Hourly *hourly = [values valueForKey:ccnData];
     NSDictionary *extraInfo = [values valueForKey:ccnExtrainfo];
     NSNumber *hourlyTOD = hourly.timeOfDay;
@@ -33,7 +38,7 @@
     if (extraInfo != nil) {
         [hourlyData setValue:extraInfo forKey:ccnExtrainfo];
     }
-    [context save:nil];
+    [appDelegate.managedObjectContext save:nil];
     return hourlyData;
     
 }
@@ -75,12 +80,12 @@
 }
 
 
-- (NSManagedObject*) load:(NSDictionary*) values context:(NSManagedObjectContext*)context {
-    
+- (NSManagedObject*) load:(NSDictionary*) values {
+     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     NSString *value = [values valueForKey:ccnUuid];
     NSPredicate *predicate =[NSPredicate predicateWithFormat:@"uuid == %@", value];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:ctnHourlyData inManagedObjectContext:context];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:ctnHourlyData inManagedObjectContext:appDelegate.managedObjectContext];
     [fetchRequest setEntity:entity];
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
@@ -92,7 +97,7 @@
     [fetchRequest setSortDescriptors:sortDescriptors];
     [fetchRequest setPredicate:predicate];
     
-    NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
+    NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:appDelegate.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     
     NSError *error = nil;
     if ([fetchedResultsController performFetch:&error]) {
@@ -106,17 +111,19 @@
 }
 
 
-- (void) remove:(NSDictionary*) values context:(NSManagedObjectContext*)context{
-    NSManagedObject* item = [self load:values context:context];
+- (void) remove:(NSDictionary*) values {
+
+    NSManagedObject* item = [self load:values];
     if (item != nil) {
-        [context deleteObject:item];
-        [context save:nil];
+        AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+        [appDelegate.managedObjectContext deleteObject:item];
+        [appDelegate.managedObjectContext save:nil];
         
     }
 }
 
-- (void) update:(NSDictionary*) values context:(NSManagedObjectContext*)context {
-    NSManagedObject* hourlyData = [self load:values context:context];
+- (void) update:(NSDictionary*) values{
+    NSManagedObject* hourlyData = [self load:values ];
     if (hourlyData != nil) {
         AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
         Hourly *hourly = [values valueForKey:ccnData];
@@ -134,14 +141,22 @@
     }
 }
 
-- (NSArray*) select:(NSDictionary*) values context:(NSManagedObjectContext*)context{
+
++ (NSArray*) summarizeData {
+    DataManagerHourly *mgr = [[DataManagerHourly alloc] init];
+    return [mgr select:nil];
+}
+
+
+- (NSArray*) select:(NSDictionary*) values{
     NSPredicate *predicate = nil;
     if(values != nil) {
-        NSPredicate *predicate = (NSPredicate*) [values valueForKey:cfnPredicate];
+        predicate = (NSPredicate*) [values valueForKey:cfnPredicate];
     }
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:ctnHourlyData inManagedObjectContext:context];
+     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:ctnHourlyData inManagedObjectContext:appDelegate.managedObjectContext];
     [fetchRequest setEntity:entity];
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
@@ -156,7 +171,7 @@
         [fetchRequest setPredicate:predicate];
     }
     
-    NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
+    NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:appDelegate.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     
     NSError *error = nil;
     if ([fetchedResultsController performFetch:&error]) {

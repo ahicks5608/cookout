@@ -10,7 +10,7 @@
 #import "Common.h"
 
 @interface Daily(){
-    NSNumber *_netSalesAmt;
+    NSNumber *_netSalesDay;
     NSNumber *_totalServiceTime;
     NSNumber *_upDownToday;
     NSNumber *_employeeFoodAmt;
@@ -33,33 +33,32 @@
 {
     self = [super init];
     if (self) {
-        _netSalesAmt = @0;
+        _netSalesDay = @0;
         _employeeFoodAmt = @0;
         _totalServiceTime = @0;
         _upDownToday = @0;
         _paidOutAmt = @0;
         _mgmtVoidAmt = @0;
-       
         _cashOsAmt = @0;
         _creditCardAmt = @0;
         _totalDepositAmt = @0;
         _salesTaxAmt = @0;
-        
-                
     }
     return self;
 }
 
+
+
 -(id) initWithHourly:(NSArray*) hourlies data:(NSDictionary*) values {
     self = [super init];
     if (self) {
-        _netSalesAmt = @0;
+        _netSalesDay = @0;
         _employeeFoodAmt = @0;
         _totalServiceTime = @0;
         _upDownToday = @0;
         _paidOutAmt = @0;
         _mgmtVoidAmt = @0;
-                _cashOsAmt = @0;
+        _cashOsAmt = @0;
         _creditCardAmt = @0;
         _totalDepositAmt = @0;
         _salesTaxAmt = @0;
@@ -86,20 +85,27 @@
         
     }
     return self;
-    
-}
--(NSNumber *)getSalesAmt {
-    return _salesAmt;
+
 }
 
--(NSNumber*) getSalesTaxAmt {
-    return _salesTaxAmt;
+-(NSNumber*) getNetSalesDAY{
+    return @0;
 }
-
--(NSNumber*) getTotalDepositAmt {
-    return _totalDepositAmt;
+-(NSNumber*) getSalesTax{
+    return @0;
 }
-
+-(NSNumber*) getCashSHForDep{
+    return @0;
+}
+-(NSNumber*) getDeposit1{
+    return @0;
+}
+-(NSNumber*) getDeposit2{
+    return @0;
+}
+-(NSNumber*) getTotalDepositAmt{
+    return @0;
+}
 -(NSNumber*) getCreditCardAmt {
     return _creditCardAmt;
 }
@@ -116,13 +122,6 @@
 -(NSNumber*) getPaidOutAmt {
     return _paidOutAmt;
 }
-
--(NSNumber*) getNetSalesAmt {
-    
-    return _netSalesAmt;
-    
-}
-
 
 -(NSNumber*) getTotalServiceTime {
     return _totalServiceTime;

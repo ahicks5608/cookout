@@ -121,10 +121,11 @@ extern NSString * const cfnTimeOfDay;
 extern NSString * const cfnSalesAmt;
 extern NSString * const cfnHoursWorked;
 extern NSString * const cfnServiceTime;
+extern NSString * const cfnServiceTime2;
 extern NSString * const cfnUpDownAmt;
 extern NSString * const cfnLaborPercent;
 extern NSString * const cfnLaborRate;
-
+extern NSString * const cfnLabMoneyPaid;
 extern NSString * const cfnPredicate;
 
 //hard coded table names

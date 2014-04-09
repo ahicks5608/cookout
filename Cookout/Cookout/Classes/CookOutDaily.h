@@ -11,13 +11,13 @@
 @protocol CookOutDaily <NSObject>
 @required
 
--(NSNumber*) getNetSalesDay;
+-(NSNumber*) getNetSalesDAY;
 -(NSNumber*) getSalesTax;
--(NSNumber*) getPaidOutAmt;
--(NSNumber*) getCreditCardAmt;
 -(NSNumber*) getCashSHForDep;
 -(NSNumber*) getDeposit1;
 -(NSNumber*) getDeposit2;
+-(NSNumber*) getPaidOutAmt;
+-(NSNumber*) getCreditCardAmt;
 -(NSNumber*) getTotalDepositAmt;
 -(NSNumber*) getCashOsAmt;
 -(NSNumber*) getMgmtVoidAmt;

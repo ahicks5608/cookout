@@ -7,12 +7,56 @@
 //
 
 #import "DailyFormulaViewController.h"
+#import "Formula3.h"
+#import "Formula10.h"
+#import "Common.h"
+#import "CookOutDaily.h"
 
-@interface DailyFormulaViewController ()
+
+@interface DailyFormulaViewController (){
+    Daily *_data;
+    NSUInteger _formulaId;
+    
+}
+
+
 
 @end
 
 @implementation DailyFormulaViewController
+
+
+- (void) configWithData:(Daily*) data fieldId:(NSUInteger) value{
+    _data = data;
+    _formulaId = value;
+
+}
+
+
+- (void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if (_formulaId == DFGrossSales  ) {
+        Formula3 *f3 = [[Formula3 alloc] init];
+        f3.delegate = _data;
+        NSDictionary *result = [f3 getvalues];
+
+        
+      NSArray *labels =  [result valueForKey:@"labels"];
+      NSArray *values =  [result valueForKey:@"values"];
+        
+        _fldInput1.text = [values objectAtIndex:0];
+        _fldInput2.text = [values objectAtIndex:1];
+        _fldTotalInput.text = [values objectAtIndex:2];
+        
+        _lblInput1.text = [labels objectAtIndex:1];
+        _lblInput2.text = [labels objectAtIndex:2];
+        _lblTotalInput.text = @"Total";
+        self.title = [labels objectAtIndex:0];
+        
+    }
+}
+
+
 
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{

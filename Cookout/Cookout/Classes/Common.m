@@ -12,9 +12,11 @@ NSString * const cfnValue = @"value";
 NSString * const cfnSalesAmt = @"salesAmt";
 NSString * const cfnHoursWorked = @"crewCount";
 NSString * const cfnServiceTime = @"serviceTime";
+NSString * const cfnServiceTime2 = @"serviceTime2";
 NSString * const cfnUpDownAmt = @"upDownAmt";
 NSString * const cfnLaborPercent = @"laborPercent";
 NSString * const cfnLaborRate = @"laborRate";
+NSString * const cfnLabMoneyPaid = @"labMoneyPaid";
 NSString * const cfnEmployeeFoodAmt = @"empFoodAmt";
 NSString * const cfnCashOsAmt = @"cashOsAmt";
 

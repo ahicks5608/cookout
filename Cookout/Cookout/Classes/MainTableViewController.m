@@ -36,6 +36,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.tableView reloadData];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -104,14 +106,7 @@
     }else{
         title = @"Daily";
     }
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                    message:@"row selected"
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
-    
-        if (indexPath.row == 0) {
+           if (indexPath.row == 0) {
             [self showHourlyController];
         } else{
             [self showDailyController];
