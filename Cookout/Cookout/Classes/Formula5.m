@@ -1,16 +1,16 @@
 //
-//  Formula2.m
+//  Formula5.m
 //  Cookout
 //
-//  Created by Alex Hicks on 4/9/14.
+//  Created by Alex Hicks on 4/15/14.
 //  Copyright (c) 2014 Simple iApps. All rights reserved.
 //
 
-#import "Formula2.h"
+#import "Formula5.h"
 #import "Common.h"
 
 
-@interface Formula2() {
+@interface Formula5() {
     NSMutableArray *_labels;
     NSMutableArray *_values;
     NSMutableDictionary *_result;
@@ -20,16 +20,16 @@
 @end
 
 
-@implementation Formula2
+@implementation Formula5
 
 -(id) init {
     if (self = [super init]) {
         _labels = [NSMutableArray arrayWithCapacity:4];
         _values = [NSMutableArray arrayWithCapacity:4];
         _result = [NSMutableDictionary dictionaryWithCapacity:2];
-        [_labels addObject:[Common getTitleForDaily:DFNetSalesDAY]];
-        [_labels addObject:@"Sales Tax Rate"];
-        [_labels addObject:[Common getTitleForDaily:DFSalesTax]];
+        [_labels addObject:[Common getTitleForDaily:DFCreditCards]];
+        [_labels addObject:[Common getTitleForDaily:DFGrossSales]];
+        [_labels addObject:[Common getTitleForDaily:DFCashSHForDep]];
         
     }
     return self;
@@ -44,10 +44,9 @@
 
 -(NSDictionary*) getvalues{
     [_result removeAllObjects];
-    NSNumber *value1 = [_delegate getNetSalesDAY];
-    NSNumber *value2 = @7.56f;
-#warning SALES TAX RATE NEEDS WORK
-    float val = [value1 floatValue] + [value2 floatValue];
+    NSNumber *value1 = [_delegate getGrossSales];
+    NSNumber *value2 = [_delegate getCashSHForDep];
+    float val = [value1 floatValue] - [value2 floatValue];
     NSNumber *value3 = [NSNumber numberWithFloat:val];
     
     
@@ -67,5 +66,3 @@
 }
 
 @end
-
-

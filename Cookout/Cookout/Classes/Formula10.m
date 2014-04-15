@@ -29,9 +29,9 @@
         _labels = [NSMutableArray arrayWithCapacity:4];
         _values = [NSMutableArray arrayWithCapacity:4];
         _result = [NSMutableDictionary dictionaryWithCapacity:2];
-        [_labels addObject:[Common getTitleForDaily:DFGrossSales]];
         [_labels addObject:[Common getTitleForDaily:DFNetSalesDAY]];
-        [_labels addObject:[Common getTitleForDaily:DFSalesTax]];
+        [_labels addObject:[Common getTitleForDaily:DFCashOSDAY]];
+        [_labels addObject:[Common getTitleForDaily:DFCashOSPercDAY91]];
         
     }
     return self;
@@ -47,8 +47,8 @@
 -(NSDictionary*) getvalues{
     [_result removeAllObjects];
     NSNumber *value1 = [NSNumber numberWithFloat:[[_delegate getNetSalesDAY] floatValue]];
-    NSNumber *value2 = [NSNumber numberWithFloat:[[_delegate getSalesTax] floatValue]];
-    float val = [value1 floatValue] + [value2 floatValue];
+    NSNumber *value2 = [NSNumber numberWithFloat:[[_delegate getCashOsAmt] floatValue]];
+    float val = ([value2 floatValue] / [value1 floatValue]) * 100;
     NSNumber *value3 = [NSNumber numberWithFloat:val];
     [_values addObject:value3];
     [_values addObject:value1];

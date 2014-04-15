@@ -10,58 +10,37 @@
 #import "Common.h"
 
 @interface Daily(){
-    NSNumber *_netSalesDay;
-    NSNumber *_totalServiceTime;
-    NSNumber *_upDownToday;
-    NSNumber *_employeeFoodAmt;
-    NSNumber *_paidOutAmt;
-    NSNumber *_mgmtVoidAmt;
-    NSNumber *_cashOsAmt;
-    NSNumber *_creditCardAmt;
-    NSNumber *_totalDepositAmt;
-    NSNumber *_salesTaxAmt;
+    NSMutableArray *_fields;
     NSMutableArray *_hourlies;
     NSMutableDictionary *_data;
-    
 }
 @end
 
 
 @implementation Daily
 
+static float kSalesTaxRate = 7.56;
+
+
 - (id)init
 {
+    
     self = [super init];
     if (self) {
-        _netSalesDay = @0;
-        _employeeFoodAmt = @0;
-        _totalServiceTime = @0;
-        _upDownToday = @0;
-        _paidOutAmt = @0;
-        _mgmtVoidAmt = @0;
-        _cashOsAmt = @0;
-        _creditCardAmt = @0;
-        _totalDepositAmt = @0;
-        _salesTaxAmt = @0;
+        _fields = [[NSMutableArray alloc] initWithCapacity:36];
+        for (int x = 0; x<35; x++) {
+            [_fields setObject:@0 atIndexedSubscript:x];
+        }
     }
     return self;
 }
 
 
 
--(id) initWithHourly:(NSArray*) hourlies data:(NSDictionary*) values {
+-(id) initWithData:(NSDictionary*) values Hourlies:(NSArray*) hourlies{
     self = [super init];
     if (self) {
-        _netSalesDay = @0;
-        _employeeFoodAmt = @0;
-        _totalServiceTime = @0;
-        _upDownToday = @0;
-        _paidOutAmt = @0;
-        _mgmtVoidAmt = @0;
-        _cashOsAmt = @0;
-        _creditCardAmt = @0;
-        _totalDepositAmt = @0;
-        _salesTaxAmt = @0;
+        
         _hourlies = [[NSMutableArray alloc] initWithCapacity:24];
         
         if (hourlies){
@@ -69,70 +48,53 @@
         }
         _data = [[NSMutableDictionary alloc] initWithCapacity:10];
         
-        if (values) {
-            [_data addEntriesFromDictionary:values];
-            _employeeFoodAmt = (NSNumber *) [_data valueForKeyPath:cfnEmployeeFoodAmt];
-            _cashOsAmt = (NSNumber *) [_data valueForKeyPath:cfnCashOsAmt];
-           
-            _creditCardAmt = (NSNumber *) [_data valueForKeyPath:cfnCreditCardAmt];
-            _salesTaxAmt = (NSNumber *) [_data valueForKeyPath:cfnSalesTaxAmt];
-            _mgmtVoidAmt = (NSNumber *) [_data valueForKeyPath:cfnMgmtVoidAmt];
-            _paidOutAmt = (NSNumber *) [_data valueForKeyPath:cfnPaidOutAmt];
-            _totalDepositAmt = (NSNumber *) [_data valueForKeyPath:cfnTotalDepositAmt];
-
-        }
-        
-        
-    }
+     }
     return self;
 
 }
 
+
+
 -(NSNumber*) getNetSalesDAY{
-    return @0;
+    return [_fields objectAtIndex:DFNetSalesDAY];
 }
 -(NSNumber*) getSalesTax{
-    return @0;
+    return [_fields objectAtIndex:DFSalesTax];
 }
--(NSNumber*) getCashSHForDep{
-    return @0;
+-(NSNumber*) getGrossSales{
+    return [_fields objectAtIndex:DFGrossSales];
 }
--(NSNumber*) getDeposit1{
-    return @0;
-}
--(NSNumber*) getDeposit2{
-    return @0;
-}
--(NSNumber*) getTotalDepositAmt{
-    return @0;
+-(NSNumber*) getPaidOutAmt {
+    return [_fields objectAtIndex:DFPaidOuts];
 }
 -(NSNumber*) getCreditCardAmt {
-    return _creditCardAmt;
+    return [_fields objectAtIndex:DFCreditCards];
 }
-
--(NSNumber*) getCashOsAmt {
-    return _cashOsAmt;
+-(NSNumber*) getCashSHForDep{
+    return [_fields objectAtIndex:DFCashSHForDep];
 }
-
-
+-(NSNumber*) getDeposit1{
+    return [_fields objectAtIndex:DFDeposit1];
+}
+-(NSNumber*) getDeposit2{
+    return [_fields objectAtIndex:DFDeposit2];
+}
+-(NSNumber*) getTotalDepositAmt{
+    return [_fields objectAtIndex:DFTotalDep];
+}
+-(NSNumber*) getCashOSDAY {
+    return [_fields objectAtIndex:DFCashOSDAY];
+}
 -(NSNumber*) getMgmtVoidAmt {
-    return _mgmtVoidAmt;
+    return [_fields objectAtIndex:DFMgvdTransvoid];;
 }
-
--(NSNumber*) getPaidOutAmt {
-    return _paidOutAmt;
-}
-
 -(NSNumber*) getTotalServiceTime {
-    return _totalServiceTime;
+    return [_fields objectAtIndex:DFTotalServiceTime];
 }
 
 
 //
 
--(NSNumber*) getUpDownAmt{
-    return _upDownToday;
-}
 
 -(NSNumber*) compare:(NSObject*) daily what:(NSUInteger) whatToCompare{
     return @0;

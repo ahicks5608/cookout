@@ -14,7 +14,6 @@
     NSNumber *_salesAmt;
     NSNumber *_crewCount;
     NSNumber *_serviceTime;
-    NSNumber *_upDownAmt;
     NSNumber *_laborRate;
 }
 
@@ -33,7 +32,7 @@
     _crewCount = [decoder decodeObjectForKey:cfnHoursWorked];
     _timeOfDay = [decoder decodeObjectForKey:cfnTimeOfDay];
     _serviceTime = [decoder decodeObjectForKey:cfnServiceTime];
-    _upDownAmt = [decoder decodeObjectForKey:cfnUpDownAmt];
+    
     _laborRate = [decoder decodeObjectForKey:cfnLaborRate];
     
     return self;
@@ -44,7 +43,7 @@
     [encoder encodeObject:_crewCount forKey:cfnHoursWorked];
     [encoder encodeObject:_timeOfDay forKey:cfnTimeOfDay];
     [encoder encodeObject:_serviceTime forKey:cfnServiceTime];
-    [encoder encodeObject:_upDownAmt forKey:cfnUpDownAmt];
+    
     [encoder encodeObject:_laborRate forKey:cfnLaborRate];
 }
 
@@ -54,7 +53,7 @@
         _crewCount = @0;
         _timeOfDay = @0;
         _serviceTime = @0;
-        _upDownAmt = @0;
+        
         _laborRate = @0;
     }return self;
 }
@@ -65,7 +64,7 @@
         _crewCount = (NSNumber*)[dict valueForKey:cfnHoursWorked];
         _serviceTime = (NSNumber*)[dict valueForKey:cfnServiceTime];
         _laborRate = (NSNumber*)[dict valueForKey:cfnLaborRate];
-        _upDownAmt = (NSNumber*)[dict valueForKey:cfnUpDownAmt];
+        
         _timeOfDay = (NSNumber*)[dict valueForKey:cfnTimeOfDay];
         
     }

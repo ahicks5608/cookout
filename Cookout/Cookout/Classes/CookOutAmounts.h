@@ -14,6 +14,5 @@
 -(NSNumber*) getCrewCount;
 -(NSNumber*) getServiceTime;
 -(NSNumber*) getLaborPercent;
--(NSNumber*) getUpDownAmt;
 
 @end

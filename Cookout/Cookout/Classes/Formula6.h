@@ -1,8 +1,8 @@
 //
-//  Formula2.h
+//  Formula6.h
 //  Cookout
 //
-//  Created by Alex Hicks on 4/9/14.
+//  Created by Alex Hicks on 4/10/14.
 //  Copyright (c) 2014 Simple iApps. All rights reserved.
 //
 
@@ -11,9 +11,8 @@
 #import "CookOutDaily.h"
 #import "Daily.h"
 
-@interface Formula2 : NSObject <DailyFormulaProtocol>
+@interface Formula6 : NSObject <DailyFormulaProtocol>
 
 @property (nonatomic, assign) id<CookOutDaily> delegate;
 
 @end
-

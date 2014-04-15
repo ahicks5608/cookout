@@ -14,20 +14,29 @@
 
 @interface Daily: NSObject <CookOutAmounts, CookOutDaily>
 
-@property(nonatomic, strong, getter = getNetSalesDay, setter = setNetSalesDay:) NSNumber* netSalesDay;
+
 @property (nonatomic, readonly, getter = getPayRate) NSNumber *payrate;
 @property (nonatomic, readonly, getter = getStoreCode) NSString *storeCode;
+
+
+
+@property(nonatomic, strong, getter = getNetSalesDay, setter = setNetSalesDay:) NSNumber* netSalesDay;
+@property (nonatomic, readonly, getter = getSalesTaxAmt) NSNumber*salesTaxAmt;
 @property (nonatomic, readonly, getter = getSalesAmount) NSNumber* salesAmt;
 @property (nonatomic, readonly, getter = getCrewCount) NSNumber* crewCount;
 @property (nonatomic, readonly, getter = getServiceTime) NSNumber* serviceTime;
 @property (nonatomic, readonly, getter = getLaborPercent) NSNumber* laborPercent;
 @property (nonatomic, readonly, getter = getUpDownAmount) NSNumber* upDownAmt;
 @property (nonatomic, readonly, getter = getEmployeeFoodAmt) NSNumber*employeeFoodAmt;
-@property (nonatomic, readonly, getter = getSalesTaxAmt) NSNumber*salesTaxAmt;
 
 
 
--(id) initWithHourly:(NSArray*) hourlies data:(NSDictionary*) values;
+//
+@property (nonatomic, strong) NSNumber *grossSales; 
+
+
+
+-(id) initWithData:(NSDictionary*) values Hourlies:(NSArray*) hourlies;
 
 
 
