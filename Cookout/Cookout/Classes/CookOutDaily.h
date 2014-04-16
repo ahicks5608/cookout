@@ -43,12 +43,14 @@
 -(NSNumber*) getFoodEmpForDay;
 -(NSNumber*) getFoodEmpPercDAY281;
 -(NSNumber*) getFoodEmpMONTH2830;
--(NSNumber*) getLaborAmtWEEK1516;
+-(NSNumber*) getFoodEmpPercMONTH3014;
+-(NSNumber*) getSalesLastWeekSameDay;
+-(NSNumber*) getUpDownToday132;
+-(NSNumber*) getNetSalesLastWEEKThruTODAY;
+-(NSNumber*) getUpDownThisWEEK1334;
 
 
 
--(NSNumber*) getMgmtVoidAmt;
--(NSNumber*) getEmployeeFoodAmt;
 
 
 

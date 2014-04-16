@@ -46,7 +46,7 @@
     [_result removeAllObjects];
     NSNumber *value1 = [_delegate getNetSalesDAY];
     NSNumber *value2 = @7.56f;
-#warning SALES TAX RATE NEEDS WORK
+#warning SALES TAX RATE NEEDS WORK 
     float val = [value1 floatValue] + [value2 floatValue];
     NSNumber *value3 = [NSNumber numberWithFloat:val];
     

@@ -105,7 +105,6 @@ NSString* const ccnUuid = @"uuid";
         
         case DFPaidOuts:
         case DFCreditCards:
-        
         case DFDeposit1:
         case DFDeposit2:
         case DFTotalDep:
