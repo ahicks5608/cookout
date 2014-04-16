@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5041.1" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="BaseEntity" representedClassName="BaseEntity" isAbstract="YES" syncable="YES">
-        <attribute name="data" attributeType="Transformable" valueTransformerName="DictionaryTransformer" storedInTruthFile="YES" syncable="YES"/>
-        <attribute name="extraInfo" optional="YES" attributeType="Transformable" valueTransformerName="DictionaryTransformer" storedInTruthFile="YES" syncable="YES"/>
         <attribute name="timeStamp" attributeType="Date" indexed="YES" syncable="YES"/>
         <attribute name="uuid" attributeType="String" indexed="YES" syncable="YES"/>
     </entity>
-    <entity name="DailyData" representedClassName="DailyData" parentEntity="HourlyData" syncable="YES"/>
+    <entity name="DailyData" representedClassName="DailyData" parentEntity="BaseEntity" syncable="YES">
+        <attribute name="data" optional="YES" attributeType="Transformable" valueTransformerName="DailyDataTransformer" storedInTruthFile="YES" syncable="YES"/>
+        <attribute name="extraInfo" optional="YES" attributeType="Binary" valueTransformerName="DictionaryTransformer" storedInTruthFile="YES" syncable="YES"/>
+    </entity>
     <entity name="HourlyData" representedClassName="HourlyData" parentEntity="BaseEntity" syncable="YES">
+        <attribute name="data" optional="YES" attributeType="Transformable" valueTransformerName="HourlyDataTransformer" storedInTruthFile="YES" syncable="YES"/>
+        <attribute name="extraInfo" optional="YES" attributeType="Transformable" storedInTruthFile="YES" syncable="YES"/>
         <attribute name="timeOfDay" attributeType="Integer 16" minValueString="0" maxValueString="23" defaultValueString="0" indexed="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="BaseEntity" positionX="36" positionY="-468" width="128" height="103"/>
-        <element name="DailyData" positionX="36" positionY="-243" width="128" height="43"/>
-        <element name="HourlyData" positionX="34" positionY="-337" width="128" height="58"/>
+        <element name="BaseEntity" positionX="36" positionY="-468" width="128" height="73"/>
+        <element name="DailyData" positionX="36" positionY="-243" width="128" height="73"/>
+        <element name="HourlyData" positionX="-243" positionY="-351" width="128" height="88"/>
     </elements>
 </model>

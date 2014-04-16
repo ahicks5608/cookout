@@ -153,4 +153,6 @@ extern NSString* const ccnUuid;
 +(NSString*) formatNumberAsPercent:(NSNumber*) value;
 +(BOOL) canEditDaily:(NSUInteger) value;
 
++(NSInteger) dayOfWeek:(NSDate*) value;
+
 @end

@@ -8,6 +8,8 @@
 
 #import "Common.h"
 //field names
+
+
 NSString * const cfnValue = @"value";
 NSString * const cfnSalesAmt = @"salesAmt";
 NSString * const cfnHoursWorked = @"crewCount";
@@ -46,6 +48,14 @@ NSString* const ccnUuid = @"uuid";
 
 
 @implementation Common
+
++(NSInteger) dayOfWeek:(NSDate*) value {
+    NSCalendar *gregorian = [NSCalendar currentCalendar];
+    NSDateComponents *weekDayComponents = [gregorian components:NSWeekdayCalendarUnit fromDate:value];
+    NSInteger mDay = [weekDayComponents weekday];
+    NSLog(@"day number = %d" , mDay);
+    return mDay;
+}
 
 +(NSString*) formatNumberAsMoney:(NSNumber*) value {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];

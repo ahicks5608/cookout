@@ -1,17 +1,13 @@
 //
-//  BaseEntity.m
+//  DailyListViewController.h
 //  Cookout
 //
 //  Created by Alex Hicks on 4/16/14.
 //  Copyright (c) 2014 Simple iApps. All rights reserved.
 //
 
-#import "BaseEntity.h"
+#import <UIKit/UIKit.h>
 
-
-@implementation BaseEntity
-
-@dynamic timeStamp;
-@dynamic uuid;
+@interface DailyListViewController : UITableViewController
 
 @end

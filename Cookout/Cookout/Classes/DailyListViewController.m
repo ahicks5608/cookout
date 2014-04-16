@@ -1,22 +1,24 @@
 //
-//  MainTableViewController.m
+//  DailyListViewController.m
 //  Cookout
 //
-//  Created by Alex Hicks on 4/2/14.
+//  Created by Alex Hicks on 4/16/14.
 //  Copyright (c) 2014 Simple iApps. All rights reserved.
 //
 
-#import "MainTableViewController.h"
-#import "HourlyViewController.h"
-#import "CommonPushSegue.h"
-#import "DailyViewController.h"
+#import "DailyListViewController.h"
+#import "Common.h"
+#import "DataManagerDaily.h"
 
 
-@interface MainTableViewController ()
+@interface DailyListViewController (){
+    NSArray *_items;
+    NSDateFormatter *_dateFormatter;
+}
 
 @end
 
-@implementation MainTableViewController
+@implementation DailyListViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -30,14 +32,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self.tableView reloadData];
-    
+    DataManagerDaily *daily = [[DataManagerDaily alloc] init];
+    _items = [daily select:nil];
+    _dateFormatter = [[NSDateFormatter alloc] init];
+    [_dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    [_dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+        
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,69 +50,26 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
     // Return the number of rows in the section.
-    return 2;
+    return [_items count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MainTableViewCell" forIndexPath:indexPath];
-    
-    if (indexPath.row == 0) {
-        cell.textLabel.text = @"Hourly";
-    }else{
-        cell.textLabel.text = @"Daily";
-    }
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DailiesViewCell" forIndexPath:indexPath];
+    NSManagedObject *item = [_items objectAtIndex:indexPath.row];
+    NSDate *date = [item valueForKey:ccnTimestamp];
+   
+    cell.textLabel.text = [_dateFormatter stringFromDate:date];
     
     return cell;
-}
--(void) showDailyController {
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Dailies" bundle:nil];
-    DailyViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"DailyListViewController"];
-    
-    CommonPushSegue *segue = [[CommonPushSegue alloc] initWithIdentifier:@"masterToDaily"
-                                                                  source:self
-                                                             destination:controller];
-    [self prepareForSegue:segue sender:self];
-    [segue perform];
- 
-}
-
--(void) showHourlyController {
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Hourly" bundle:nil];
-    HourlyViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"HourlyViewController"];
-
-    CommonPushSegue *segue = [[CommonPushSegue alloc] initWithIdentifier:@"masterToHourly"
-                                                                    source:self
-                                                               destination:controller];
-    [self prepareForSegue:segue sender:self];
-    [segue perform];
-}
-
--(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSString *title;
-    if (indexPath.row == 0) {
-        title = @"Hourly";
-    }else{
-        title = @"Daily";
-    }
-           if (indexPath.row == 0) {
-            [self showHourlyController];
-        } else{
-            [self showDailyController];
-        }
-    
-
 }
 
 

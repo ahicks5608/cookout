@@ -19,7 +19,7 @@
     NSManagedObjectContext *context = appDelegate.managedObjectContext;
     NSManagedObject *daily = [NSEntityDescription insertNewObjectForEntityForName:ctnDailyData  inManagedObjectContext:context];
     NSDictionary *data = [values valueForKey:ccnData];
-    NSDictionary *extraInfo = [values valueForKey:ccnExtrainfo];
+    NSData *extraInfo = [values valueForKey:ccnExtrainfo];
     
     [daily setValue:[Common generateUuidString] forKey:ccnUuid];
     [daily setValue:[NSDate date] forKey:ccnTimestamp];
@@ -68,10 +68,12 @@
 -(NSArray*) select:(NSDictionary*) values{
     
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    
+    NSPredicate *predicate = nil;
     NSManagedObjectContext *context = appDelegate.managedObjectContext;
-    
-    NSPredicate *predicate = (NSPredicate*) [values valueForKey:cfnPredicate];
+    if (values) {
+        NSPredicate *predicate = (NSPredicate*) [values valueForKey:cfnPredicate];
+    }
+   
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:ctnDailyData inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
@@ -83,8 +85,9 @@
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     //
     [fetchRequest setSortDescriptors:sortDescriptors];
-    [fetchRequest setPredicate:predicate];
-    
+    if (predicate) {
+        [fetchRequest setPredicate:predicate];
+    }
     NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
     
     NSError *error = nil;

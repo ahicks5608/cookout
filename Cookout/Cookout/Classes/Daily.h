@@ -12,7 +12,7 @@
 #import "CookOutDaily.h"
 
 
-@interface Daily: NSObject <CookOutAmounts, CookOutDaily>
+@interface Daily: NSObject <CookOutAmounts, CookOutDaily, NSCoding>
 
 
 @property (nonatomic, readonly, getter = getPayRate) NSNumber *payrate;
@@ -36,7 +36,7 @@
 
 
 
--(id) initWithData:(NSDictionary*) values Hourlies:(NSArray*) hourlies;
+-(id) initWithData:(NSDictionary*) values;
 
 
 

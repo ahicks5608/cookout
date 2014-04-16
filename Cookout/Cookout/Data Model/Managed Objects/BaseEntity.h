@@ -2,7 +2,7 @@
 //  BaseEntity.h
 //  Cookout
 //
-//  Created by Alex Hicks on 3/24/14.
+//  Created by Alex Hicks on 4/16/14.
 //  Copyright (c) 2014 Simple iApps. All rights reserved.
 //
 
@@ -12,8 +12,6 @@
 
 @interface BaseEntity : NSManagedObject
 
-@property (nonatomic, retain) id data;
-@property (nonatomic, retain) id extraInfo;
 @property (nonatomic, retain) NSDate * timeStamp;
 @property (nonatomic, retain) NSString * uuid;
 

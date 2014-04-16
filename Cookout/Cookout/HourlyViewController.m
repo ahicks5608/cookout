@@ -15,8 +15,9 @@
 #import "HourlyEditViewController.h"
 #import "Hourly.h"
 #import "DailyData.h"
+#import "Daily.h"
 #import "HourlyData.h"
-
+#import "DataManagerDaily.h"
 
 
 @interface HourlyViewController () {
@@ -73,27 +74,13 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     
-    /*
-     NSString *hoursWorked = viewController.fldHoursWorked.text;
-     NSString *str = viewController.fldSalesAmt.text;
-     
-     // NSString *salesAmount = [str substringWithRange:NSMakeRange(1, [str length]-1 )];
-     NSString *salesAmount = [str stringByReplacingOccurrencesOfString:@"$" withString:@""];
-     salesAmount = [salesAmount stringByReplacingOccurrencesOfString:@"," withString:@""];
-     NSString *serviceTime = viewController.fldServiceTime.text;
-     NSInteger timeOfDay = [viewController.fldTimeOfDay selectedRowInComponent:0];
-     NSString *laborRate = viewController.fldLaborRate.text;
-     laborRate = [laborRate stringByReplacingOccurrencesOfString:@"$" withString:@""];
-     //NSString *laborRate= [str substringWithRange:NSMakeRange(1, [str length]-1 )];
-     //NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] init];
-     */
-    
-    float netSalesAmt = 0.00;
-    int serviceTime1 = 0;  //average service before 5
-    int serviceTime2 = 0;  //average sevice after 5
-    float moneyPaid = 0;  //#15 lab$paysh
-    int count = [_items count];
     if (buttonIndex == 1) {
+        
+        float netSalesAmt = 0.00;
+        int serviceTime1 = 0;  //average service before 5
+        int serviceTime2 = 0;  //average sevice after 5
+        float moneyPaid = 0;  //#15 lab$paysh
+        int count = [_items count];
         for (HourlyData *item in _items) {
             Hourly *hourly = (Hourly*) item.data;
             netSalesAmt += [hourly.salesAmt floatValue];
@@ -109,23 +96,37 @@
             }
             
         }
+        
+        serviceTime1 = serviceTime1 / count;
+        serviceTime2 = serviceTime2 / count;
+        moneyPaid = moneyPaid / count;
+        
+        NSNumber *netSalesVal = [NSNumber numberWithFloat:netSalesAmt];
+        NSNumber *serviceTime1Val = [NSNumber numberWithInt:serviceTime1];
+        NSNumber *serviceTime2Val = [NSNumber numberWithInt:serviceTime2];
+        NSNumber *moneyPaidVal = [NSNumber numberWithFloat:moneyPaid];
+        
+        NSDictionary *values = @{cfnSalesAmt: netSalesVal, cfnServiceTime: serviceTime1Val, cfnServiceTime2: serviceTime2Val, cfnLabMoneyPaid: moneyPaidVal};
+        Daily *daily = [[Daily alloc] initWithData:values];
+        DataManagerDaily *dataManagerDaily = [[DataManagerDaily alloc] init];
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:_items];
+        [dataManagerDaily addNew:@{ccnData: daily, ccnExtrainfo: data}];
+        
+    } else{
+        NSDate *today = [NSDate date];
+        NSInteger dow = [Common dayOfWeek:today] -1;
+        NSDate *sunday = [today dateByAddingTimeInterval:60*60*24*-dow];
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+        [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+
+        
+        NSLog(@"sunday for locale %@: %@",
+              [[dateFormatter locale] localeIdentifier], [dateFormatter stringFromDate:sunday]);
     }
-    serviceTime1 = serviceTime1 / count;
-    serviceTime2 = serviceTime2 / count;
-    moneyPaid = moneyPaid / count;
-    
-    NSNumber *netSalesVal = [NSNumber numberWithFloat:netSalesAmt];
-    NSNumber *serviceTime1Val = [NSNumber numberWithInt:serviceTime1];
-    NSNumber *serviceTime2Val = [NSNumber numberWithInt:serviceTime2];
-    NSNumber *moneyPaidVal = [NSNumber numberWithFloat:moneyPaid];
-    
-    NSDictionary *values = @{cfnSalesAmt: netSalesVal, cfnServiceTime: serviceTime1Val, cfnServiceTime2: serviceTime2Val, cfnLabMoneyPaid: moneyPaidVal};
-    
-    
     
 }
-
-
 
 - (void) endOfDay {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Create a Daily"
