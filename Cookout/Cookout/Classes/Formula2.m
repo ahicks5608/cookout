@@ -22,6 +22,17 @@
 
 @implementation Formula2
 
+
++(NSString*) getValue:(Daily*) value {
+    Formula2 *f2 = [[Formula2 alloc] init];
+    f2.delegate = value;
+    NSDictionary *value1 = [f2 getvalues];
+    NSArray *value2 = (NSArray*) [value1 valueForKey:@"values"];
+    return [value2 objectAtIndex:2];
+
+}
+
+
 -(id) init {
     if (self = [super init]) {
         _labels = [NSMutableArray arrayWithCapacity:4];
@@ -47,7 +58,7 @@
     NSNumber *value1 = [_delegate getNetSalesDAY];
     NSNumber *value2 = @7.56f;
 #warning SALES TAX RATE NEEDS WORK 
-    float val = [value1 floatValue] + [value2 floatValue];
+    float val = ([value1 floatValue] * [value2 floatValue]/100);
     NSNumber *value3 = [NSNumber numberWithFloat:val];
     
     

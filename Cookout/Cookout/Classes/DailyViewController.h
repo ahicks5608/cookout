@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "ModalDelegate.h"
 
+
+@class Daily;
 @interface DailyViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, ModalDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView* tableView;
+
+@property (nonatomic, strong) Daily *data;
 
 @end

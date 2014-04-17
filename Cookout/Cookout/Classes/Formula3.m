@@ -8,7 +8,7 @@
 
 #import "Formula3.h"
 #import "Common.h"
-
+#import "Daily.h"
 
 @interface Formula3() {
     NSMutableArray *_labels;
@@ -21,6 +21,11 @@
 
 
 @implementation Formula3
+
++(NSString*) getValue:(Daily *)value{
+    return @"$0.00";
+}
+
 
 -(id) init {
     if (self = [super init]) {

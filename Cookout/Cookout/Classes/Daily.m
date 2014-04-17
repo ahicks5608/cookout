@@ -8,9 +8,10 @@
 
 #import "Daily.h"
 #import "Common.h"
-
+#import "Formula2.h"
 @interface Daily(){
     NSMutableArray *_fields;
+
 
 }
 @end
@@ -27,6 +28,7 @@ static float kSalesTaxRate = 7.56;
         [_fields setObject:@0 atIndexedSubscript:x];
         
     }
+
 }
 
 
@@ -34,7 +36,8 @@ static float kSalesTaxRate = 7.56;
     self = [super init];
     if (self) {
         
-    //    _fields = [decoder decodeObjectForKey:cfnValue];
+    _fields = [decoder decodeObjectForKey:cfnValue];
+
     }
     return self;
 }
@@ -45,20 +48,16 @@ static float kSalesTaxRate = 7.56;
 }
 
 
-- (id)init
-{
+- (id)init {
     
     self = [super init];
     if (self) {
         [self configureFields];
+
+       
         }
 return self;
 }
-
-
-
-
-//NSDictionary *values = @{cfnSalesAmt: netSalesVal, cfnServiceTime: serviceTime1Val, cfnServiceTime2: serviceTime2Val, cfnLabMoneyPaid: moneyPaidVal};
 
 
 -(id) initWithData:(NSDictionary*) values {
@@ -85,6 +84,28 @@ return self;
 
 }
 
+
+-(NSString*) getValueAtIndex:(NSUInteger) index{
+    switch (index) {
+        case DFDayServiceTime:
+        case DFNightServiceTime: {
+          NSNumber *value = [_fields objectAtIndex:index];
+            return [value stringValue];
+        }
+        case DFLaborAmtDAYPaysh:
+        case DFNetSalesDAY: {
+            NSNumber *value = [_fields objectAtIndex:index];
+            return [Common formatNumberAsMoney:value];
+        }
+            break;
+        case DFSalesTax: {
+            return [Formula2 getValue:self];
+        }
+        default:
+            return @"$0.00";
+            break;
+    }
+}
 
 
 -(NSNumber*) getNetSalesDAY{

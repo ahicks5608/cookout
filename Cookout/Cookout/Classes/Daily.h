@@ -34,7 +34,7 @@
 //
 @property (nonatomic, strong) NSNumber *grossSales; 
 
-
+-(NSString*) getValueAtIndex:(NSUInteger) index;
 
 -(id) initWithData:(NSDictionary*) values;
 

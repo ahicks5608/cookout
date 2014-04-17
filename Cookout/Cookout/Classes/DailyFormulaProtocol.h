@@ -13,6 +13,7 @@
 
 @protocol DailyFormulaProtocol <NSObject>
 
++(NSString*) getValue:(Daily*) value;
 
 -(NSUInteger) getFormulaId;
 

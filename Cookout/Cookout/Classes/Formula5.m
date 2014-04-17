@@ -8,7 +8,7 @@
 
 #import "Formula5.h"
 #import "Common.h"
-
+#import "Daily.h"
 
 @interface Formula5() {
     NSMutableArray *_labels;
@@ -21,6 +21,10 @@
 
 
 @implementation Formula5
+
++(NSString*) getValue:(Daily *)value{
+    return @"$0.00";
+}
 
 -(id) init {
     if (self = [super init]) {

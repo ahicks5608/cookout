@@ -8,6 +8,7 @@
 
 #import "Formula10.h"
 #import "Common.h"
+#import "Daily.h"
 
 
 
@@ -23,6 +24,11 @@
 
 
 @implementation Formula10
+
++(NSString*) getValue:(Daily *)value{
+    return @"$0.00";
+}
+
 
 -(id) init {
     if (self = [super init]) {

@@ -8,7 +8,7 @@
 
 #import "Formula6.h"
 #import "Common.h"
-
+#import "Daily.h"
 
 @interface Formula6() {
     NSMutableArray *_labels;
@@ -21,6 +21,10 @@
 
 
 @implementation Formula6
+
++(NSString*) getValue:(Daily *)value{
+    return @"$0.00";
+}
 
 -(id) init {
     if (self = [super init]) {
