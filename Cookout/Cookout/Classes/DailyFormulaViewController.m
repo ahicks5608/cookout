@@ -12,6 +12,7 @@
 #import "Formula5.h"
 #import "Formula6.h"
 #import "Formula10.h"
+#import "Formula27.h"
 
 #import "Common.h"
 #import "CookOutDaily.h"
@@ -56,7 +57,12 @@
         Formula5 *f5 = [[Formula5 alloc] init];
         f5.delegate = _data;
         result = [f5 getvalues];
+    }else if (_formulaId == DFTotalServiceTime) {
+        Formula27 *f27 = [[Formula27 alloc] init];
+        f27.delegate = _data;
+        result = [f27 getvalues];
     }
+
     
     NSArray *labels =  [result valueForKey:@"labels"];
     NSArray *values =  [result valueForKey:@"values"];

@@ -9,6 +9,7 @@
 #import "Daily.h"
 #import "Common.h"
 #import "Formula2.h"
+#import "Formula27.h"
 @interface Daily(){
     NSMutableArray *_fields;
 
@@ -87,9 +88,12 @@ return self;
 
 -(NSString*) getValueAtIndex:(NSUInteger) index{
     switch (index) {
+        case DFTotalServiceTime:
+            return [Formula27 getValue:self];
+            break;
         case DFDayServiceTime:
         case DFNightServiceTime: {
-          NSNumber *value = [_fields objectAtIndex:index];
+            NSNumber *value = [_fields objectAtIndex:index];
             return [value stringValue];
         }
         case DFLaborAmtDAYPaysh:
@@ -99,6 +103,7 @@ return self;
         }
             break;
         case DFSalesTax: {
+            
             return [Formula2 getValue:self];
         }
         default:
@@ -106,6 +111,7 @@ return self;
             break;
     }
 }
+
 
 
 -(NSNumber*) getNetSalesDAY{

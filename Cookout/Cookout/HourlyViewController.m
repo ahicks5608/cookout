@@ -72,6 +72,8 @@
     }
 }
 
+                                                                                            // SUMMARIZING THE VALUES FOR DAILY 
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     
     if (buttonIndex == 1) {
@@ -79,14 +81,15 @@
         float netSalesAmt = 0.00;
         int serviceTime1 = 0;  //average service before 5
         int serviceTime2 = 0;  //average sevice after 5
-        float moneyPaid = 0;  //#15 lab$paysh
+        float moneyPaid = 0;  //#15 lab$paysh                          !! Formula 15 !!
+        
         int count = [_items count];
         for (HourlyData *item in _items) {
             Hourly *hourly = (Hourly*) item.data;
             netSalesAmt += [hourly.salesAmt floatValue];
             moneyPaid += [hourly.laborRate floatValue] * [hourly.crewCount intValue];
             
-            int timeVal = [hourly.serviceTime intValue];
+            int timeVal = [hourly.timeOfDay intValue];
             
             if ((timeVal >= TOD0) && (timeVal <= TOD17)) {
                 serviceTime1 += [hourly.serviceTime intValue];
@@ -97,11 +100,12 @@
             
         }
         
-        serviceTime1 = serviceTime1 / count;
-        serviceTime2 = serviceTime2 / count;
-        moneyPaid = moneyPaid / count;
+        //serviceTime1 = serviceTime1 / count;
+        //serviceTime2 = serviceTime2 / count;
+       // moneyPaid = moneyPaid / count;
         
         NSNumber *netSalesVal = [NSNumber numberWithFloat:netSalesAmt];
+        
         NSNumber *serviceTime1Val = [NSNumber numberWithInt:serviceTime1];
         NSNumber *serviceTime2Val = [NSNumber numberWithInt:serviceTime2];
         NSNumber *moneyPaidVal = [NSNumber numberWithFloat:moneyPaid];

@@ -41,6 +41,7 @@
 		589F0F1118F7217300FCD72E /* Formula6.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F0F1018F7217300FCD72E /* Formula6.m */; };
 		58A0B23818AE9142005C1E88 /* Daily.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0B23718AE9142005C1E88 /* Daily.m */; };
 		58A0B23A18AEA15C005C1E88 /* CookoutDailyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */; };
+		58A0EB07190893B5000D348E /* Formula27.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0EB06190893B5000D348E /* Formula27.m */; };
 		58A1D0AE18D21961003C4EB2 /* Calc.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58A1D0AD18D21961003C4EB2 /* Calc.Storyboard */; };
 		58A2E21918EDCB7500E9E543 /* Formula10.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A2E21818EDCB7500E9E543 /* Formula10.m */; };
 		58A2E21C18EDE07900E9E543 /* Formula3.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A2E21B18EDE07900E9E543 /* Formula3.m */; };
@@ -126,6 +127,8 @@
 		58A0B23618AE9142005C1E88 /* Daily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Daily.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		58A0B23718AE9142005C1E88 /* Daily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Daily.m; sourceTree = "<group>"; };
 		58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CookoutDailyTest.m; sourceTree = "<group>"; };
+		58A0EB05190893B5000D348E /* Formula27.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Formula27.h; sourceTree = "<group>"; };
+		58A0EB06190893B5000D348E /* Formula27.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Formula27.m; sourceTree = "<group>"; };
 		58A1D0AD18D21961003C4EB2 /* Calc.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calc.Storyboard; sourceTree = "<group>"; };
 		58A2E21518EDCA4600E9E543 /* DailyFormulaProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyFormulaProtocol.h; sourceTree = "<group>"; };
 		58A2E21718EDCB7500E9E543 /* Formula10.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Formula10.h; sourceTree = "<group>"; };
@@ -354,6 +357,8 @@
 				589F0F1018F7217300FCD72E /* Formula6.m */,
 				58A2E21718EDCB7500E9E543 /* Formula10.h */,
 				58A2E21818EDCB7500E9E543 /* Formula10.m */,
+				58A0EB05190893B5000D348E /* Formula27.h */,
+				58A0EB06190893B5000D348E /* Formula27.m */,
 			);
 			name = Formulas;
 			sourceTree = "<group>";
@@ -389,15 +394,15 @@
 			children = (
 				58A4C0B618E9C77F000CD73D /* DailyViewController.h */,
 				58A4C0B718E9C77F000CD73D /* DailyViewController.m */,
-				58AA459918E5FBCA0081CA3D /* DailyTableViewCell.h */,
-				58AA459A18E5FBCA0081CA3D /* DailyTableViewCell.m */,
 				5832F1F318FF230B00849D9D /* DailyListViewController.h */,
 				5832F1F418FF230B00849D9D /* DailyListViewController.m */,
+				589E025718ECB9B00028AFC0 /* DailyFormulaViewController.h */,
+				589E025818ECB9B00028AFC0 /* DailyFormulaViewController.m */,
+				58AA459918E5FBCA0081CA3D /* DailyTableViewCell.h */,
+				58AA459A18E5FBCA0081CA3D /* DailyTableViewCell.m */,
 				58AA459618E5F7FA0081CA3D /* daily.storyboard */,
 				589E025218ECB7470028AFC0 /* DailyFormula.storyboard */,
 				5832F1F618FF2FAD00849D9D /* Dailies.storyboard */,
-				589E025718ECB9B00028AFC0 /* DailyFormulaViewController.h */,
-				589E025818ECB9B00028AFC0 /* DailyFormulaViewController.m */,
 				58A2E21618EDCB5400E9E543 /* Formulas */,
 			);
 			name = "daily stuff";
@@ -546,6 +551,7 @@
 				5832F20318FF387400849D9D /* HourlyDataTransformer.m in Sources */,
 				589E024918EC8C5D0028AFC0 /* MainTableViewCell.m in Sources */,
 				2030CE3618ABBE3400636B2C /* HourlyViewController.m in Sources */,
+				58A0EB07190893B5000D348E /* Formula27.m in Sources */,
 				58A78FB618C8D30100DB3B03 /* DictionaryTransformer.m in Sources */,
 				58AA459B18E5FBCA0081CA3D /* DailyTableViewCell.m in Sources */,
 				58A0B23818AE9142005C1E88 /* Daily.m in Sources */,

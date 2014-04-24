@@ -245,7 +245,7 @@
     _fldServiceTime.text = @"0";
     _fldServiceTime.tag = efServiceTime;
     _fldLaborRate.delegate = self;
-    _fldLaborRate.text = @"9.00"; //default from settings
+    _fldLaborRate.text = @"0.00"; //default from settings
     _fldLaborRate.tag = efLaborRate;
     _selectedRow = @0;
     _uuid = @"";
