@@ -93,12 +93,19 @@ return self;
         case DFTotalServiceTime:
             return [Formula27 getValue:self];
             break;
+        
         case DFDayServiceTime:
         case DFNightServiceTime: {
             NSNumber *value = [_fields objectAtIndex:index];
             return [value stringValue];
         }
+        
         case DFPaidOuts:
+        case DFCreditCards:
+        case DFDeposit1:
+        case DFDeposit2:
+        case DFMgvdTransvoid:
+        case DFFoodEmpForDay:
         case DFLaborAmtDAYPaysh:
         case DFNetSalesDAY: {
             NSNumber *value = [_fields objectAtIndex:index];
