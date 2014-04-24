@@ -38,9 +38,9 @@
         _labels = [NSMutableArray arrayWithCapacity:4];
         _values = [NSMutableArray arrayWithCapacity:4];
         _result = [NSMutableDictionary dictionaryWithCapacity:2];
-        [_labels addObject:[Common getTitleForDaily:DFNetSalesDAY]];
-        [_labels addObject:@"Sales Tax Rate"];
         [_labels addObject:[Common getTitleForDaily:DFSalesTax]];
+        [_labels addObject:[Common getTitleForDaily:DFNetSalesDAY]];
+        [_labels addObject:@"Sales Tax Percentage Rate"];
         
     }
     return self;
@@ -64,8 +64,10 @@
     
     NSString *formattedValue = [Common formatNumberAsMoney:value1];
     [_values addObject:formattedValue];
-    formattedValue = [Common formatNumberAsMoney:value2];
-    [_values addObject:formattedValue];
+    
+    [_values addObject:[value3 stringValue]];
+    
+    
     formattedValue = [Common formatNumberAsMoney:value3];
     [_values addObject:formattedValue];
     

@@ -88,6 +88,8 @@ return self;
 
 -(NSString*) getValueAtIndex:(NSUInteger) index{
     switch (index) {
+ 
+        
         case DFTotalServiceTime:
             return [Formula27 getValue:self];
             break;
@@ -96,6 +98,7 @@ return self;
             NSNumber *value = [_fields objectAtIndex:index];
             return [value stringValue];
         }
+        case DFPaidOuts:
         case DFLaborAmtDAYPaysh:
         case DFNetSalesDAY: {
             NSNumber *value = [_fields objectAtIndex:index];
@@ -112,6 +115,9 @@ return self;
     }
 }
 
+-(void) setValueAtIndex:(NSUInteger) index value:(NSNumber*) value{
+    [_fields setObject:value atIndexedSubscript:index];
+}
 
 
 -(NSNumber*) getNetSalesDAY{

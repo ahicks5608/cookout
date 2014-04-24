@@ -1,5 +1,5 @@
 //
-//  HourlyViewController.h
+//  HourlyEditViewController.h
 //  Cookout
 //
 //  Created by Alex Hicks on 3/7/14.

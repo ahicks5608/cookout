@@ -42,12 +42,26 @@
 }
 
 
-- (void) willDismissViewController:(UIViewController*) controller{
-    //
+/* case DFNightServiceTime: {
+NSNumber *value = [_fields objectAtIndex:index];
+return [value stringValue];
 }
+case DFLaborAmtDAYPaysh:
+*/
+
+- (void) willDismissViewController:(UIViewController*) controller {
+    CalculatorViewController *calcVC = (CalculatorViewController*) controller;
+    NSString *strVal = calcVC.calcResult.text;
+    strVal = [strVal stringByReplacingOccurrencesOfString:@"$" withString:@""];
+    [_data setValueAtIndex:_selectedRow value:[ NSNumber numberWithFloat:strVal.floatValue]];
+
+
+}
+
 
 - (void) didDismissViewController{
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self.tableView reloadData];
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -110,6 +124,7 @@
     _selectedRow = indexPath.row;
     if ([Common canEditDaily:indexPath.row]) {
         [self showCalc];
+        
     }else{
         [self showFormula];
     }
