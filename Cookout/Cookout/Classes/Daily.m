@@ -10,6 +10,8 @@
 #import "Common.h"
 #import "Formula2.h"
 #import "Formula27.h"
+#import "Formula3.h"
+
 @interface Daily(){
     NSMutableArray *_fields;
 
@@ -113,8 +115,17 @@ return self;
         }
             break;
         case DFSalesTax: {
-            
-            return [Formula2 getValue:self];
+    
+            NSString *val = [Formula2 getValue:self];
+            NSNumber *num = [NSNumber numberWithFloat:val.floatValue];
+            [_fields setObject:num atIndexedSubscript:DFSalesTax];
+            return val;
+        }
+        case DFGrossSales: {
+            NSString *val = [Formula2 getValue:self];
+            NSNumber *num = [NSNumber numberWithFloat:val.floatValue];
+            [_fields setObject:num atIndexedSubscript:DFSalesTax];
+            return [Formula3 getValue:self];
         }
         default:
             return @"$0.00";
@@ -124,6 +135,7 @@ return self;
 
 -(void) setValueAtIndex:(NSUInteger) index value:(NSNumber*) value{
     [_fields setObject:value atIndexedSubscript:index];
+
 }
 
 

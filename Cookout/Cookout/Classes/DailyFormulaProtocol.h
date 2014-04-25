@@ -15,6 +15,7 @@
 
 +(NSString*) getValue:(Daily*) value;
 
+
 -(NSUInteger) getFormulaId;
 
 -(NSDictionary*) getvalues;

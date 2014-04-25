@@ -82,7 +82,7 @@
         int serviceTime1 = 0;  //average service before 5
         int serviceTime2 = 0;  //average sevice after 5
         float moneyPaid = 0;  //#15 lab$paysh                          !! Formula 15 !!
-        
+        int count1 = 0;
         int count = [_items count];
         for (HourlyData *item in _items) {
             Hourly *hourly = (Hourly*) item.data;
@@ -93,6 +93,8 @@
             
             if ((timeVal >= TOD0) && (timeVal <= TOD17)) {
                 serviceTime1 += [hourly.serviceTime intValue];
+                count1 += 1;
+                
             }else {
                 serviceTime2 += [hourly.serviceTime intValue];
                 
@@ -100,8 +102,8 @@
             
         }
         
-        //serviceTime1 = serviceTime1 / count;
-        //serviceTime2 = serviceTime2 / count;
+        serviceTime2 = serviceTime2 / (count - count1);
+        serviceTime1 = serviceTime1 / (count1==0?1:count1);
        // moneyPaid = moneyPaid / count;
         
         NSNumber *netSalesVal = [NSNumber numberWithFloat:netSalesAmt];
@@ -133,14 +135,23 @@
 }
 
 - (void) endOfDay {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Create a Daily"
-                                                    message:@"Are you sure you want to close out current day ?"
-                                                   delegate:self
-                                          cancelButtonTitle:@"Cancel"
-                                          otherButtonTitles:@"OK",nil];
+    UIAlertView *alert;
+    if ( (_items == nil) || ([_items count] == 0)) {
+        alert = [[UIAlertView alloc] initWithTitle:@"Create a Daily"
+                                           message:@"A daily report requires at least one or more hourly records."
+                                          delegate:nil
+                                 cancelButtonTitle:@"Continue"
+                                 otherButtonTitles:nil];
+    }else {
+        alert = [[UIAlertView alloc] initWithTitle:@"Create a Daily"
+                                           message:@"Are you sure you want to close out current day ?"
+                                          delegate:self
+                                 cancelButtonTitle:@"Cancel"
+                                 otherButtonTitles:@"OK",nil];
+    }
     [alert show];
     
-
+    
 }
 
 - (void)viewDidLoad

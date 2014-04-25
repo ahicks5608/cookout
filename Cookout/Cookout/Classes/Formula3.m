@@ -23,7 +23,12 @@
 @implementation Formula3
 
 +(NSString*) getValue:(Daily *)value{
-    return @"$0.00";
+    Formula3 *f3 = [[Formula3 alloc] init];
+    f3.delegate = value;
+    NSDictionary *value1 = [f3 getvalues];
+    NSArray *value2 = (NSArray*) [value1 valueForKey:@"values"];
+    return [value2 objectAtIndex:2];
+
 }
 
 

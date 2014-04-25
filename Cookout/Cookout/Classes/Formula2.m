@@ -49,7 +49,7 @@
 
 
 -(NSUInteger) getFormulaId{
-    return DFGrossSales;
+    return DFSalesTax;
 }
 
 
@@ -65,7 +65,8 @@
     NSString *formattedValue = [Common formatNumberAsMoney:value1];
     [_values addObject:formattedValue];
     
-    [_values addObject:[value3 stringValue]];
+    
+    [_values addObject:[value2 stringValue]];
     
     
     formattedValue = [Common formatNumberAsMoney:value3];
