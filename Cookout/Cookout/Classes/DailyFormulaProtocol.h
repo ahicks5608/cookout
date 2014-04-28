@@ -15,10 +15,13 @@
 
 +(NSString*) getValue:(Daily*) value;
 
++(NSNumber*) getFormulaResult:(Daily*) value;
 
 -(NSUInteger) getFormulaId;
 
 -(NSDictionary*) getvalues;
+
+-(NSNumber*) getResult;
 
 
 @end

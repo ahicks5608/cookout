@@ -5,7 +5,7 @@
 //  Created by Alex Hicks on 3/31/14.
 //  Copyright (c) 2014 Simple iApps. All rights reserved.
 //
-
+#import "AppDelegate.h"
 #import "DailyViewController.h"
 #import "DailyTableViewCell.h"
 #import "Common.h"
@@ -41,6 +41,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [_tableView reloadData];
+}
 
 /* case DFNightServiceTime: {
 NSNumber *value = [_fields objectAtIndex:index];
@@ -54,6 +58,10 @@ case DFLaborAmtDAYPaysh:
     NSString *strVal = calcVC.calcResult.text;
     strVal = [strVal stringByReplacingOccurrencesOfString:@"$" withString:@""];
     [_data setValueAtIndex:_selectedRow value:[ NSNumber numberWithFloat:strVal.floatValue]];
+    NSString *alex99 = [_data getValueAtIndex:_selectedRow];
+    NSLog(@"value %@", alex99);
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [appDelegate saveContext];
 
 
 }
@@ -68,9 +76,13 @@ case DFLaborAmtDAYPaysh:
     
     if ([segue.identifier isEqualToString:@"masterToFormula"]) {
         DailyFormulaViewController *controller =  (DailyFormulaViewController*)segue.destinationViewController;
-
         [controller configWithData:_data fieldId:_selectedRow];
+    } else if ([segue.identifier isEqualToString:@"masterToDetail"]) {
+        CalculatorViewController *controller =  (CalculatorViewController*)segue.destinationViewController;
+        [controller configWithData:@{cfnValue:[_data getValueAtIndex:_selectedRow]}];
     }
+        
+    
 }
 
 -(void) showFormula {

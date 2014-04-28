@@ -15,7 +15,7 @@
 #import "DailyViewController.h"
 
 @interface DailyListViewController (){
-    NSArray *_items;
+    NSMutableArray *_items;
     NSDateFormatter *_dateFormatter;
 }
 
@@ -31,22 +31,32 @@
     }
     return self;
 }
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+- (void) viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
     DataManagerDaily *daily = [[DataManagerDaily alloc] init];
-    _items = [daily select:nil];
-    _dateFormatter = [[NSDateFormatter alloc] init];
-    [_dateFormatter setTimeStyle:NSDateFormatterNoStyle];
-    [_dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-        
+    if (_items == nil) {
+        _items = [[NSMutableArray alloc] init];
+    } else {
+        [_items removeAllObjects];
+    }
+    [_items addObjectsFromArray:[daily select:nil]];
+    if (_dateFormatter == nil) {
+        _dateFormatter = [[NSDateFormatter alloc] init];
+        [_dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+        [_dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    }
 }
 
 - (void) showDaily:(NSUInteger) index {
     DailyData *item = (DailyData *) [_items objectAtIndex:index];
     Daily *data = [(Daily *) item valueForKey:ccnData];
-        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"daily" bundle:nil];
+    data.parentUUID = item.uuid;
+
+   NSString *value = [data getValueAtIndex:DFPaidOuts];
+    NSLog(@"value %@",value);
+    
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"daily" bundle:nil];
     DailyViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"DailyViewController"];
     controller.data = data;
     CommonPushSegue *segue = [[CommonPushSegue alloc] initWithIdentifier:@"masterToDetail"
@@ -54,6 +64,7 @@
                                                                destination:controller];
     [self prepareForSegue:segue sender:self];
     [segue perform];
+    
 
 }
 

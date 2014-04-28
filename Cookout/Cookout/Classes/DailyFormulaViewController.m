@@ -53,6 +53,7 @@
         Formula2 *f2 = [[Formula2 alloc] init];
         f2.delegate = _data;
         result = [f2 getvalues];
+        [_data setValueAtIndex:DFSalesTax value:[f2 getResult]];
     } else if (_formulaId == DFCreditCards) {
         Formula5 *f5 = [[Formula5 alloc] init];
         f5.delegate = _data;

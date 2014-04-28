@@ -30,6 +30,15 @@
     return [value2 objectAtIndex:2];
 
 }
++(NSNumber*) getFormulaResult:(Daily *)value{
+    Formula3 *f3 = [[Formula3 alloc] init];
+    f3.delegate = value;
+    [f3 getvalues];
+    
+    return [f3 getResult];
+    
+    
+}
 
 
 -(id) init {
@@ -50,6 +59,11 @@
 -(NSUInteger) getFormulaId{
     return DFGrossSales;
 }
+
+-(NSNumber*) getResult {
+    return @0;
+}
+
 
 
 -(NSDictionary*) getvalues{

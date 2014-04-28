@@ -29,7 +29,7 @@
 @property (nonatomic, readonly, getter = getUpDownAmount) NSNumber* upDownAmt;
 @property (nonatomic, readonly, getter = getEmployeeFoodAmt) NSNumber*employeeFoodAmt;
 
-
+@property (nonatomic,strong) NSString *parentUUID;
 
 //
 @property (nonatomic, strong) NSNumber *grossSales; 

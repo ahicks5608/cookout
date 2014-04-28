@@ -26,6 +26,11 @@
     return @"$0.00";
 }
 
++(NSNumber*) getFormulaResult {
+    return @0;
+}
+
+
 -(id) init {
     if (self = [super init]) {
         _labels = [NSMutableArray arrayWithCapacity:4];
@@ -45,6 +50,9 @@
     return DFGrossSales;
 }
 
+-(NSNumber*) getResult {
+    return @0;
+}
 
 -(NSDictionary*) getvalues{
     [_result removeAllObjects];

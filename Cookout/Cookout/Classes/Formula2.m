@@ -14,6 +14,7 @@
     NSMutableArray *_labels;
     NSMutableArray *_values;
     NSMutableDictionary *_result;
+    NSNumber *_formulaResult;
     
 }
 
@@ -32,6 +33,15 @@
 
 }
 
++(NSNumber*)getFormulaResult:(Daily*) value {
+    Formula2 *f2 = [[Formula2 alloc] init];
+    f2.delegate = value;
+    [f2 getvalues];
+    
+    return [f2 getResult];
+
+
+}
 
 -(id) init {
     if (self = [super init]) {
@@ -52,6 +62,9 @@
     return DFSalesTax;
 }
 
+-(NSNumber*) getResult{
+    return _formulaResult;
+}
 
 -(NSDictionary*) getvalues{
     [_result removeAllObjects];
@@ -59,7 +72,7 @@
     NSNumber *value2 = @7.56f;
 #warning SALES TAX RATE NEEDS WORK 
     float val = ([value1 floatValue] * [value2 floatValue]/100);
-    NSNumber *value3 = [NSNumber numberWithFloat:val];
+    _formulaResult = [NSNumber numberWithFloat:val];
     
     
     NSString *formattedValue = [Common formatNumberAsMoney:value1];
@@ -69,7 +82,7 @@
     [_values addObject:[value2 stringValue]];
     
     
-    formattedValue = [Common formatNumberAsMoney:value3];
+    formattedValue = [Common formatNumberAsMoney:_formulaResult];
     [_values addObject:formattedValue];
     
     [_result setValue:_labels forKey:@"labels"];

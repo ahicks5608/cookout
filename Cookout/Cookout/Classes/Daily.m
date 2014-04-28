@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Simple iApps. All rights reserved.
 //
 
+#import "DataManagerDaily.h"
 #import "Daily.h"
 #import "Common.h"
 #import "Formula2.h"
@@ -80,6 +81,8 @@ return self;
         value = (NSNumber*) [values valueForKey:cfnLabMoneyPaid];
         [_fields setObject:value atIndexedSubscript:DFLaborAmtDAYPaysh];
         
+    
+
         
         
     }
@@ -117,15 +120,16 @@ return self;
         case DFSalesTax: {
     
             NSString *val = [Formula2 getValue:self];
-            NSNumber *num = [NSNumber numberWithFloat:val.floatValue];
-            [_fields setObject:num atIndexedSubscript:DFSalesTax];
+            NSNumber *alex2 = [Formula2 getFormulaResult:self];
+
+            [_fields setObject:alex2 atIndexedSubscript:DFSalesTax];
             return val;
         }
         case DFGrossSales: {
-            NSString *val = [Formula2 getValue:self];
-            NSNumber *num = [NSNumber numberWithFloat:val.floatValue];
-            [_fields setObject:num atIndexedSubscript:DFSalesTax];
-            return [Formula3 getValue:self];
+            NSString *val = [Formula3 getValue:self];
+            NSNumber *alex2 = [Formula3 getFormulaResult:self];
+            [_fields setObject:alex2 atIndexedSubscript:DFGrossSales];
+            return val;
         }
         default:
             return @"$0.00";
@@ -135,6 +139,9 @@ return self;
 
 -(void) setValueAtIndex:(NSUInteger) index value:(NSNumber*) value{
     [_fields setObject:value atIndexedSubscript:index];
+    //[self setValue:_fields forKey:cfnValue];
+    DataManagerDaily *data = [[DataManagerDaily alloc] init];
+    [data update:@{ccnData:self, ccnUuid:_parentUUID}];
 
 }
 

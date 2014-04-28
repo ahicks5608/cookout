@@ -101,7 +101,9 @@
             }
             
         }
-        
+        if ((count > 0 ) && (count - count1 == 0)) {
+            count1 = 0;
+        }
         serviceTime2 = serviceTime2 / (count - count1);
         serviceTime1 = serviceTime1 / (count1==0?1:count1);
        // moneyPaid = moneyPaid / count;
@@ -116,7 +118,9 @@
         Daily *daily = [[Daily alloc] initWithData:values];
         DataManagerDaily *dataManagerDaily = [[DataManagerDaily alloc] init];
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:_items];
-        [dataManagerDaily addNew:@{ccnData: daily, ccnExtrainfo: data}];
+        NSManagedObject *newItem = [dataManagerDaily addNew:@{ccnData: daily, ccnExtrainfo: data}];
+        NSString *uuid = [newItem valueForKey:ccnUuid];
+        daily.parentUUID = uuid;
         
     } else{
         NSDate *today = [NSDate date];

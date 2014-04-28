@@ -32,6 +32,10 @@
     
 }
 
++(NSNumber*) getFormulaResult {
+    return @0;
+}
+
 
 -(id) init {
     if (self = [super init]) {
@@ -51,6 +55,11 @@
 -(NSUInteger) getFormulaId{
     return DFTotalServiceTime;
 }
+
+-(NSNumber*) getResult {
+    return @0;
+}
+
 
 
 -(NSDictionary*) getvalues{
