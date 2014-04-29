@@ -137,10 +137,18 @@ case DFLaborAmtDAYPaysh:
     if ([Common canEditDaily:indexPath.row]) {
         [self showCalc];
         
-    }else{
-        [self showFormula];
-    }
-}
+    }else if (indexPath.row == DFNetSalesDAY) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"NET SALES TOTALS"
+                                               message:@"This is the combined sales amount from each hourly record."
+                                              delegate:nil
+                                     cancelButtonTitle:@"Continue"
+                                     otherButtonTitles:nil];
+        [alert show];
 
+        
+    }else {
+        [self showFormula];
+}
+}
 
 @end

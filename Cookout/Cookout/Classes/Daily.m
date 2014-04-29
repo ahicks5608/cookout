@@ -12,6 +12,7 @@
 #import "Formula2.h"
 #import "Formula27.h"
 #import "Formula3.h"
+#import "Formula6.h"
 
 @interface Daily(){
     NSMutableArray *_fields;
@@ -63,6 +64,9 @@ static float kSalesTaxRate = 7.56;
 return self;
 }
 
+
+
+//These values are "instant summaries" of the hourly records.
 
 -(id) initWithData:(NSDictionary*) values {
     self = [super init];
