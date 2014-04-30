@@ -1,16 +1,17 @@
 //
-//  Formula6.m
+//  Formula12.m
 //  Cookout
 //
-//  Created by Alex Hicks on 4/29/14.
+//  Created by Alex Hicks on 4/30/14.
 //  Copyright (c) 2014 Simple iApps. All rights reserved.
 //
 
-#import "Formula6.h"
+
+#import "Formula12.h"
 #import "Common.h"
 #import "Daily.h"
 
-@interface Formula6() {
+@interface Formula12() {
     NSMutableArray *_labels;
     NSMutableArray *_values;
     NSMutableDictionary *_result;
@@ -20,22 +21,22 @@
 @end
 
 
-@implementation Formula6
+@implementation Formula12
 
 +(NSString*) getValue:(Daily *)value{
-    Formula6 *f6 = [[Formula6 alloc] init];
-    f6.delegate = value;
-    NSDictionary *value1 = [f6 getvalues];
+    Formula12 *f12 = [[Formula12 alloc] init];
+    f12.delegate = value;
+    NSDictionary *value1 = [f12 getvalues];
     NSArray *value2 = (NSArray*) [value1 valueForKey:@"values"];
     return [value2 objectAtIndex:2];
     
 }
 +(NSNumber*) getFormulaResult:(Daily *)value{
-    Formula6 *f6 = [[Formula6 alloc] init];
-    f6.delegate = value;
-    [f6 getvalues];
+    Formula12 *f12 = [[Formula12 alloc] init];
+    f12.delegate = value;
+    [f12 getvalues];
     
-    return [f6 getResult];
+    return [f12 getResult];
     
     
 }
@@ -46,9 +47,9 @@
         _labels = [NSMutableArray arrayWithCapacity:4];
         _values = [NSMutableArray arrayWithCapacity:4];
         _result = [NSMutableDictionary dictionaryWithCapacity:2];
-        [_labels addObject:[Common getTitleForDaily:DFCashSHForDep]];
-        [_labels addObject:[Common getTitleForDaily:DFGrossSales]];
-        [_labels addObject:[Common getTitleForDaily:DFCreditCards]];
+        [_labels addObject:[Common getTitleForDaily:DFCashOSPercMONTH1114]];
+        [_labels addObject:[Common getTitleForDaily:DFCashOSMONTH911]];
+        [_labels addObject:[Common getTitleForDaily:DFNetSalesMONTH114]];
         
     }
     return self;
@@ -57,7 +58,7 @@
 
 
 -(NSUInteger) getFormulaId{
-    return DFCashSHForDep;
+    return DFCashOSPercMONTH1114;
 }
 
 -(NSNumber*) getResult {
@@ -68,9 +69,9 @@
 
 -(NSDictionary*) getvalues{
     [_result removeAllObjects];
-    NSNumber *value1 = [_delegate getGrossSales];
-    NSNumber *value2 = [_delegate getCreditCards];
-    float val = [value1 floatValue] - [value2 floatValue];
+    NSNumber *value1 = [_delegate getCashOSMONTH911];
+    NSNumber *value2 = [_delegate getNetSalesMONTH114];
+    float val = ([value1 floatValue] / [value2 floatValue]) * 100;
     NSNumber *value3 = [NSNumber numberWithFloat:val];
     
     

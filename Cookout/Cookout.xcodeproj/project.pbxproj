@@ -32,6 +32,11 @@
 		5832F20C18FF39B600849D9D /* HourlyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5832F20B18FF39B600849D9D /* HourlyData.m */; };
 		5832F20F18FF39B600849D9D /* BaseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5832F20E18FF39B600849D9D /* BaseEntity.m */; };
 		589CA6AB18BF9AE100DC73CA /* TODTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 589CA6AA18BF9AE100DC73CA /* TODTest.m */; };
+		589D948F191172F000CDC7AD /* Formula18.m in Sources */ = {isa = PBXBuildFile; fileRef = 589D948E191172F000CDC7AD /* Formula18.m */; };
+		589D949219117A6D00CDC7AD /* Formula19.m in Sources */ = {isa = PBXBuildFile; fileRef = 589D949119117A6D00CDC7AD /* Formula19.m */; };
+		589D949519117C5600CDC7AD /* Formula20.m in Sources */ = {isa = PBXBuildFile; fileRef = 589D949419117C5600CDC7AD /* Formula20.m */; };
+		589D949819117E7700CDC7AD /* Formula22.m in Sources */ = {isa = PBXBuildFile; fileRef = 589D949719117E7700CDC7AD /* Formula22.m */; };
+		589D949B1911828E00CDC7AD /* Formula24.m in Sources */ = {isa = PBXBuildFile; fileRef = 589D949A1911828E00CDC7AD /* Formula24.m */; };
 		589E023B18EC822C0028AFC0 /* Hourly.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 589E023A18EC822C0028AFC0 /* Hourly.storyboard */; };
 		589E024918EC8C5D0028AFC0 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589E024818EC8C5D0028AFC0 /* MainTableViewCell.m */; };
 		589E024C18EC8C720028AFC0 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 589E024B18EC8C720028AFC0 /* MainTableViewController.m */; };
@@ -39,6 +44,9 @@
 		589E025118EC91530028AFC0 /* CommonPushSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 589E025018EC91530028AFC0 /* CommonPushSegue.m */; };
 		589E025318ECB7480028AFC0 /* DailyFormula.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 589E025218ECB7470028AFC0 /* DailyFormula.storyboard */; };
 		589E025918ECB9B00028AFC0 /* DailyFormulaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 589E025818ECB9B00028AFC0 /* DailyFormulaViewController.m */; };
+		589F98D31910C373000E98C9 /* FormulaTotalDep.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F98D21910C373000E98C9 /* FormulaTotalDep.m */; };
+		589F98D61910C682000E98C9 /* Formula9.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F98D51910C682000E98C9 /* Formula9.m */; };
+		589F98D91910D771000E98C9 /* Formula12.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F98D81910D771000E98C9 /* Formula12.m */; };
 		58A0B23818AE9142005C1E88 /* Daily.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0B23718AE9142005C1E88 /* Daily.m */; };
 		58A0B23A18AEA15C005C1E88 /* CookoutDailyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */; };
 		58A0EB07190893B5000D348E /* Formula27.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0EB06190893B5000D348E /* Formula27.m */; };
@@ -112,6 +120,16 @@
 		5832F20E18FF39B600849D9D /* BaseEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseEntity.m; sourceTree = "<group>"; };
 		589CA6AA18BF9AE100DC73CA /* TODTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TODTest.m; sourceTree = "<group>"; };
 		589CA6AF18BFB2D100DC73CA /* HourlyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HourlyViewController.h; path = ../HourlyViewController.h; sourceTree = "<group>"; };
+		589D948D191172F000CDC7AD /* Formula18.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Formula18.h; sourceTree = "<group>"; };
+		589D948E191172F000CDC7AD /* Formula18.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Formula18.m; sourceTree = "<group>"; };
+		589D949019117A6D00CDC7AD /* Formula19.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Formula19.h; sourceTree = "<group>"; };
+		589D949119117A6D00CDC7AD /* Formula19.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Formula19.m; sourceTree = "<group>"; };
+		589D949319117C5600CDC7AD /* Formula20.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Formula20.h; sourceTree = "<group>"; };
+		589D949419117C5600CDC7AD /* Formula20.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Formula20.m; sourceTree = "<group>"; };
+		589D949619117E7700CDC7AD /* Formula22.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Formula22.h; sourceTree = "<group>"; };
+		589D949719117E7700CDC7AD /* Formula22.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Formula22.m; sourceTree = "<group>"; };
+		589D94991911828E00CDC7AD /* Formula24.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Formula24.h; sourceTree = "<group>"; };
+		589D949A1911828E00CDC7AD /* Formula24.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Formula24.m; sourceTree = "<group>"; };
 		589E023A18EC822C0028AFC0 /* Hourly.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Hourly.storyboard; sourceTree = "<group>"; };
 		589E024718EC8C5D0028AFC0 /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
 		589E024818EC8C5D0028AFC0 /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
@@ -123,6 +141,12 @@
 		589E025218ECB7470028AFC0 /* DailyFormula.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DailyFormula.storyboard; sourceTree = "<group>"; };
 		589E025718ECB9B00028AFC0 /* DailyFormulaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyFormulaViewController.h; sourceTree = "<group>"; };
 		589E025818ECB9B00028AFC0 /* DailyFormulaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyFormulaViewController.m; sourceTree = "<group>"; };
+		589F98D11910C373000E98C9 /* FormulaTotalDep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormulaTotalDep.h; sourceTree = "<group>"; };
+		589F98D21910C373000E98C9 /* FormulaTotalDep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormulaTotalDep.m; sourceTree = "<group>"; };
+		589F98D41910C682000E98C9 /* Formula9.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Formula9.h; sourceTree = "<group>"; };
+		589F98D51910C682000E98C9 /* Formula9.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Formula9.m; sourceTree = "<group>"; };
+		589F98D71910D771000E98C9 /* Formula12.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Formula12.h; sourceTree = "<group>"; };
+		589F98D81910D771000E98C9 /* Formula12.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Formula12.m; sourceTree = "<group>"; };
 		58A0B23618AE9142005C1E88 /* Daily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Daily.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		58A0B23718AE9142005C1E88 /* Daily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Daily.m; sourceTree = "<group>"; };
 		58A0B23918AEA15C005C1E88 /* CookoutDailyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CookoutDailyTest.m; sourceTree = "<group>"; };
@@ -350,10 +374,26 @@
 				58A2E21B18EDE07900E9E543 /* Formula3.m */,
 				581CFAAF1910227A00BB0E9D /* Formula6.h */,
 				581CFAB01910227A00BB0E9D /* Formula6.m */,
+				589F98D11910C373000E98C9 /* FormulaTotalDep.h */,
+				589F98D21910C373000E98C9 /* FormulaTotalDep.m */,
+				589F98D41910C682000E98C9 /* Formula9.h */,
+				589F98D51910C682000E98C9 /* Formula9.m */,
 				58A2E21718EDCB7500E9E543 /* Formula10.h */,
 				58A2E21818EDCB7500E9E543 /* Formula10.m */,
+				589F98D71910D771000E98C9 /* Formula12.h */,
+				589F98D81910D771000E98C9 /* Formula12.m */,
+				589D948D191172F000CDC7AD /* Formula18.h */,
+				589D948E191172F000CDC7AD /* Formula18.m */,
+				589D949019117A6D00CDC7AD /* Formula19.h */,
+				589D949119117A6D00CDC7AD /* Formula19.m */,
 				58A0EB05190893B5000D348E /* Formula27.h */,
 				58A0EB06190893B5000D348E /* Formula27.m */,
+				589D949319117C5600CDC7AD /* Formula20.h */,
+				589D949419117C5600CDC7AD /* Formula20.m */,
+				589D949619117E7700CDC7AD /* Formula22.h */,
+				589D949719117E7700CDC7AD /* Formula22.m */,
+				589D94991911828E00CDC7AD /* Formula24.h */,
+				589D949A1911828E00CDC7AD /* Formula24.m */,
 			);
 			name = Formulas;
 			sourceTree = "<group>";
@@ -537,7 +577,11 @@
 				2030CE6218ABBEF700636B2C /* DataModel.xcdatamodeld in Sources */,
 				58A76CE818D37C770098D9F9 /* BaseModalViewController.m in Sources */,
 				5832F20918FF39B500849D9D /* DailyData.m in Sources */,
+				589D949219117A6D00CDC7AD /* Formula19.m in Sources */,
+				589F98D91910D771000E98C9 /* Formula12.m in Sources */,
 				58A89F2318BD2B7300239ED0 /* HourlyTableViewCell.m in Sources */,
+				589F98D31910C373000E98C9 /* FormulaTotalDep.m in Sources */,
+				589D949B1911828E00CDC7AD /* Formula24.m in Sources */,
 				58A4F60B18AC29A70094E983 /* Hourly.m in Sources */,
 				5832F20C18FF39B600849D9D /* HourlyData.m in Sources */,
 				2030CE3018ABBE3400636B2C /* AppDelegate.m in Sources */,
@@ -548,16 +592,20 @@
 				58A0EB07190893B5000D348E /* Formula27.m in Sources */,
 				58A78FB618C8D30100DB3B03 /* DictionaryTransformer.m in Sources */,
 				58AA459B18E5FBCA0081CA3D /* DailyTableViewCell.m in Sources */,
+				589D949519117C5600CDC7AD /* Formula20.m in Sources */,
 				581CFAB11910227A00BB0E9D /* Formula6.m in Sources */,
 				58A0B23818AE9142005C1E88 /* Daily.m in Sources */,
+				589D948F191172F000CDC7AD /* Formula18.m in Sources */,
 				589E025918ECB9B00028AFC0 /* DailyFormulaViewController.m in Sources */,
 				2030CE2C18ABBE3400636B2C /* main.m in Sources */,
 				58E9839218CA738D00E4AFC9 /* HourlyEditViewController.m in Sources */,
 				58A78FBE18C8D60F00DB3B03 /* DataManagerDaily.m in Sources */,
+				589F98D61910C682000E98C9 /* Formula9.m in Sources */,
 				58B8191B18C62E4B006D222C /* CalculatorViewController.m in Sources */,
 				589E025118EC91530028AFC0 /* CommonPushSegue.m in Sources */,
 				58A4F60A18AC0A320094E983 /* Common.m in Sources */,
 				58A4C0B818E9C77F000CD73D /* DailyViewController.m in Sources */,
+				589D949819117E7700CDC7AD /* Formula22.m in Sources */,
 				5832F20618FF38B300849D9D /* DailyDataTransformer.m in Sources */,
 				58A78FBA18C8D5C400DB3B03 /* DataManagerHourly.m in Sources */,
 				58A2E21C18EDE07900E9E543 /* Formula3.m in Sources */,

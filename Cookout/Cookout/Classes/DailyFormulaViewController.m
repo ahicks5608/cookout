@@ -9,11 +9,16 @@
 #import "DailyFormulaViewController.h"
 #import "Formula2.h"
 #import "Formula3.h"
-#import "Formula5.h"
 #import "Formula6.h"
+#import "FormulaTotalDep.h"
+#import "Formula9.h"
 #import "Formula10.h"
-#import "Formula27.h"
+#import "Formula12.h"
+#import "Formula18.h"
+#import "Formula19.h"
+#import "Formula20.h"
 
+#import "Formula27.h"
 #import "Common.h"
 #import "CookOutDaily.h"
 
@@ -54,15 +59,45 @@
         f2.delegate = _data;
         result = [f2 getvalues];
         [_data setValueAtIndex:DFSalesTax value:[f2 getResult]];
-    } else if (_formulaId == DFCreditCards) {
-        Formula5 *f5 = [[Formula5 alloc] init];
-        f5.delegate = _data;
-        result = [f5 getvalues];
+    }else if (_formulaId == DFCashOSDAY) {
+        Formula9 *f9 = [[Formula9 alloc] init];
+        f9.delegate = _data;
+        result = [f9 getvalues];
     }else if (_formulaId == DFTotalServiceTime) {
         Formula27 *f27 = [[Formula27 alloc] init];
         f27.delegate = _data;
         result = [f27 getvalues];
+    }else if (_formulaId == DFCashOSPercDAY91) {
+        Formula10 *f10 = [[Formula10 alloc] init];
+        f10.delegate = _data;
+        result = [f10 getvalues];
+    }else if (_formulaId == DFCashOSPercMONTH1114) {
+        Formula12 *f12 = [[Formula12 alloc] init];
+        f12.delegate = _data;
+        result = [f12 getvalues];
+    }else if (_formulaId == DFTotalDep) {
+        FormulaTotalDep *fTotalDep = [[FormulaTotalDep alloc] init];
+        fTotalDep.delegate = _data;
+        result = [fTotalDep  getvalues];
+    }else if (_formulaId == DFLaborPercDAY151) {
+        Formula18 *f18 = [[Formula18 alloc] init];
+        f18.delegate = _data;
+        result = [f18  getvalues];
+    }else if (_formulaId == DFLaborPercWEEK1613) {
+        Formula19 *f19 = [[Formula19 alloc] init];
+        f19.delegate = _data;
+        result = [f19  getvalues];
+    }else if (_formulaId == DFLaborPercMONTH1714) {
+        Formula20 *f20 = [[Formula20 alloc] init];
+        f20.delegate = _data;
+        result = [f20  getvalues];
+    }else if (_formulaId == DFMgrvdPercDAY211) {
+        Formula22 *f22 = [[Formula22 alloc] init];
+        f22.delegate = _data;
+        result = [f22  getvalues];
     }
+
+
 
     
     NSArray *labels =  [result valueForKey:@"labels"];

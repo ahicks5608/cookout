@@ -26,11 +26,21 @@
 @implementation Formula10
 
 +(NSString*) getValue:(Daily *)value{
-    return @"$0.00";
+    Formula10 *f10 = [[Formula10 alloc] init];
+    f10.delegate = value;
+    NSDictionary *value1 = [f10 getvalues];
+    NSArray *value2 = (NSArray*) [value1 valueForKey:@"values"];
+    return [value2 objectAtIndex:2];
+    
 }
-
-+(NSNumber*) getFormulaResult {
-    return @0;
++(NSNumber*) getFormulaResult:(Daily *)value{
+    Formula10 *f10 = [[Formula10 alloc] init];
+    f10.delegate = value;
+    [f10 getvalues];
+    
+    return [f10 getResult];
+    
+    
 }
 
 
@@ -39,9 +49,9 @@
         _labels = [NSMutableArray arrayWithCapacity:4];
         _values = [NSMutableArray arrayWithCapacity:4];
         _result = [NSMutableDictionary dictionaryWithCapacity:2];
+        [_labels addObject:[Common getTitleForDaily:DFCashOSPercDAY91]];
         [_labels addObject:[Common getTitleForDaily:DFNetSalesDAY]];
         [_labels addObject:[Common getTitleForDaily:DFCashOSDAY]];
-        [_labels addObject:[Common getTitleForDaily:DFCashOSPercDAY91]];
         
     }
     return self;
@@ -50,7 +60,7 @@
 
 
 -(NSUInteger) getFormulaId{
-    return DFGrossSales;
+    return DFCashOSPercDAY91;
 }
 
 -(NSNumber*) getResult {

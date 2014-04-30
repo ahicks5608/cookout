@@ -108,7 +108,6 @@ return self;
             NSNumber *value = [_fields objectAtIndex:index];
             return [value stringValue];
         }
-        
         case DFPaidOuts:
         case DFCreditCards:
         case DFDeposit1:
