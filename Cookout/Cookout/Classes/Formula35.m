@@ -1,16 +1,16 @@
 //
-//  Formula24.m
+//  Formula35.m
 //  Cookout
 //
-//  Created by Alex Hicks on 4/30/14.
+//  Created by Alex Hicks on 5/1/14.
 //  Copyright (c) 2014 Simple iApps. All rights reserved.
 //
 
-#import "Formula24.h"
+#import "Formula35.h"
 #import "Common.h"
 #import "Daily.h"
 
-@interface Formula24() {
+@interface Formula35() {
     NSMutableArray *_labels;
     NSMutableArray *_values;
     NSMutableDictionary *_result;
@@ -20,22 +20,22 @@
 @end
 
 
-@implementation Formula24
+@implementation Formula35
 
 +(NSString*) getValue:(Daily *)value{
-    Formula24 *f24 = [[Formula24 alloc] init];
-    f24.delegate = value;
-    NSDictionary *value1 = [f24 getvalues];
+    Formula35 *f35 = [[Formula35 alloc] init];
+    f35.delegate = value;
+    NSDictionary *value1 = [f35 getvalues];
     NSArray *value2 = (NSArray*) [value1 valueForKey:@"values"];
     return [value2 objectAtIndex:2];
     
 }
 +(NSNumber*) getFormulaResult:(Daily *)value{
-    Formula24 *f24 = [[Formula24 alloc] init];
-    f24.delegate = value;
-    [f24 getvalues];
+    Formula35 *f35 = [[Formula35 alloc] init];
+    f35.delegate = value;
+    [f35 getvalues];
     
-    return [f24 getResult];
+    return [f35 getResult];
     
     
 }
@@ -46,9 +46,9 @@
         _labels = [NSMutableArray arrayWithCapacity:4];
         _values = [NSMutableArray arrayWithCapacity:4];
         _result = [NSMutableDictionary dictionaryWithCapacity:2];
-        [_labels addObject:[Common getTitleForDaily:DFMgrvdPercMONTH2314]];
-        [_labels addObject:[Common getTitleForDaily:DFNetSalesMONTH114]];
-        [_labels addObject:[Common getTitleForDaily:DFMgrvdMONTH2123]];
+        [_labels addObject:[Common getTitleForDaily:DFUpDownThisWEEK1334]];
+        [_labels addObject:[Common getTitleForDaily:DFNetSalesWEEK113]];
+        [_labels addObject:[Common getTitleForDaily:DFNetSalesLastWEEKThruTODAY]];
         
     }
     return self;
@@ -57,7 +57,7 @@
 
 
 -(NSUInteger) getFormulaId{
-    return DFMgrvdPercMONTH2314;
+    return DFUpDownThisWEEK1334;
 }
 
 -(NSNumber*) getResult {
@@ -68,9 +68,9 @@
 
 -(NSDictionary*) getvalues{
     [_result removeAllObjects];
-    NSNumber *value1 = [_delegate getMgrvdMONTH2123];
-    NSNumber *value2 = [_delegate getNetSalesMONTH114];
-    float val = ([value1 floatValue] / [value2 floatValue]) * 100;
+    NSNumber *value1 = [_delegate getNetSalesWEEK113];
+    NSNumber *value2 = [_delegate getNetSalesLastWEEKThruTODAY];
+    float val = [value1 floatValue] - [value2 floatValue];
     NSNumber *value3 = [NSNumber numberWithFloat:val];
     
     

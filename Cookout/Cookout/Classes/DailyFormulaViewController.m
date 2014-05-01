@@ -17,8 +17,14 @@
 #import "Formula18.h"
 #import "Formula19.h"
 #import "Formula20.h"
-
+#import "Formula22.h"
+#import "Formula24.h"
 #import "Formula27.h"
+#import "Formula29.h"
+#import "Formula31.h"
+#import "Formula33.h"
+#import "Formula35.h"
+
 #import "Common.h"
 #import "CookOutDaily.h"
 
@@ -95,7 +101,31 @@
         Formula22 *f22 = [[Formula22 alloc] init];
         f22.delegate = _data;
         result = [f22  getvalues];
+    }else if (_formulaId == DFMgrvdPercMONTH2314) {
+        Formula24 *f24 = [[Formula24 alloc] init];
+        f24.delegate = _data;
+        result = [f24  getvalues];
+    }else if (_formulaId == DFFoodEmpPercDAY281) {
+        Formula29 *f29 = [[Formula29 alloc] init];
+        f29.delegate = _data;
+        result = [f29  getvalues];
+    }else if (_formulaId == DFFoodEmpPercMONTH3014) {
+        Formula31 *f31 = [[Formula31 alloc] init];
+        f31.delegate = _data;
+        result = [f31  getvalues];
+    }else if (_formulaId == DFUpDownToday132) {
+        Formula33 *f33 = [[Formula33 alloc] init];
+        f33.delegate = _data;
+        result = [f33  getvalues];
+    }else if (_formulaId == DFUpDownThisWEEK1334) {
+        Formula35 *f35 = [[Formula35 alloc] init];
+        f35.delegate = _data;
+        result = [f35  getvalues];
     }
+
+
+
+         
 
 
 

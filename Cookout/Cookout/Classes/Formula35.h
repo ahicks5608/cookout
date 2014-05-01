@@ -1,8 +1,8 @@
 //
-//  Formula24.h
+//  Formula35.h
 //  Cookout
 //
-//  Created by Alex Hicks on 4/30/14.
+//  Created by Alex Hicks on 5/1/14.
 //  Copyright (c) 2014 Simple iApps. All rights reserved.
 //
 
@@ -11,7 +11,7 @@
 #import "CookOutDaily.h"
 #import "Daily.h"
 
-@interface Formula24 : NSObject <DailyFormulaProtocol>
+@interface Formula35 : NSObject <DailyFormulaProtocol>
 
 @property (nonatomic, assign) id<CookOutDaily> delegate;
 
