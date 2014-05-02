@@ -146,6 +146,18 @@ case DFLaborAmtDAYPaysh:
         [alert show];
 
         
+    }else if (indexPath.row == DFCashOSMONTH911) {
+    
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"MONTHLY TOTALS"
+                                                        message:@"monthlyRunningTotal not yet implemented, and big doubles are delicious-_-"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Continue"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+
+    
+    
     }else {
         [self showFormula];
 }

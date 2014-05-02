@@ -17,7 +17,8 @@
     NSMutableArray *_labels;
     NSMutableArray *_values;
     NSMutableDictionary *_result;
-    
+    NSNumber *_formulaResult;
+
 }
 
 @end
@@ -64,7 +65,7 @@
 }
 
 -(NSNumber*) getResult {
-    return @0;
+    return _formulaResult;
 }
 
 
@@ -73,10 +74,15 @@
     NSNumber *value1 = [NSNumber numberWithFloat:[[_delegate getNetSalesDAY] floatValue]];
     NSNumber *value2 = [NSNumber numberWithFloat:[[_delegate getCashOSDAY] floatValue]];
     float val = ([value2 floatValue] / [value1 floatValue]) * 100;
-    NSNumber *value3 = [NSNumber numberWithFloat:val];
-    [_values addObject:value3];
-    [_values addObject:value1];
-    [_values addObject:value2];
+    _formulaResult = [NSNumber numberWithFloat:val];
+    
+    NSString *formattedValue = [Common formatNumberAsMoney:value1];
+    [_values addObject:formattedValue];
+    formattedValue = [Common formatNumberAsMoney:value2];
+    [_values addObject:formattedValue];
+    formattedValue = [Common formatNumberAsMoney:_formulaResult];
+    [_values addObject:formattedValue];
+
     
     [_result setValue:_labels forKey:@"labels"];
     [_result setValue:_values forKey:@"values"];

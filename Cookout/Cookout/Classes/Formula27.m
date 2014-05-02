@@ -14,7 +14,8 @@
     NSMutableArray *_labels;
     NSMutableArray *_values;
     NSMutableDictionary *_result;
-    
+    NSNumber *_formulaResult;
+
 }
 
 @end
@@ -32,7 +33,7 @@
     
 }
 
-+(NSNumber*) getFormulaResult {
++(NSNumber*) getFormulaResult:(Daily*) value{
     return @0;
 }
 

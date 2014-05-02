@@ -110,6 +110,18 @@ NSString* const ccnUuid = @"uuid";
              ];
     
 }
+
++(BOOL) notYetImplemented:(NSUInteger) value{
+    switch (value) {
+        case DFCashOSMONTH911:
+        case DFNetSalesMONTH114:
+                return YES;
+            default:
+                return NO;
+    }
+}
+
+
 +(BOOL) canEditDaily:(NSUInteger) value{
     switch (value) {
         

@@ -14,7 +14,8 @@
     NSMutableArray *_labels;
     NSMutableArray *_values;
     NSMutableDictionary *_result;
-    
+    NSNumber *_formulaResult;
+
 }
 
 @end
@@ -46,9 +47,9 @@
         _labels = [NSMutableArray arrayWithCapacity:4];
         _values = [NSMutableArray arrayWithCapacity:4];
         _result = [NSMutableDictionary dictionaryWithCapacity:2];
-        [_labels addObject:[Common getTitleForDaily:DFGrossSales]];
-        [_labels addObject:[Common getTitleForDaily:DFNetSalesDAY]];
-        [_labels addObject:[Common getTitleForDaily:DFSalesTax]];
+        [_labels addObject:[Common getTitleForDaily:DFTotalDep]];
+        [_labels addObject:[Common getTitleForDaily:DFDeposit1]];
+        [_labels addObject:[Common getTitleForDaily:DFDeposit2]];
         
     }
     return self;
@@ -61,24 +62,24 @@
 }
 
 -(NSNumber*) getResult {
-    return @0;
+    return _formulaResult;
 }
 
 
 
 -(NSDictionary*) getvalues{
     [_result removeAllObjects];
-    NSNumber *value1 = [_delegate getNetSalesDAY];
-    NSNumber *value2 = [_delegate getSalesTax];
+    NSNumber *value1 = [_delegate getDeposit1];
+    NSNumber *value2 = [_delegate getDeposit2];
     float val = [value1 floatValue] + [value2 floatValue];
-    NSNumber *value3 = [NSNumber numberWithFloat:val];
+   _formulaResult = [NSNumber numberWithFloat:val];
     
     
     NSString *formattedValue = [Common formatNumberAsMoney:value1];
     [_values addObject:formattedValue];
     formattedValue = [Common formatNumberAsMoney:value2];
     [_values addObject:formattedValue];
-    formattedValue = [Common formatNumberAsMoney:value3];
+    formattedValue = [Common formatNumberAsMoney:_formulaResult];
     [_values addObject:formattedValue];
     
     [_result setValue:_labels forKey:@"labels"];

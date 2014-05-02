@@ -13,7 +13,8 @@
     NSMutableArray *_labels;
     NSMutableArray *_values;
     NSMutableDictionary *_result;
-    
+    NSNumber *_formulaResult;
+
 }
 
 @end

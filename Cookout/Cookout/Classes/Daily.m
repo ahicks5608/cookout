@@ -10,9 +10,23 @@
 #import "Daily.h"
 #import "Common.h"
 #import "Formula2.h"
-#import "Formula27.h"
 #import "Formula3.h"
 #import "Formula6.h"
+#import "FormulaTotalDep.h"
+#import "Formula9.h"
+#import "Formula10.h"
+#import "Formula12.h"
+#import "Formula18.h"
+#import "Formula19.h"
+#import "Formula20.h"
+#import "Formula22.h"
+#import "Formula24.h"
+#import "Formula27.h"
+#import "Formula29.h"
+#import "Formula31.h"
+#import "Formula33.h"
+#import "Formula35.h"
+
 
 @interface Daily(){
     NSMutableArray *_fields;
@@ -98,7 +112,9 @@ return self;
 -(NSString*) getValueAtIndex:(NSUInteger) index{
     switch (index) {
  
-        
+        case DFNetSalesWEEK113:
+            return @"0.00";
+            break;
         case DFTotalServiceTime:
             return [Formula27 getValue:self];
             break;
@@ -108,6 +124,7 @@ return self;
             NSNumber *value = [_fields objectAtIndex:index];
             return [value stringValue];
         }
+       
         case DFPaidOuts:
         case DFCreditCards:
         case DFDeposit1:
@@ -134,6 +151,38 @@ return self;
             [_fields setObject:alex2 atIndexedSubscript:DFGrossSales];
             return val;
         }
+        case DFCashSHForDep: {
+            NSString *val = [Formula6 getValue:self];
+            NSNumber *alex2 = [Formula6 getFormulaResult:self];
+            [_fields setObject:alex2 atIndexedSubscript:DFCashSHForDep];
+            return val;
+        }
+        case DFTotalDep: {
+            NSString *val = [FormulaTotalDep getValue:self];
+            NSNumber *alex2 = [FormulaTotalDep getFormulaResult:self];
+            [_fields setObject:alex2 atIndexedSubscript:DFTotalDep];
+            return val;
+        }
+        case DFCashOSDAY: {
+            NSString *val = [Formula9 getValue:self];
+            NSNumber *alex2 = [Formula9 getFormulaResult:self];
+            [_fields setObject:alex2 atIndexedSubscript:DFCashOSDAY];
+            return val;
+        }
+        case DFCashOSPercDAY91: {
+            NSString *val = [Formula10 getValue:self];
+            NSNumber *alex2 = [Formula10 getFormulaResult:self];
+            [_fields setObject:alex2 atIndexedSubscript:DFCashOSPercDAY91];
+            return val;
+        }
+        case DFLaborPercDAY151: {
+            NSString *val = [Formula18 getValue:self];
+            NSNumber *alex2 = [Formula18 getFormulaResult:self];
+            [_fields setObject:alex2 atIndexedSubscript:DFLaborPercDAY151];
+            return val;
+        }
+    
+        
         default:
             return @"$0.00";
             break;
