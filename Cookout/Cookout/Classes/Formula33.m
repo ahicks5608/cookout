@@ -62,7 +62,7 @@
 }
 
 -(NSNumber*) getResult {
-    return @0;
+    return _formulaResult;
 }
 
 
@@ -71,15 +71,16 @@
     [_result removeAllObjects];
     NSNumber *value1 = [_delegate getNetSalesDAY];
     NSNumber *value2 = [_delegate getSalesLastWeekSameDay];
-    float val = [value1 floatValue] - [value2 floatValue];
-    NSNumber *value3 = [NSNumber numberWithFloat:val];
+    float val = ([value1 floatValue] / ([value2 floatValue]==0.0f?1:[value2 floatValue])) * 100;
+    _formulaResult = [NSNumber numberWithFloat:val];
+
     
     
     NSString *formattedValue = [Common formatNumberAsMoney:value1];
     [_values addObject:formattedValue];
     formattedValue = [Common formatNumberAsMoney:value2];
     [_values addObject:formattedValue];
-    formattedValue = [Common formatNumberAsMoney:value3];
+    formattedValue = [Common formatNumberAsMoney:_formulaResult];
     [_values addObject:formattedValue];
     
     [_result setValue:_labels forKey:@"labels"];

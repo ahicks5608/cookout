@@ -62,24 +62,25 @@
 }
 
 -(NSNumber*) getResult {
-    return @0;
+    return _formulaResult;
 }
 
 
 
 -(NSDictionary*) getvalues{
     [_result removeAllObjects];
-    NSNumber *value1 = [_delegate getFoodEmpForDay];
-    NSNumber *value2 = [_delegate getNetSalesDAY];
-    float val = ([value1 floatValue] / [value2 floatValue]) * 100;
-    NSNumber *value3 = [NSNumber numberWithFloat:val];
+    NSNumber *value1 = [_delegate getNetSalesDAY];
+    NSNumber *value2 = [_delegate getFoodEmpForDay];
+    float val = ([value2 floatValue] / [value1 floatValue]) * 100;
+    _formulaResult = [NSNumber numberWithFloat:val];
+
     
     
     NSString *formattedValue = [Common formatNumberAsMoney:value1];
     [_values addObject:formattedValue];
     formattedValue = [Common formatNumberAsMoney:value2];
     [_values addObject:formattedValue];
-    formattedValue = [Common formatNumberAsMoney:value3];
+    formattedValue = [Common formatNumberAsPercent:_formulaResult];
     [_values addObject:formattedValue];
     
     [_result setValue:_labels forKey:@"labels"];

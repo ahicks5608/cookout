@@ -71,7 +71,7 @@
     [_result removeAllObjects];
     NSNumber *value1 = [_delegate getMgrvdMONTH2123];
     NSNumber *value2 = [_delegate getNetSalesMONTH114];
-    float val = ([value1 floatValue] / [value2 floatValue]) * 100;
+    float val = ([value1 floatValue] / ([value2 floatValue]==0.0f?1:[value2 floatValue])) * 100;
     _formulaResult = [NSNumber numberWithFloat:val];
     
     

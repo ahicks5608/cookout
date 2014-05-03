@@ -181,6 +181,20 @@ return self;
             [_fields setObject:alex2 atIndexedSubscript:DFLaborPercDAY151];
             return val;
         }
+        case DFMgrvdPercDAY211: {
+            NSString *val = [Formula22 getValue:self];
+            NSNumber *alex2 = [Formula22 getFormulaResult:self];
+            [_fields setObject:alex2 atIndexedSubscript:DFMgrvdPercDAY211];
+            return val;
+        }
+        case DFFoodEmpPercDAY281: {
+            NSString *val = [Formula29 getValue:self];
+            NSNumber *alex2 = [Formula29 getFormulaResult:self];
+            [_fields setObject:alex2 atIndexedSubscript:DFFoodEmpPercDAY281];
+            return val;
+        }
+
+
     
         
         default:

@@ -148,8 +148,30 @@ case DFLaborAmtDAYPaysh:
         
     }else if (indexPath.row == DFCashOSMONTH911) {
     
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"MONTHLY TOTALS"
-                                                        message:@"monthlyRunningTotal not yet implemented, and big doubles are delicious-_-"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Big Doubles are delicious"
+                                                        message:@"O/S running total for the month not yet implemented"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Yes they are"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+
+    
+    
+    } else if (indexPath.row == DFNetSalesWEEK113)  {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Weekly Sums"
+                                                        message:@"Weekly running totals not yet implemented"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Continue"
+                                              otherButtonTitles:nil];
+        [alert show];
+
+    
+    } else if (indexPath.row == DFNetSalesMONTH114)  {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Monthly Sums"
+                                                        message:@"Monthly running totals not yet implemented"
                                                        delegate:nil
                                               cancelButtonTitle:@"Continue"
                                               otherButtonTitles:nil];
@@ -158,7 +180,85 @@ case DFLaborAmtDAYPaysh:
 
     
     
-    }else {
+    
+    
+    } else if (indexPath.row == DFLaborAmtWEEK1516)  {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Weekly Sums"
+                                                        message:@"Weekly labor amount not yet implemented"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Continue"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+    
+    
+    } else if (indexPath.row == DFLaborAmtMONTH1517)  {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Monthly Sums"
+                                                        message:@"Monthly labor amount not yet implemented"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Continue"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+        
+        
+    } else if (indexPath.row == DFMgrvdMONTH2123)  {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Monthly Sums"
+                                                        message:@"Monthly voids not yet implemented"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Continue"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+        
+        
+    } else if (indexPath.row == DFFoodEmpMONTH2830)  {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Monthly Sums"
+                                                        message:@"Monthly running totals not yet implemented"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Continue"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+        
+        
+        
+        
+        
+    } else if (indexPath.row == DFSalesLastWeekSameDay)  {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Weekly Sums"
+                                                        message:@"Weekly amounts not yet implemented"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Continue"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+        
+        
+    } else if (indexPath.row == DFNetSalesLastWEEKThruTODAY)  {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Weekly Sums"
+                                                        message:@"Sales last week thru today not yet implemented"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Continue"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+        
+        
+    }
+
+
+
+
+    
+    
+    else {
         [self showFormula];
 }
 }

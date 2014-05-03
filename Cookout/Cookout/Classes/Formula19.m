@@ -70,7 +70,7 @@
     [_result removeAllObjects];
     NSNumber *value1 = [_delegate getLaborAmtWEEK1516];
     NSNumber *value2 = [_delegate getNetSalesWEEK113];
-    float val = ([value1 floatValue] / [value2 floatValue]) * 100;
+    float val = ([value1 floatValue] / ([value2 floatValue]==0.0f?1:[value2 floatValue])) * 100;
     _formulaResult = [NSNumber numberWithFloat:val];
     
     
@@ -78,7 +78,7 @@
     [_values addObject:formattedValue];
     formattedValue = [Common formatNumberAsMoney:value2];
     [_values addObject:formattedValue];
-    formattedValue = [Common formatNumberAsMoney:_formulaResult];
+    formattedValue = [Common formatNumberAsPercent:_formulaResult];
     [_values addObject:formattedValue];
     
     [_result setValue:_labels forKey:@"labels"];
