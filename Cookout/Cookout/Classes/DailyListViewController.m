@@ -13,10 +13,14 @@
 #import "Daily.h"
 #import "CommonPushSegue.h"
 #import "DailyViewController.h"
-
+#import "AppDelegate.h"
+#import "DataManagerDaily.h"
 @interface DailyListViewController (){
     NSMutableArray *_items;
     NSDateFormatter *_dateFormatter;
+    DataManagerDaily *_dataManager;
+    UIBarButtonItem *_editButton;
+    BOOL _newRecord;
 }
 
 @end
@@ -31,9 +35,61 @@
     }
     return self;
 }
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        DailyData *hd = (DailyData*) [_items objectAtIndex:indexPath.row];
+        AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+        [appDelegate.managedObjectContext deleteObject:hd];
+        [appDelegate.managedObjectContext save:nil];
+        DataManagerDaily *daily = [[DataManagerDaily alloc] init];
+        if (_items == nil) {
+            _items = [[NSMutableArray alloc] init];
+        } else {
+            [_items removeAllObjects];
+        }
+        [_items addObjectsFromArray:[daily select:nil]];
+        _editButton.enabled = [_items count] >0;
+        [self.tableView reloadData];
+        
+        
+    }
+}
+
+
+-(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer{
+    if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft){
+        self.tableView.editing = YES;
+    }
+}
+- (void) doEdit:(id) sender {
+    _newRecord = FALSE;
+    if (self.tableView.editing == NO) {
+        self.tableView.editing = YES;
+    }
+}
+
+
+
 - (void) viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
+    
+    
+    UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeFrom:)];
+    [swipeRecognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+    [self.tableView addGestureRecognizer:swipeRecognizer];
+
+
+    NSMutableArray *buttons = [NSMutableArray arrayWithArray:self.navigationItem.leftBarButtonItems];
+    _editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
+                                                                target:self action: @selector(doEdit:)];
+    
+    
+    [buttons insertObject:_editButton atIndex:0];
+    self.navigationItem.leftItemsSupplementBackButton = YES;
+    self.navigationItem.leftBarButtonItems = buttons;
+    
     DataManagerDaily *daily = [[DataManagerDaily alloc] init];
     if (_items == nil) {
         _items = [[NSMutableArray alloc] init];

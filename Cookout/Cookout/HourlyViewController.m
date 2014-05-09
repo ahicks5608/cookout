@@ -61,7 +61,6 @@
 }
 
 //GESTURE FOR DELETING
-
 -(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer{
     if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft){
         self.tableView.editing = YES;
